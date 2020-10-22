@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+#   uifiles.bsh: A bash script to compile user interface files from Qt.
+#
+echo
+echo Compiling User Interface Files.
+echo
+pyuic5 uifiles/dataentry.ui > machinetrans/userinterfaces/ui_dataentry.py
+pyuic5 uifiles/verbconjugation.ui > machinetrans/userinterfaces/ui_verbconjugation.py
+pyuic5 uifiles/sqlcheck.ui > machinetrans/userinterfaces/ui_sqlcheck.py
+pyuic5 uifiles/sqltest.ui > machinetrans/userinterfaces/ui_sqltest.py
+pyuic5 uifiles/errordisplay.ui > machinetrans/userinterfaces/ui_errordisplay.py
+pyuic5 uifiles/sqldata.ui > machinetrans/userinterfaces/ui_sqldata.py
+pyuic5 uifiles/worddatagen.ui > machinetrans/userinterfaces/ui_worddatagen.py
+pyuic5 uifiles/datadisplay.ui > machinetrans/userinterfaces/ui_datadisplay.py
+pyuic5 uifiles/declentry.ui > machinetrans/userinterfaces/ui_declentry.py
+pyuic5 uifiles/adjdeclentry.ui > machinetrans/userinterfaces/ui_adjdeclentry.py
+pyuic5 uifiles/partdecl.ui > machinetrans/userinterfaces/ui_partdecl.py
+pyuic5 uifiles/pastconj.ui > machinetrans/userinterfaces/ui_pastconj.py
+pyuic5 uifiles/miscconj.ui > machinetrans/userinterfaces/ui_miscconj.py
+pyuic5 uifiles/verbconjsel.ui > machinetrans/userinterfaces/ui_verbconjsel.py
+pyuic5 uifiles/adjdeclsel.ui > machinetrans/userinterfaces/ui_adjdeclsel.py
+pyuic5 uifiles/noundeclsel.ui > machinetrans/userinterfaces/ui_noundeclsel.py
+pyuic5 uifiles/pronlist.ui > machinetrans/userinterfaces/ui_pronlist.py
+pyuic5 uifiles/pronoundecl.ui > machinetrans/userinterfaces/ui_pronoundecl.py
+pyuic5 uifiles/shortadj.ui > machinetrans/userinterfaces/ui_shortadj.py
+pyuic5 uifiles/invarlist.ui > machinetrans/userinterfaces/ui_invarlist.py
+pyuic5 uifiles/editdata.ui > machinetrans/userinterfaces/ui_editdata.py
+pyuic5 uifiles/helpview.ui > machinetrans/userinterfaces/ui_helpview.py
+pyuic5 uifiles/pronadjsel.ui > machinetrans/userinterfaces/ui_pronadjsel.py
+pyuic5 uifiles/sortedkeys.ui > machinetrans/userinterfaces/ui_sortedkeys.py

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module subverb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>subverb</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/eberdeed/machinetrans-1.15/machinetrans/parser/subverb.py">/home/eberdeed/machinetrans-1.15/machinetrans/parser/subverb.py</a></font></td></tr></table>
+    <p><tt><a href="#SubVerb">SubVerb</a>:&nbsp;A&nbsp;class&nbsp;to&nbsp;encapsulate&nbsp;a&nbsp;subject&nbsp;and&nbsp;a&nbsp;verb<br>
+and&nbsp;potentially&nbsp;an&nbsp;article&nbsp;an&nbsp;adjective&nbsp;and&nbsp;an&nbsp;adverb.<br>
+Edward&nbsp;C.&nbsp;Eberle&nbsp;&lt;eberdeed@eberdeed.net&gt;<br>
+06/25/2016&nbsp;San&nbsp;Diego,&nbsp;California&nbsp;USA</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="subverb.html#SubVerb">SubVerb</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SubVerb">class <strong>SubVerb</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#SubVerb">SubVerb</a>(conn,&nbsp;art,&nbsp;sub,&nbsp;verb,&nbsp;adj=None,&nbsp;adv=None,&nbsp;capit=True)<br>
+&nbsp;<br>
+Creates&nbsp;a&nbsp;grammatical&nbsp;structure&nbsp;for&nbsp;an&nbsp;English<br>
+sentence&nbsp;of&nbsp;the&nbsp;form:<br>
+[article]&nbsp;[adjective]&nbsp;subject&nbsp;[adverb]&nbsp;verb.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SubVerb-__init__"><strong>__init__</strong></a>(self, conn, art, sub, verb, adj=None, adv=None, capit=True)</dt><dd><tt>Initialize&nbsp;the&nbsp;class&nbsp;global&nbsp;variables.</tt></dd></dl>
+
+<dl><dt><a name="SubVerb-compose"><strong>compose</strong></a>(self)</dt><dd><tt>Compose&nbsp;the&nbsp;construct&nbsp;with&nbsp;the&nbsp;data&nbsp;provided.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>adj</strong> = None</dl>
+
+<dl><dt><strong>adv</strong> = None</dl>
+
+<dl><dt><strong>art</strong> = None</dl>
+
+<dl><dt><strong>capit</strong> = True</dl>
+
+<dl><dt><strong>conn</strong> = None</dl>
+
+<dl><dt><strong>currcommand</strong> = ''</dl>
+
+<dl><dt><strong>db</strong> = None</dl>
+
+<dl><dt><strong>output</strong> = ''</dl>
+
+<dl><dt><strong>sqlcommand</strong> = "SELECT DISTINCT conjugation FROM verbs WHERE name='{}' AND tense='{}' AND person='{}';<font color="#c040c0">\n</font>"</dl>
+
+<dl><dt><strong>sub</strong> = None</dl>
+
+<dl><dt><strong>types</strong> = &lt;machinetrans.data.wordtype.WordType object&gt;</dl>
+
+<dl><dt><strong>verb</strong> = None</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PronounDecl</class>
+ <widget class="QDialog" name="PronounDecl">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Russian Pronoun Declension</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../usr/share/machinetrans/resources/logo.png</normaloff>../../../../usr/share/machinetrans/resources/logo.png</iconset>
+  </property>
+  <widget class="QLabel" name="titleLbl">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>780</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Russian Pronoun Declension</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="LineEditRU" name="nomEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>310</y>
+     <width>340</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="nomLbl">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>280</y>
+     <width>340</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nominative</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="genLbl">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>350</y>
+     <width>340</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Genitive</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="LineEditRU" name="genEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>380</y>
+     <width>340</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="insLbl">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>420</y>
+     <width>340</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Instrumental</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="LineEditRU" name="insEdit">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>450</y>
+     <width>340</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="accLbl">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>280</y>
+     <width>340</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Accusative</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="LineEditRU" name="accEdit">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>310</y>
+     <width>340</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="datLbl">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>350</y>
+     <width>340</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dative</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="LineEditRU" name="datEdit">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>380</y>
+     <width>340</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="prpLbl">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>420</y>
+     <width>340</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Prepositional</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="LineEditRU" name="prpEdit">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>450</y>
+     <width>340</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="rejectBttn">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>530</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reject</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="acceptBttn">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>530</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Accept</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pronBttn">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>530</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pronouns</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="typeLbl">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>170</y>
+     <width>180</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pronoun Type</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="typeDrop">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>180</width>
+     <height>35</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="helpBttn">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>10</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="endingBttn">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>530</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Endings</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="stemLbl">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>240</y>
+     <width>340</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pronoun Stem</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="LineEditRU" name="stemEdit">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>240</y>
+     <width>340</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="LineEditEN" name="enEdit">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>200</y>
+     <width>340</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="enLbl">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>200</y>
+     <width>130</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="genderBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>780</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="mascanimrb">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>250</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Masculine Animate</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="mascinanrb">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>20</y>
+      <width>250</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Masculine Inanimate</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="femrb">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>20</y>
+      <width>130</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Feminine</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="plurinanrb">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>50</y>
+      <width>200</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plural Inanimate</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="pluranimrb">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>50</y>
+      <width>200</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plural Animate</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="nuetrb">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>150</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nueter</string>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="singBttn">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>480</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Singular</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="groupBttn">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>480</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Group</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LineEditRU</class>
+   <extends>QLineEdit</extends>
+   <header>machinetrans.lineeditru</header>
+  </customwidget>
+  <customwidget>
+   <class>LineEditEN</class>
+   <extends>QLineEdit</extends>
+   <header>machinetrans.lineediten</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>helpBttn</tabstop>
+  <tabstop>mascanimrb</tabstop>
+  <tabstop>mascinanrb</tabstop>
+  <tabstop>femrb</tabstop>
+  <tabstop>nuetrb</tabstop>
+  <tabstop>pluranimrb</tabstop>
+  <tabstop>plurinanrb</tabstop>
+  <tabstop>typeDrop</tabstop>
+  <tabstop>enEdit</tabstop>
+  <tabstop>stemEdit</tabstop>
+  <tabstop>nomEdit</tabstop>
+  <tabstop>accEdit</tabstop>
+  <tabstop>genEdit</tabstop>
+  <tabstop>datEdit</tabstop>
+  <tabstop>insEdit</tabstop>
+  <tabstop>prpEdit</tabstop>
+  <tabstop>singBttn</tabstop>
+  <tabstop>groupBttn</tabstop>
+  <tabstop>rejectBttn</tabstop>
+  <tabstop>endingBttn</tabstop>
+  <tabstop>pronBttn</tabstop>
+  <tabstop>acceptBttn</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

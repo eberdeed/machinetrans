@@ -1,0 +1,1190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module dataentry</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>dataentry</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/eberdeed/machinetrans-1.15/dataentry.py">/home/eberdeed/machinetrans-1.15/dataentry.py</a></font></td></tr></table>
+    <p><tt><a href="#DataEntry">DataEntry</a>:&nbsp;&nbsp;Machine&nbsp;Translation&nbsp;Data&nbsp;Entry.&nbsp;&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;program&nbsp;to&nbsp;create&nbsp;a&nbsp;database&nbsp;of&nbsp;Russian-English&nbsp;terms.<br>
+Created&nbsp;By&nbsp;Edward&nbsp;Charles&nbsp;Eberle&nbsp;&lt;eberdeed@eberdeed.net&gt;<br>
+August&nbsp;23,&nbsp;2016,&nbsp;San&nbsp;Diego&nbsp;California&nbsp;United&nbsp;States&nbsp;of&nbsp;America</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="psycopg2.html">psycopg2</a><br>
+</td><td width="25%" valign=top><a href="pwd.html">pwd</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>(<a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="dataentry.html#DataEntry">DataEntry</a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_dataentry.html#Ui_DataEntry">machinetrans.userinterfaces.ui_dataentry.Ui_DataEntry</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="machinetrans.userinterfaces.ui_dataentry.html#Ui_DataEntry">machinetrans.userinterfaces.ui_dataentry.Ui_DataEntry</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="dataentry.html#DataEntry">DataEntry</a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_dataentry.html#Ui_DataEntry">machinetrans.userinterfaces.ui_dataentry.Ui_DataEntry</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DataEntry">class <strong>DataEntry</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_dataentry.html#Ui_DataEntry">machinetrans.userinterfaces.ui_dataentry.Ui_DataEntry</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DataEntry">DataEntry</a>(parent=None)<br>
+&nbsp;<br>
+A&nbsp;GUI&nbsp;to&nbsp;enter&nbsp;Russian-English&nbsp;language&nbsp;data&nbsp;into<br>
+an&nbsp;PostgreSQL&nbsp;database.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="dataentry.html#DataEntry">DataEntry</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="machinetrans.userinterfaces.ui_dataentry.html#Ui_DataEntry">machinetrans.userinterfaces.ui_dataentry.Ui_DataEntry</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DataEntry-__init__"><strong>__init__</strong></a>(self, parent=None)</dt><dd><tt>Initialize&nbsp;a&nbsp;Qt&nbsp;Dialog&nbsp;and&nbsp;open<br>
+a&nbsp;connection&nbsp;to&nbsp;PostgreSQL.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-adjective"><strong>adjective</strong></a>(self)</dt><dd><tt>Enter&nbsp;an&nbsp;adjective&nbsp;and&nbsp;go&nbsp;to&nbsp;endsql.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-adverb"><strong>adverb</strong></a>(self)</dt><dd><tt>Enter&nbsp;an&nbsp;adverb&nbsp;and&nbsp;go&nbsp;to&nbsp;"endnocase."</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-apostrophe"><strong>apostrophe</strong></a>(self, x)</dt></dl>
+
+<dl><dt><a name="DataEntry-checksql"><strong>checksql</strong></a>(self)</dt><dd><tt>Check&nbsp;the&nbsp;current&nbsp;state&nbsp;of&nbsp;the&nbsp;given&nbsp;SQL&nbsp;command.<br>
+This&nbsp;can&nbsp;be&nbsp;done&nbsp;at&nbsp;any&nbsp;time&nbsp;from&nbsp;the&nbsp;main&nbsp;GUI.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-closeEvent"><strong>closeEvent</strong></a>(self, event)</dt><dd><tt>Close&nbsp;the&nbsp;GUI&nbsp;and&nbsp;prompt&nbsp;for&nbsp;data&nbsp;consolidation&nbsp;(removal&nbsp;of&nbsp;duplicates.)<br>
+In&nbsp;database&nbsp;consolidation&nbsp;a&nbsp;temporary&nbsp;table&nbsp;of&nbsp;unique&nbsp;entries&nbsp;is&nbsp;created,&nbsp;<br>
+the&nbsp;original&nbsp;table&nbsp;is&nbsp;deleted,&nbsp;and&nbsp;the&nbsp;temporary&nbsp;table&nbsp;is&nbsp;then&nbsp;renamed&nbsp;as<br>
+the&nbsp;original.&nbsp;<br>
+The&nbsp;window&nbsp;geometry&nbsp;information&nbsp;is&nbsp;written&nbsp;to&nbsp;the&nbsp;configuration&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-commitdata"><strong>commitdata</strong></a>(self)</dt><dd><tt>Commit&nbsp;the&nbsp;SQL&nbsp;command.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-conjunction"><strong>conjunction</strong></a>(self)</dt><dd><tt>Enter&nbsp;an&nbsp;conjunction&nbsp;and&nbsp;go&nbsp;to&nbsp;endnocase.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-displaydata"><strong>displaydata</strong></a>(self)</dt><dd><tt>Display&nbsp;and&nbsp;edit&nbsp;the&nbsp;data&nbsp;in&nbsp;the&nbsp;current&nbsp;postgresql&nbsp;table&nbsp;selected.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-displayhelp"><strong>displayhelp</strong></a>(self)</dt><dd><tt>Display&nbsp;an&nbsp;HTML&nbsp;help&nbsp;file&nbsp;located&nbsp;in&nbsp;/usr/share/machinetrans/resources<br>
+in&nbsp;its&nbsp;own&nbsp;gui.&nbsp;&nbsp;This&nbsp;is&nbsp;dependent&nbsp;on&nbsp;the&nbsp;variable&nbsp;"helpfile."</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-endnocase"><strong>endnocase</strong></a>(self)</dt><dd><tt>Finalize&nbsp;the&nbsp;SQL&nbsp;command&nbsp;and&nbsp;commit&nbsp;the&nbsp;data.<br>
+This&nbsp;is&nbsp;the&nbsp;reflection&nbsp;of&nbsp;endsql&nbsp;but&nbsp;with&nbsp;no<br>
+declension&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-endsql"><strong>endsql</strong></a>(self)</dt><dd><tt>Create&nbsp;the&nbsp;SQL&nbsp;dictionary&nbsp;entry,&nbsp;create&nbsp;the&nbsp;proper&nbsp;GUI<br>
+for&nbsp;the&nbsp;given&nbsp;word&nbsp;type.&nbsp;&nbsp;This&nbsp;method&nbsp;handles&nbsp;nouns&nbsp;and&nbsp;adjectives.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-finalize"><strong>finalize</strong></a>(self)</dt><dd><tt>Show&nbsp;the&nbsp;user&nbsp;the&nbsp;SQL&nbsp;command&nbsp;in&nbsp;a&nbsp;gui&nbsp;and&nbsp;prompt&nbsp;for&nbsp;commit.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-interjection"><strong>interjection</strong></a>(self)</dt><dd><tt>Enter&nbsp;an&nbsp;interjection&nbsp;and&nbsp;then&nbsp;insert&nbsp;it&nbsp;into<br>
+the&nbsp;database.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-interrogative"><strong>interrogative</strong></a>(self)</dt><dd><tt>Enter&nbsp;an&nbsp;interrogative&nbsp;and&nbsp;go&nbsp;to&nbsp;the&nbsp;interrogative&nbsp;variety.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-interrogvar"><strong>interrogvar</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;variety,&nbsp;update&nbsp;the&nbsp;SQL&nbsp;dictionary&nbsp;and&nbsp;<br>
+enter&nbsp;it&nbsp;into&nbsp;the&nbsp;database.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-invariant"><strong>invariant</strong></a>(self)</dt><dd><tt>Enter&nbsp;an&nbsp;invariant&nbsp;item&nbsp;(no&nbsp;declension).<br>
+Display&nbsp;the&nbsp;invariant&nbsp;GUI,&nbsp;which&nbsp;allows<br>
+for&nbsp;entering&nbsp;multiple&nbsp;invariant&nbsp;values,<br>
+and&nbsp;the&nbsp;editing&nbsp;and&nbsp;deleting&nbsp;of&nbsp;existing&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-itemSelect"><strong>itemSelect</strong></a>(self)</dt><dd><tt>Select&nbsp;an&nbsp;item&nbsp;from&nbsp;the&nbsp;word&nbsp;class&nbsp;list.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-nextlist"><strong>nextlist</strong></a>(self)</dt><dd><tt>Direct&nbsp;the&nbsp;program&nbsp;into&nbsp;the&nbsp;selected&nbsp;word&nbsp;type&nbsp;and&nbsp;<br>
+initialize&nbsp;the&nbsp;SQL&nbsp;command.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-noun"><strong>noun</strong></a>(self)</dt><dd><tt>Enter&nbsp;a&nbsp;noun&nbsp;and&nbsp;go&nbsp;to&nbsp;the&nbsp;noun&nbsp;variety.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-nounanim"><strong>nounanim</strong></a>(self)</dt><dd><tt>Create&nbsp;the&nbsp;correct&nbsp;SQL&nbsp;dictionary&nbsp;entry&nbsp;and&nbsp;direct&nbsp;the&nbsp;program&nbsp;to&nbsp;endsql.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-nounvar"><strong>nounvar</strong></a>(self)</dt><dd><tt>Create&nbsp;the&nbsp;correct&nbsp;SQL&nbsp;dictionary&nbsp;entry&nbsp;and&nbsp;direct&nbsp;the&nbsp;program&nbsp;to&nbsp;endsql.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-preposition"><strong>preposition</strong></a>(self)</dt><dd><tt>Enter&nbsp;a&nbsp;preposition&nbsp;and&nbsp;go&nbsp;to&nbsp;endnocase.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-pronoun"><strong>pronoun</strong></a>(self)</dt><dd><tt>Display&nbsp;the&nbsp;pronoun&nbsp;GUI.&nbsp;The&nbsp;pronoun&nbsp;GUI&nbsp;allows&nbsp;for&nbsp;<br>
+automatic&nbsp;entry&nbsp;of&nbsp;the&nbsp;pronouns,&nbsp;which&nbsp;reside&nbsp;in&nbsp;the&nbsp;<br>
+WordMorph&nbsp;class,&nbsp;or&nbsp;alternatively&nbsp;individual&nbsp;items&nbsp;<br>
+or&nbsp;pronoun&nbsp;groups&nbsp;can&nbsp;be&nbsp;entered&nbsp;or&nbsp;edited.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-resizeEvent"><strong>resizeEvent</strong></a>(self, event)</dt><dd><tt>Resize&nbsp;the&nbsp;GUI&nbsp;and&nbsp;record&nbsp;GUI&nbsp;sizing&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-symbol"><strong>symbol</strong></a>(self)</dt><dd><tt>Enter&nbsp;an&nbsp;symbol&nbsp;and&nbsp;go&nbsp;to&nbsp;endnocase.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-verb"><strong>verb</strong></a>(self)</dt><dd><tt>Enter&nbsp;a&nbsp;verb&nbsp;and&nbsp;go&nbsp;to&nbsp;the&nbsp;verb&nbsp;variety.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-verbact"><strong>verbact</strong></a>(self)</dt><dd><tt>Display&nbsp;a&nbsp;series&nbsp;of&nbsp;GUI&nbsp;"pages"&nbsp;for&nbsp;the&nbsp;entry&nbsp;of&nbsp;a&nbsp;complete&nbsp;Russian<br>
+verb-participle&nbsp;conjugation-declension,&nbsp;which&nbsp;can&nbsp;contain&nbsp;up&nbsp;to&nbsp;105&nbsp;entries.<br>
+Because&nbsp;I&nbsp;wanted&nbsp;the&nbsp;verb&nbsp;pages&nbsp;to&nbsp;be&nbsp;browsable&nbsp;backwards&nbsp;and&nbsp;forwards<br>
+they&nbsp;use&nbsp;a&nbsp;separate&nbsp;dictionary&nbsp;called&nbsp;"verbdict"&nbsp;and&nbsp;not&nbsp;the&nbsp;regular<br>
+"sqldict"&nbsp;that&nbsp;most&nbsp;of&nbsp;the&nbsp;other&nbsp;pages&nbsp;use.&nbsp;&nbsp;However,&nbsp;they&nbsp;draw&nbsp;their<br>
+basic&nbsp;data&nbsp;from&nbsp;"sqldict."</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-verbvar"><strong>verbvar</strong></a>(self)</dt><dd><tt>Create&nbsp;the&nbsp;correct&nbsp;SQL&nbsp;dictionary&nbsp;item,&nbsp;<br>
+and&nbsp;go&nbsp;to&nbsp;the&nbsp;"verbact"&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-wordclasses"><strong>wordclasses</strong></a>(self)</dt><dd><tt>Create&nbsp;the&nbsp;list&nbsp;for&nbsp;the&nbsp;main&nbsp;word&nbsp;classification:&nbsp;Nouns,&nbsp;verbs,&nbsp;etc.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>adjcommand</strong> = ''</dl>
+
+<dl><dt><strong>adjdict</strong> = {}</dl>
+
+<dl><dt><strong>adjpages</strong> = [False, False]</dl>
+
+<dl><dt><strong>animate</strong> = False</dl>
+
+<dl><dt><strong>back</strong> = False</dl>
+
+<dl><dt><strong>cancel</strong> = False</dl>
+
+<dl><dt><strong>completed</strong> = True</dl>
+
+<dl><dt><strong>confdir</strong> = '.config'</dl>
+
+<dl><dt><strong>conn</strong> = None</dl>
+
+<dl><dt><strong>contpage</strong> = True</dl>
+
+<dl><dt><strong>db</strong> = None</dl>
+
+<dl><dt><strong>declension</strong> = []</dl>
+
+<dl><dt><strong>enpastadv</strong> = ''</dl>
+
+<dl><dt><strong>enpasttense</strong> = ''</dl>
+
+<dl><dt><strong>enppp</strong> = ''</dl>
+
+<dl><dt><strong>enpresadv</strong> = ''</dl>
+
+<dl><dt><strong>enstr</strong> = ''</dl>
+
+<dl><dt><strong>errormessage</strong> = ''</dl>
+
+<dl><dt><strong>finalkey</strong> = ''</dl>
+
+<dl><dt><strong>firstpersonplural</strong> = ''</dl>
+
+<dl><dt><strong>firstpersonsingular</strong> = ''</dl>
+
+<dl><dt><strong>geometry</strong> = []</dl>
+
+<dl><dt><strong>guicount</strong> = 0</dl>
+
+<dl><dt><strong>height1</strong> = 0</dl>
+
+<dl><dt><strong>helpfile</strong> = '/usr/share/machinetrans/resources/dataentry.html'</dl>
+
+<dl><dt><strong>imperfective</strong> = False</dl>
+
+<dl><dt><strong>labeldata</strong> = 'Data Entry for '</dl>
+
+<dl><dt><strong>labeltext</strong> = ''</dl>
+
+<dl><dt><strong>morphs</strong> = None</dl>
+
+<dl><dt><strong>noexit</strong> = True</dl>
+
+<dl><dt><strong>oneself</strong> = False</dl>
+
+<dl><dt><strong>pastactive</strong> = False</dl>
+
+<dl><dt><strong>paststem</strong> = ''</dl>
+
+<dl><dt><strong>pppend</strong> = ''</dl>
+
+<dl><dt><strong>pppstem</strong> = ''</dl>
+
+<dl><dt><strong>presstem</strong> = ''</dl>
+
+<dl><dt><strong>progconf</strong> = 'machinetrans.conf'</dl>
+
+<dl><dt><strong>progdir</strong> = ''</dl>
+
+<dl><dt><strong>quote</strong> = "'"</dl>
+
+<dl><dt><strong>rugen</strong> = ''</dl>
+
+<dl><dt><strong>rustr</strong> = ''</dl>
+
+<dl><dt><strong>shortadj</strong> = True</dl>
+
+<dl><dt><strong>shortadjcommand</strong> = ''</dl>
+
+<dl><dt><strong>shortppp</strong> = False</dl>
+
+<dl><dt><strong>sqlcommand</strong> = ''</dl>
+
+<dl><dt><strong>sqldata</strong> = None</dl>
+
+<dl><dt><strong>sqldict</strong> = {}</dl>
+
+<dl><dt><strong>sqllist</strong> = []</dl>
+
+<dl><dt><strong>tagtext</strong> = ''</dl>
+
+<dl><dt><strong>tense</strong> = ''</dl>
+
+<dl><dt><strong>thirdpersonplural</strong> = ''</dl>
+
+<dl><dt><strong>types</strong> = &lt;machinetrans.data.wordtype.WordType object&gt;</dl>
+
+<dl><dt><strong>usrdir</strong> = ''</dl>
+
+<dl><dt><strong>variety</strong> = ''</dl>
+
+<dl><dt><strong>verbconj</strong> = None</dl>
+
+<dl><dt><strong>verbdict</strong> = {}</dl>
+
+<dl><dt><strong>verbpages</strong> = [False, False, False, False]</dl>
+
+<dl><dt><strong>wclass</strong> = ''</dl>
+
+<dl><dt><strong>width1</strong> = 0</dl>
+
+<dl><dt><strong>winx</strong> = 0</dl>
+
+<dl><dt><strong>winy</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><a name="DataEntry-accept"><strong>accept</strong></a>(...)</dt><dd><tt><a href="#DataEntry-accept">accept</a>(self)</tt></dd></dl>
+
+<strong>accepted</strong> = &lt;unbound PYQT_SIGNAL accepted()&gt;
+<dl><dt><a name="DataEntry-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-done"><strong>done</strong></a>(...)</dt><dd><tt><a href="#DataEntry-done">done</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#DataEntry-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-exec"><strong>exec</strong></a>(...)</dt><dd><tt><a href="#DataEntry-exec">exec</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-exec_"><strong>exec_</strong></a>(...)</dt><dd><tt><a href="#DataEntry-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<strong>finished</strong> = &lt;unbound PYQT_SIGNAL finished(int)&gt;
+<dl><dt><a name="DataEntry-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-keyPressEvent">keyPressEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#DataEntry-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-open"><strong>open</strong></a>(...)</dt><dd><tt><a href="#DataEntry-open">open</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-reject"><strong>reject</strong></a>(...)</dt><dd><tt><a href="#DataEntry-reject">reject</a>(self)</tt></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound PYQT_SIGNAL rejected()&gt;
+<dl><dt><a name="DataEntry-result"><strong>result</strong></a>(...)</dt><dd><tt><a href="#DataEntry-result">result</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setModal"><strong>setModal</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setModal">setModal</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setResult"><strong>setResult</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setResult">setResult</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#DataEntry-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt5.QtWidgets.QDialog.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="DataEntry-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#DataEntry-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#DataEntry-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#DataEntry-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#DataEntry-actions">actions</a>(self)&nbsp;-&gt;&nbsp;List[QAction]</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#DataEntry-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#DataEntry-addAction">addAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#DataEntry-addActions">addActions</a>(self,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#DataEntry-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#DataEntry-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#DataEntry-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#DataEntry-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#DataEntry-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#DataEntry-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#DataEntry-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#DataEntry-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#DataEntry-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#DataEntry-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#DataEntry-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#DataEntry-create">create</a>(self,&nbsp;window:&nbsp;sip.voidptr&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><tt><a href="#DataEntry-createWindowContainer">createWindowContainer</a>(QWindow,&nbsp;parent:&nbsp;QWidget&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#DataEntry-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="DataEntry-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#DataEntry-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#DataEntry-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#DataEntry-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#DataEntry-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#DataEntry-find">find</a>(sip.voidptr)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#DataEntry-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#DataEntry-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-focusOutEvent">focusOutEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#DataEntry-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#DataEntry-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#DataEntry-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#DataEntry-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#DataEntry-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#DataEntry-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#DataEntry-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#DataEntry-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#DataEntry-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#DataEntry-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Union[Qt.GestureFlags,&nbsp;Qt.GestureFlag]&nbsp;=&nbsp;Qt.GestureFlags())</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#DataEntry-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#DataEntry-grabMouse">grabMouse</a>(self)<br>
+<a href="#DataEntry-grabMouse">grabMouse</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#DataEntry-grabShortcut">grabShortcut</a>(self,&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;str,&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#DataEntry-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#DataEntry-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#DataEntry-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#DataEntry-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#DataEntry-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)</dt><dd><tt><a href="#DataEntry-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#DataEntry-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#DataEntry-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#DataEntry-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#DataEntry-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#DataEntry-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#DataEntry-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#DataEntry-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#DataEntry-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#DataEntry-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#DataEntry-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#DataEntry-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#DataEntry-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#DataEntry-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#DataEntry-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#DataEntry-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#DataEntry-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#DataEntry-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#DataEntry-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#DataEntry-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#DataEntry-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-nativeEvent">nativeEvent</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#DataEntry-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#DataEntry-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#DataEntry-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#DataEntry-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#DataEntry-overrideWindowState">overrideWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#DataEntry-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#DataEntry-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#DataEntry-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#DataEntry-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#DataEntry-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#DataEntry-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#DataEntry-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#DataEntry-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#DataEntry-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#DataEntry-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#DataEntry-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#DataEntry-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#DataEntry-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))<br>
+<a href="#DataEntry-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#DataEntry-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#DataEntry-repaint">repaint</a>(self)<br>
+<a href="#DataEntry-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#DataEntry-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#DataEntry-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#DataEntry-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#DataEntry-restoreGeometry">restoreGeometry</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#DataEntry-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#DataEntry-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DataEntry-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setAccessibleName">setAccessibleName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DataEntry-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#DataEntry-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setCursor">setCursor</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#DataEntry-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setFocus">setFocus</a>(self)<br>
+<a href="#DataEntry-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#DataEntry-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Union[Qt.InputMethodHints,&nbsp;Qt.InputMethodHint])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#DataEntry-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DataEntry-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DataEntry-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#DataEntry-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DataEntry-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#DataEntry-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setStatusTip">setStatusTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setStyleSheet">setStyleSheet</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setTabletTracking"><strong>setTabletTracking</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setTabletTracking">setTabletTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setToolTip">setToolTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWhatsThis">setWhatsThis</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowFlag"><strong>setWindowFlag</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowFlag">setWindowFlag</a>(self,&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowFlags">setWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowIconText">setWindowIconText</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowRole">setWindowRole</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowState">setWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setWindowTitle">setWindowTitle</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#DataEntry-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#DataEntry-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#DataEntry-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#DataEntry-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#DataEntry-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#DataEntry-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#DataEntry-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#DataEntry-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#DataEntry-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#DataEntry-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#DataEntry-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#DataEntry-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#DataEntry-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#DataEntry-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#DataEntry-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-toolTipDuration"><strong>toolTipDuration</strong></a>(...)</dt><dd><tt><a href="#DataEntry-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#DataEntry-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#DataEntry-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#DataEntry-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#DataEntry-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#DataEntry-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#DataEntry-update">update</a>(self)<br>
+<a href="#DataEntry-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#DataEntry-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#DataEntry-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#DataEntry-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#DataEntry-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#DataEntry-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#DataEntry-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#DataEntry-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#DataEntry-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#DataEntry-winId">winId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#DataEntry-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-windowHandle"><strong>windowHandle</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;QWindow</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="DataEntry-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="DataEntry-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="DataEntry-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#DataEntry-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#DataEntry-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#DataEntry-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlags'&gt;<dd><tt>QWidget.<a href="#DataEntry-RenderFlags">RenderFlags</a>()<br>
+QWidget.<a href="#DataEntry-RenderFlags">RenderFlags</a>(Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag])<br>
+QWidget.<a href="#DataEntry-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><a name="DataEntry-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#DataEntry-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#DataEntry-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#DataEntry-children">children</a>(self)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#DataEntry-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#DataEntry-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="DataEntry-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#DataEntry-disconnect">disconnect</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#DataEntry-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#DataEntry-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#DataEntry-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#DataEntry-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;List[QByteArray]</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#DataEntry-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject<br>
+<a href="#DataEntry-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#DataEntry-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DataEntry-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DataEntry-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DataEntry-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DataEntry-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DataEntry-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#DataEntry-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#DataEntry-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#DataEntry-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#DataEntry-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#DataEntry-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#DataEntry-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#DataEntry-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="DataEntry-parent"><strong>parent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-parent">parent</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#DataEntry-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#DataEntry-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#DataEntry-receivers">receivers</a>(self,&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#DataEntry-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#DataEntry-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#DataEntry-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setObjectName">setObjectName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#DataEntry-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;Any)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#DataEntry-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#DataEntry-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#DataEntry-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#DataEntry-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#DataEntry-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt5.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="DataEntry-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#DataEntry-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#DataEntry-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)</dt><dd><tt><a href="#DataEntry-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)</dt><dd><tt><a href="#DataEntry-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)</dt><dd><tt><a href="#DataEntry-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#DataEntry-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#DataEntry-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#DataEntry-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#DataEntry-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#DataEntry-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#DataEntry-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DataEntry-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#DataEntry-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt5.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDevicePixelRatio</strong> = 11</dl>
+
+<dl><dt><strong>PdmDevicePixelRatioScaled</strong> = 12</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Static methods inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><a name="DataEntry-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="sip.html#wrappertype">sip.wrappertype</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="machinetrans.userinterfaces.ui_dataentry.html#Ui_DataEntry">machinetrans.userinterfaces.ui_dataentry.Ui_DataEntry</a>:<br>
+<dl><dt><a name="DataEntry-retranslateUi"><strong>retranslateUi</strong></a>(self, DataEntry)</dt></dl>
+
+<dl><dt><a name="DataEntry-setupUi"><strong>setupUi</strong></a>(self, DataEntry)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-QT_TRANSLATE_NOOP"><strong>QT_TRANSLATE_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP"><strong>QT_TR_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP">QT_TR_NOOP</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP_UTF8"><strong>QT_TR_NOOP_UTF8</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP_UTF8">QT_TR_NOOP_UTF8</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-Q_ARG"><strong>Q_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_ARG">Q_ARG</a>(object,&nbsp;object)&nbsp;-&gt;&nbsp;QGenericArgument</tt></dd></dl>
+ <dl><dt><a name="-Q_CLASSINFO"><strong>Q_CLASSINFO</strong></a>(...)</dt><dd><tt><a href="#-Q_CLASSINFO">Q_CLASSINFO</a>(str,&nbsp;str)</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUM"><strong>Q_ENUM</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUM">Q_ENUM</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUMS"><strong>Q_ENUMS</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUMS">Q_ENUMS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAG"><strong>Q_FLAG</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAG">Q_FLAG</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAGS"><strong>Q_FLAGS</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAGS">Q_FLAGS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_RETURN_ARG"><strong>Q_RETURN_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_RETURN_ARG">Q_RETURN_ARG</a>(object)&nbsp;-&gt;&nbsp;QGenericReturnArgument</tt></dd></dl>
+ <dl><dt><a name="-bin_"><strong>bin_</strong></a>(...)</dt><dd><tt><a href="#-bin_">bin_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-bom"><strong>bom</strong></a>(...)</dt><dd><tt><a href="#-bom">bom</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-center"><strong>center</strong></a>(...)</dt><dd><tt><a href="#-center">center</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-dec"><strong>dec</strong></a>(...)</dt><dd><tt><a href="#-dec">dec</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-endl"><strong>endl</strong></a>(...)</dt><dd><tt><a href="#-endl">endl</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-fixed"><strong>fixed</strong></a>(...)</dt><dd><tt><a href="#-fixed">fixed</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-flush"><strong>flush</strong></a>(...)</dt><dd><tt><a href="#-flush">flush</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcepoint"><strong>forcepoint</strong></a>(...)</dt><dd><tt><a href="#-forcepoint">forcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcesign"><strong>forcesign</strong></a>(...)</dt><dd><tt><a href="#-forcesign">forcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-hex_"><strong>hex_</strong></a>(...)</dt><dd><tt><a href="#-hex_">hex_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-left"><strong>left</strong></a>(...)</dt><dd><tt><a href="#-left">left</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasebase"><strong>lowercasebase</strong></a>(...)</dt><dd><tt><a href="#-lowercasebase">lowercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasedigits"><strong>lowercasedigits</strong></a>(...)</dt><dd><tt><a href="#-lowercasedigits">lowercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-noforcepoint"><strong>noforcepoint</strong></a>(...)</dt><dd><tt><a href="#-noforcepoint">noforcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcesign"><strong>noforcesign</strong></a>(...)</dt><dd><tt><a href="#-noforcesign">noforcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noshowbase"><strong>noshowbase</strong></a>(...)</dt><dd><tt><a href="#-noshowbase">noshowbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-oct_"><strong>oct_</strong></a>(...)</dt><dd><tt><a href="#-oct_">oct_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-pyqtPickleProtocol"><strong>pyqtPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtPickleProtocol">pyqtPickleProtocol</a>()&nbsp;-&gt;&nbsp;Optional[int]</tt></dd></dl>
+ <dl><dt><a name="-pyqtRemoveInputHook"><strong>pyqtRemoveInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRemoveInputHook">pyqtRemoveInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtRestoreInputHook"><strong>pyqtRestoreInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRestoreInputHook">pyqtRestoreInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtSetPickleProtocol"><strong>pyqtSetPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtSetPickleProtocol">pyqtSetPickleProtocol</a>(Optional[int])</tt></dd></dl>
+ <dl><dt><a name="-pyqtSlot"><strong>pyqtSlot</strong></a>(...)</dt><dd><tt>@<a href="#-pyqtSlot">pyqtSlot</a>(*types,&nbsp;name:&nbsp;Optional[str],&nbsp;result:&nbsp;Optional[str])<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;decorator&nbsp;applied&nbsp;to&nbsp;Python&nbsp;methods&nbsp;of&nbsp;a&nbsp;QObject&nbsp;that&nbsp;marks&nbsp;them<br>
+as&nbsp;Qt&nbsp;slots.<br>
+The&nbsp;non-keyword&nbsp;arguments&nbsp;are&nbsp;the&nbsp;types&nbsp;of&nbsp;the&nbsp;slot&nbsp;arguments&nbsp;and&nbsp;each&nbsp;may<br>
+be&nbsp;a&nbsp;Python&nbsp;type&nbsp;object&nbsp;or&nbsp;a&nbsp;string&nbsp;specifying&nbsp;a&nbsp;C++&nbsp;type.<br>
+name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;slot&nbsp;and&nbsp;defaults&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method.<br>
+result&nbsp;is&nbsp;type&nbsp;of&nbsp;the&nbsp;value&nbsp;returned&nbsp;by&nbsp;the&nbsp;slot.</tt></dd></dl>
+ <dl><dt><a name="-qAbs"><strong>qAbs</strong></a>(...)</dt><dd><tt><a href="#-qAbs">qAbs</a>(float)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qAddPostRoutine"><strong>qAddPostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPostRoutine">qAddPostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAddPreRoutine"><strong>qAddPreRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPreRoutine">qAddPreRoutine</a>(Callable[[],&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAlpha"><strong>qAlpha</strong></a>(...)</dt><dd><tt><a href="#-qAlpha">qAlpha</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qAlpha">qAlpha</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qBlue"><strong>qBlue</strong></a>(...)</dt><dd><tt><a href="#-qBlue">qBlue</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qBlue">qBlue</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qChecksum"><strong>qChecksum</strong></a>(...)</dt><dd><tt><a href="#-qChecksum">qChecksum</a>(bytes)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qChecksum">qChecksum</a>(bytes,&nbsp;Qt.ChecksumType)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qCompress"><strong>qCompress</strong></a>(...)</dt><dd><tt><a href="#-qCompress">qCompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;compressionLevel:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qCritical"><strong>qCritical</strong></a>(...)</dt><dd><tt><a href="#-qCritical">qCritical</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDebug"><strong>qDebug</strong></a>(...)</dt><dd><tt><a href="#-qDebug">qDebug</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDrawBorderPixmap"><strong>qDrawBorderPixmap</strong></a>(...)</dt><dd><tt><a href="#-qDrawBorderPixmap">qDrawBorderPixmap</a>(QPainter,&nbsp;QRect,&nbsp;QMargins,&nbsp;QPixmap)</tt></dd></dl>
+ <dl><dt><a name="-qDrawPlainRect"><strong>qDrawPlainRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;QRect,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeLine"><strong>qDrawShadeLine</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)<br>
+<a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;QPoint,&nbsp;QPoint,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadePanel"><strong>qDrawShadePanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeRect"><strong>qDrawShadeRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinButton"><strong>qDrawWinButton</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinPanel"><strong>qDrawWinPanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qEnvironmentVariable"><strong>qEnvironmentVariable</strong></a>(...)</dt><dd><tt><a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str)&nbsp;-&gt;&nbsp;str<br>
+<a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qErrnoWarning"><strong>qErrnoWarning</strong></a>(...)</dt><dd><tt><a href="#-qErrnoWarning">qErrnoWarning</a>(int,&nbsp;str)<br>
+<a href="#-qErrnoWarning">qErrnoWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFatal"><strong>qFatal</strong></a>(...)</dt><dd><tt><a href="#-qFatal">qFatal</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFloatDistance"><strong>qFloatDistance</strong></a>(...)</dt><dd><tt><a href="#-qFloatDistance">qFloatDistance</a>(float,&nbsp;float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qFormatLogMessage"><strong>qFormatLogMessage</strong></a>(...)</dt><dd><tt><a href="#-qFormatLogMessage">qFormatLogMessage</a>(QtMsgType,&nbsp;QMessageLogContext,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qFuzzyCompare"><strong>qFuzzyCompare</strong></a>(...)</dt><dd><tt><a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix4x4,&nbsp;QMatrix4x4)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QQuaternion,&nbsp;QQuaternion)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QTransform,&nbsp;QTransform)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector2D,&nbsp;QVector2D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector3D,&nbsp;QVector3D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector4D,&nbsp;QVector4D)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qGray"><strong>qGray</strong></a>(...)</dt><dd><tt><a href="#-qGray">qGray</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGray">qGray</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qGreen"><strong>qGreen</strong></a>(...)</dt><dd><tt><a href="#-qGreen">qGreen</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGreen">qGreen</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qInf"><strong>qInf</strong></a>(...)</dt><dd><tt><a href="#-qInf">qInf</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qInfo"><strong>qInfo</strong></a>(...)</dt><dd><tt><a href="#-qInfo">qInfo</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qInstallMessageHandler"><strong>qInstallMessageHandler</strong></a>(...)</dt><dd><tt><a href="#-qInstallMessageHandler">qInstallMessageHandler</a>(Optional[Callable[[],&nbsp;None]])&nbsp;-&gt;&nbsp;Optional[Callable[[],&nbsp;None]]</tt></dd></dl>
+ <dl><dt><a name="-qIsFinite"><strong>qIsFinite</strong></a>(...)</dt><dd><tt><a href="#-qIsFinite">qIsFinite</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsGray"><strong>qIsGray</strong></a>(...)</dt><dd><tt><a href="#-qIsGray">qIsGray</a>(int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsInf"><strong>qIsInf</strong></a>(...)</dt><dd><tt><a href="#-qIsInf">qIsInf</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNaN"><strong>qIsNaN</strong></a>(...)</dt><dd><tt><a href="#-qIsNaN">qIsNaN</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNull"><strong>qIsNull</strong></a>(...)</dt><dd><tt><a href="#-qIsNull">qIsNull</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatAlpha"><strong>qPixelFormatAlpha</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatAlpha">qPixelFormatAlpha</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatCmyk"><strong>qPixelFormatCmyk</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatCmyk">qPixelFormatCmyk</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatGrayscale"><strong>qPixelFormatGrayscale</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatGrayscale">qPixelFormatGrayscale</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsl"><strong>qPixelFormatHsl</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsl">qPixelFormatHsl</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsv"><strong>qPixelFormatHsv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsv">qPixelFormatHsv</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatRgba"><strong>qPixelFormatRgba</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatRgba">qPixelFormatRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPixelFormat.AlphaUsage,&nbsp;QPixelFormat.AlphaPosition,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatYuv"><strong>qPixelFormatYuv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatYuv">qPixelFormatYuv</a>(QPixelFormat.YUVLayout,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedByte,&nbsp;byteOrder:&nbsp;QPixelFormat.ByteOrder&nbsp;=&nbsp;QPixelFormat.LittleEndian)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPremultiply"><strong>qPremultiply</strong></a>(...)</dt><dd><tt><a href="#-qPremultiply">qPremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qPremultiply">qPremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qQNaN"><strong>qQNaN</strong></a>(...)</dt><dd><tt><a href="#-qQNaN">qQNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qRed"><strong>qRed</strong></a>(...)</dt><dd><tt><a href="#-qRed">qRed</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qRed">qRed</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRegisterResourceData"><strong>qRegisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qRegisterResourceData">qRegisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qRemovePostRoutine"><strong>qRemovePostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qRemovePostRoutine">qRemovePostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qRgb"><strong>qRgb</strong></a>(...)</dt><dd><tt><a href="#-qRgb">qRgb</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba"><strong>qRgba</strong></a>(...)</dt><dd><tt><a href="#-qRgba">qRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba64"><strong>qRgba64</strong></a>(...)</dt><dd><tt><a href="#-qRgba64">qRgba64</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qRgba64">qRgba64</a>(int)&nbsp;-&gt;&nbsp;QRgba64</tt></dd></dl>
+ <dl><dt><a name="-qRound"><strong>qRound</strong></a>(...)</dt><dd><tt><a href="#-qRound">qRound</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRound64"><strong>qRound64</strong></a>(...)</dt><dd><tt><a href="#-qRound64">qRound64</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qSNaN"><strong>qSNaN</strong></a>(...)</dt><dd><tt><a href="#-qSNaN">qSNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qSetFieldWidth"><strong>qSetFieldWidth</strong></a>(...)</dt><dd><tt><a href="#-qSetFieldWidth">qSetFieldWidth</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetMessagePattern"><strong>qSetMessagePattern</strong></a>(...)</dt><dd><tt><a href="#-qSetMessagePattern">qSetMessagePattern</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qSetPadChar"><strong>qSetPadChar</strong></a>(...)</dt><dd><tt><a href="#-qSetPadChar">qSetPadChar</a>(str)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetRealNumberPrecision"><strong>qSetRealNumberPrecision</strong></a>(...)</dt><dd><tt><a href="#-qSetRealNumberPrecision">qSetRealNumberPrecision</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSharedBuild"><strong>qSharedBuild</strong></a>(...)</dt><dd><tt><a href="#-qSharedBuild">qSharedBuild</a>()&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qUncompress"><strong>qUncompress</strong></a>(...)</dt><dd><tt><a href="#-qUncompress">qUncompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qUnpremultiply"><strong>qUnpremultiply</strong></a>(...)</dt><dd><tt><a href="#-qUnpremultiply">qUnpremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qUnpremultiply">qUnpremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qUnregisterResourceData"><strong>qUnregisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qUnregisterResourceData">qUnregisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qVersion"><strong>qVersion</strong></a>(...)</dt><dd><tt><a href="#-qVersion">qVersion</a>()&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qWarning"><strong>qWarning</strong></a>(...)</dt><dd><tt><a href="#-qWarning">qWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qrand"><strong>qrand</strong></a>(...)</dt><dd><tt><a href="#-qrand">qrand</a>()&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qsrand"><strong>qsrand</strong></a>(...)</dt><dd><tt><a href="#-qsrand">qsrand</a>(int)</tt></dd></dl>
+ <dl><dt><a name="-qt_set_sequence_auto_mnemonic"><strong>qt_set_sequence_auto_mnemonic</strong></a>(...)</dt><dd><tt><a href="#-qt_set_sequence_auto_mnemonic">qt_set_sequence_auto_mnemonic</a>(bool)</tt></dd></dl>
+ <dl><dt><a name="-reset"><strong>reset</strong></a>(...)</dt><dd><tt><a href="#-reset">reset</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-right"><strong>right</strong></a>(...)</dt><dd><tt><a href="#-right">right</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-scientific"><strong>scientific</strong></a>(...)</dt><dd><tt><a href="#-scientific">scientific</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-showbase"><strong>showbase</strong></a>(...)</dt><dd><tt><a href="#-showbase">showbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasebase"><strong>uppercasebase</strong></a>(...)</dt><dd><tt><a href="#-uppercasebase">uppercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasedigits"><strong>uppercasedigits</strong></a>(...)</dt><dd><tt><a href="#-uppercasedigits">uppercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-ws"><strong>ws</strong></a>(...)</dt><dd><tt><a href="#-ws">ws</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>PYQT_CONFIGURATION</strong> = {'sip_flags': '-n sip -t WS_X11 -t Qt_5_11_3'}<br>
+<strong>PYQT_VERSION</strong> = 330499<br>
+<strong>PYQT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QT_VERSION</strong> = 330499<br>
+<strong>QT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QWIDGETSIZE_MAX</strong> = 16777215<br>
+<strong>QtCriticalMsg</strong> = 2<br>
+<strong>QtDebugMsg</strong> = 0<br>
+<strong>QtFatalMsg</strong> = 3<br>
+<strong>QtInfoMsg</strong> = 4<br>
+<strong>QtSystemMsg</strong> = 2<br>
+<strong>QtWarningMsg</strong> = 1<br>
+<strong>qApp</strong> = &lt;PyQt5.QtWidgets.QApplication object&gt;</td></tr></table>
+</body></html>

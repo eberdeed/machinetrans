@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module wordtype</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>wordtype</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/eberdeed/machinetrans-1.15/machinetrans/data/wordtype.py">/home/eberdeed/machinetrans-1.15/machinetrans/data/wordtype.py</a></font></td></tr></table>
+    <p><tt><a href="#WordType">WordType</a>:&nbsp;&nbsp;A&nbsp;class&nbsp;to&nbsp;encapsulate&nbsp;English&nbsp;word&nbsp;types.<br>
+I&nbsp;am&nbsp;indebted&nbsp;to&nbsp;the&nbsp;website&nbsp;www.englishclub.com&nbsp;<br>
+for&nbsp;the&nbsp;categorization&nbsp;lists.<br>
+Edward&nbsp;C.&nbsp;Eberle&nbsp;&lt;eberdeed@eberdeed.net&gt;<br>
+06-24-2016&nbsp;San&nbsp;Diego&nbsp;California</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="wordtype.html#WordType">WordType</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="WordType">class <strong>WordType</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;to&nbsp;encapsulate&nbsp;English&nbsp;word&nbsp;types.<br>
+This&nbsp;varies&nbsp;a&nbsp;bit&nbsp;from&nbsp;the&nbsp;Russian&nbsp;grammar.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>adjectivekeys</strong> = ('name', 'runame', 'variety', 'gender', 'declension', 'wordcase', 'animate')</dl>
+
+<dl><dt><strong>adjectives</strong> = ('descriptive', 'comparative', 'superlative', 'short adjective')</dl>
+
+<dl><dt><strong>adverbkeys</strong> = ('name', 'runame', 'variety')</dl>
+
+<dl><dt><strong>adverbs</strong> = ('state', 'manner', 'place', 'time', 'degree', 'other')</dl>
+
+<dl><dt><strong>animate</strong> = ('animate', 'inanimate')</dl>
+
+<dl><dt><strong>conjunctionkeys</strong> = ('name', 'runame', 'variety')</dl>
+
+<dl><dt><strong>conjunctions</strong> = ('coordinating', 'subordinating')</dl>
+
+<dl><dt><strong>declension</strong> = ('none', 'nominative', 'accusative', 'genitive', 'dative', 'instrumental', 'prepositional')</dl>
+
+<dl><dt><strong>gender</strong> = ('masculine', 'feminine', 'nueter', 'plural')</dl>
+
+<dl><dt><strong>imperfective</strong> = ('perfective', 'imperfective')</dl>
+
+<dl><dt><strong>interjectionkeys</strong> = ('name', 'runame')</dl>
+
+<dl><dt><strong>interrogativekeys</strong> = ('name', 'runame', 'variety')</dl>
+
+<dl><dt><strong>interrogs</strong> = ('person', 'place', 'time', 'method', 'reason', 'ownership', 'quantity')</dl>
+
+<dl><dt><strong>invariant</strong> = ('foreign', 'subjunctive', 'acronym', 'other')</dl>
+
+<dl><dt><strong>invariantkeys</strong> = ('name', 'runame', 'wordcase', 'variety')</dl>
+
+<dl><dt><strong>nounkeys</strong> = ('name', 'runame', 'variety', 'gender', 'type', 'declension', 'wordcase', 'animate')</dl>
+
+<dl><dt><strong>nouns</strong> = ('abstract', 'proper', 'concrete', 'collective', 'compound')</dl>
+
+<dl><dt><strong>nountype</strong> = ('location', 'thing')</dl>
+
+<dl><dt><strong>objcase</strong> = ('nominative', 'accusative', 'genitive', 'dative', 'instrumental', 'prepositional', 'none')</dl>
+
+<dl><dt><strong>participlekeys</strong> = ('name', 'runame', 'variety', 'gender', 'objcase', 'animate', 'declension', 'enval', 'wordcase')</dl>
+
+<dl><dt><strong>participles</strong> = ('present active', 'present passive', 'past active', 'past passive', 'verbal adverb', 'short past passive')</dl>
+
+<dl><dt><strong>pastverbkeys</strong> = ('name', 'runame', 'tense', 'gender', 'conjugation', 'conjugationru', 'objcase', 'imperfective')</dl>
+
+<dl><dt><strong>person</strong> = ('first', 'second', 'third', 'plural first', 'plural second', 'plural third')</dl>
+
+<dl><dt><strong>prepositionkeys</strong> = ('name', 'runame', 'variety', 'objcase')</dl>
+
+<dl><dt><strong>prepositions</strong> = ('place', 'time', 'other')</dl>
+
+<dl><dt><strong>pronoun</strong> = ['I', 'you', 'he', 'she', 'it', 'we', 'they']</dl>
+
+<dl><dt><strong>pronounkeys</strong> = ('name', 'runame', 'variety', 'gender', 'declension', 'wordcase', 'animate')</dl>
+
+<dl><dt><strong>pronouns</strong> = ('personal', 'demonstrative', 'possessive', 'interrogative', 'reflexive', 'reciprocal', 'indefinite', 'relative')</dl>
+
+<dl><dt><strong>status</strong> = ('subject', 'object')</dl>
+
+<dl><dt><strong>symbolkeys</strong> = ('name', 'runame', 'variety')</dl>
+
+<dl><dt><strong>symbols</strong> = ('glyph', 'number', 'other')</dl>
+
+<dl><dt><strong>tense</strong> = ('imperative', 'simple present', 'simple past', 'perfect simple past', 'perfect continuous past', 'continuous past', 'continuous present', 'perfect simple present', 'perfect continous present', 'simple future', 'continuous future', 'perfect simple future', 'perfect continuous future')</dl>
+
+<dl><dt><strong>verbkeys</strong> = ('name', 'runame', 'variety', 'tense', 'person', 'objcase', 'conjugationru', 'conjugation', 'imperfective')</dl>
+
+<dl><dt><strong>verbs</strong> = ('motion', 'other')</dl>
+
+<dl><dt><strong>wordclass</strong> = ('noun', 'adjective', 'verb', 'past tense verb', 'adverb', 'interjection', 'pronoun', 'preposition', 'symbol', 'conjunction', 'interrogative', 'participle', 'invariant')</dl>
+
+<dl><dt><strong>wordkeys</strong> = {'adjective': ('name', 'runame', 'variety', 'gender', 'declension', 'wordcase', 'animate'), 'adverb': ('name', 'runame', 'variety'), 'conjunction': ('name', 'runame', 'variety'), 'interjection': ('name', 'runame'), 'interrogative': ('name', 'runame', 'variety'), 'invariant': ('name', 'runame', 'wordcase', 'variety'), 'noun': ('name', 'runame', 'variety', 'gender', 'type', 'declension', 'wordcase', 'animate'), 'participle': ('name', 'runame', 'variety', 'gender', 'objcase', 'animate', 'declension', 'enval', 'wordcase'), 'pastverb': ('name', 'runame', 'tense', 'gender', 'conjugation', 'conjugationru', 'objcase', 'imperfective'), 'preposition': ('name', 'runame', 'variety', 'objcase'), ...}</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

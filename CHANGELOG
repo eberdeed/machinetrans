@@ -1,0 +1,83 @@
+    
+    Change Log for machinetrans
+
+    First propotype made with only English sentence generation.
+    07/05/2016 ECE
+    
+    The setup utility now automates all of the postgresql features.
+    07/12/2016 ECE
+    
+    Once again made the setup utility automate all of the postgresql features.
+    Fixed indeterminate article before pronouns and added placeholder for adjective.
+    07/15/2016 ECE
+    
+    Add database removal to setup and Russian dataentry.
+    07/19/2016 ECE
+    
+    Added full declension of nouns and adjectives.  Currently only noun and
+    adjective data entry work.  More to come.
+    08/09/2016 ECE
+    
+    Finished Russian language data entry.  Updated English word generation.
+    Completely documented all classes.
+    08/27/2016 ECE
+    
+    Added HTML documentation and updated database.
+    09/05/2016 ECE
+    
+    Added invariants to database and updated selection of nouns.
+    09/25/2016 ECE
+    
+    Created help files, added their associated buttons and updated documentation.  
+    Debuged several classes including the setup utility.
+    10/28/2016 ECE
+    
+    Updated explanatory paper with Bibliography and Table of Contents.  Added more
+    vocabulary. Changed masculine plural declension to allow for Russian sybillants.
+    11/08/2016 ECE
+    
+    Changed plural to be a gender item. Updated adjective gui to produce all genders at one
+    time.  Changed participle gui to reflect plural as gender.  Fixed invariant gui to 
+    be editable without an ongoing cache. Updated documentation and added more help files.
+    08/25/2017 ECE
+    
+    Cleaned up help files.  Added "variety" as a type of pronoun and removed status.  
+    Added loop to catch apostrophes and escape them for postgresql by doubling them
+    in delete and edit commands of SQLData class.
+    09/14/2017
+    
+    Made the 4 verb pages browsable and put them on an an independent dictionary "verbdict."
+    Update the pronoun pages so a single root with all the associated adjectival endings
+    can be created and edited.  Updated the help files and documentation.
+    10/6/2017
+    
+    Escaped the English in the invariants GUI so it goes into the database properly. 
+    Added adjectival endings to the nouns to account for adjectival nouns. 
+    Added a sorting keys GUI to the data display GUI so the data could be adjusted in the view.
+    10/30/2017
+    
+    Corrected feminine plural of ия to properly drop the и when creating the declension.
+    Corrected nueter plural of мя to be properly recognized by the system.  Updated the 
+    conjugation of numbers in the nouns menu option.  Added blank as a declension on all
+    the noun declension lists.  Added the hundreds declension to the plural nouns. Added
+    declensions for nouns with ы ев combinations.  Provided for нка and нька from нк 
+    and ньк to нок and нек in the feminine genitive plural. Fixed the imperative for 
+    verbs ending in ить and и.  Went through all the menus and made sure an unselected
+    item that was accepted produced a popup error. Fixed the plural only declension
+    to fall into masculine plurals.  Corrected the reflexive for verb conjugations.  
+    Corrected the English conjugation for participles of verbs with "to be" in the 
+    first position.  Changed the adjective entry process so that it is required to 
+    enter a short adjective with a regular adjective and these two pages are browsable
+    and will remember the edits made on them with their help files updated.  Also,
+    short adjectives can be disabled using a check box on the form. Fixed the
+    superlative of adjectives.  Changed adjective conversion process so adjective variety
+    is recorded properly.  Changed the English participle values so they are unique for
+    each tense and gender.  Added a change all button to the English participle value
+    so that the English value for each tense can be changed all at once.  Corrected
+    the imperative so that when the second letter in the Russian stem is a consonant
+    the -и and -ите endings are used to create the imperative.
+    08/02/2018
+
+    Updated the PostgreSQL driver to psycopg2.
+    10/22/2020
+    

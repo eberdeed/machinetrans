@@ -1,0 +1,100 @@
+"""
+    ConditionalGenSQL:  A class to generate English sentences
+    with conditional constructs.
+    Edward C. Eberle <eberdeed@eberdeed.net>
+    July 4, 2016 San Diego California
+"""
+
+import sys, os
+from machinetrans.parser.subverb import SubVerb
+from machinetrans.parser.artobj import ArtObj
+from machinetrans.parser.wordgensql import WordGenSQL
+
+class ConditionalGenSQL(WordGenSQL):
+    """ A class to generate English sentences
+        with conditional constructs.  This is a subclass of WordGenSQL
+        which handles database management and data generation.
+    """
+
+    def __init__(self):
+        """ Initialize the class.
+        """
+        super(ConditionalGenSQL, self).__init__()
+        return
+    
+    def makesentences(self, choice):
+        """ Generate sentences.
+        """
+        if choice == 0:
+            """ Generates the following:  If A-S-V, then A-S-V
+                where A = article, S = subject and V = verb.
+            """
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], None, None, True)    
+            tmpstr = sub.compose()
+            self.datastr += "\nIf " + tmpstr + ", "
+            self.newvocab()
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], None, None, False)    
+            tmpstr = sub.compose()
+            self.datastr += "then " + tmpstr + "."
+
+        elif choice == 1:    
+            """ Generates the following:  If A-S-V-A-O, then A-S-V-A-O
+                where A = article, S = subject, V = verb and O = object.
+            """
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], None, None, True)    
+            obj = ArtObj(self.sentence["articles"], self.sentence["objects"])
+            tmpstr = sub.compose() + " "
+            tmpstr += obj.compose()
+            self.datastr += "\nIf " + tmpstr + ", "
+            self.newvocab()
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], None, None, False)    
+            obj = ArtObj(self.sentence["articles"], self.sentence["objects"])
+            tmpstr = sub.compose() + " "
+            tmpstr += obj.compose() + "."
+            self.datastr += "then " + tmpstr
+        elif choice == 2:    
+            """ Generates the following:  If A-S-V-A-ADJ-O, then A-S-V-A-ADJ-O
+                where A = article, S = subject, V = verb, O = object and ADJ = adjective.
+            """
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], None, None, True)    
+            obj = ArtObj(self.sentence["articles"], self.sentence["objects"], self.sentence["adjectives"])
+            tmpstr = sub.compose() + " "
+            tmpstr += obj.compose()
+            self.datastr += "\nIf " + tmpstr + ", "
+            self.newvocab()
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], None, None, False)    
+            obj = ArtObj(self.sentence["articles"], self.sentence["objects"], self.sentence["adjectives"])
+            tmpstr = sub.compose() + " "
+            tmpstr += obj.compose() + "."
+            self.datastr += "then " + tmpstr
+        elif choice == 3:    
+            """ Generates the following:  If A-S-AV-V-A-ADJ-O, then A-S-AV-V-A-ADJ-O
+                where A = article, S = subject, V = verb, O = object, ADJ = adjective and AV = adverb.
+            """
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], None, self.sentence["advsmanner"], True)    
+            obj = ArtObj(self.sentence["articles"], self.sentence["objects"], self.sentence["adjectives"])
+            tmpstr = sub.compose() + " "
+            tmpstr += obj.compose()
+            self.datastr += "\nIf " + tmpstr + ", "
+            self.newvocab()
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], None, self.sentence["advsmanner"], False)    
+            obj = ArtObj(self.sentence["articles"], self.sentence["objects"], self.sentence["adjectives"])
+            tmpstr = sub.compose() + " "
+            tmpstr += obj.compose() + "."
+            self.datastr += "then " + tmpstr
+        elif choice == 4:    
+            """ Generates the following:  If A-ADJ-S-AV-V-A-ADJ-O, then A-ADJ-S-AV-V-A-ADJ-O
+                where A = article, S = subject, V = verb, O = object, ADJ = adjective and AV = adverb.
+            """
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], self.sentence["adjectives"], self.sentence["advsmanner"], True)    
+            obj = ArtObj(self.sentence["articles"], self.sentence["objects"], self.sentence["adjectives"])
+            tmpstr = sub.compose() + " "
+            tmpstr += obj.compose()
+            self.datastr += "\nIf " + tmpstr + ", "
+            self.newvocab()
+            sub = SubVerb( self.conn, self.sentence["articles"], self.sentence["subjects"], self.sentence["contemplatives"], self.sentence["adjectives"], self.sentence["advsmanner"], False)    
+            obj = ArtObj(self.sentence["articles"], self.sentence["objects"], self.sentence["adjectives"])
+            tmpstr = sub.compose() + " "
+            tmpstr += obj.compose() + "."
+            self.datastr += "then " + tmpstr
+

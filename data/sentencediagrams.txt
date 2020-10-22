@@ -1,0 +1,52 @@
+article subject verb
+article subject verb article object
+article subject verb article adjective object
+article subject adverb verb article object
+article subject adverb verb article adjective object
+article subject verb prepositon article object
+article subject verb prepositon article adjective object
+article subject adverb verb preposition article object
+article subject adverb verb preposition article adjective object
+
+article subject verb article object article object
+article subject verb article adjective object article object
+article subject verb article object article adjective object
+article subject verb article adjective object article adjective object
+article subject adverb verb article object article object
+article subject adverb verb article article object adjective object
+article subject adverb verb article adjective object article object
+article subject adverb verb article adjective object article adjective object
+
+interrogative object verb article 
+interrogative adjective object verb article
+interrogative object verb article object
+interrogative adjective object verb article object
+
+interrogative verb object verb
+interrogative adverb verb object verb
+interrogative verb adjective object verb
+interrogative adverb verb adjective object verb
+
+interrogative verb object verb article object
+interrogative adverb verb object verb article object
+interrogative adverb verb adjective object verb article object
+interrogative adverb verb object verb article adjective object
+interrogative adverb verb adjective object verb article adjective object
+interrogative verb adjective object verb article object
+interrogative verb adjective object verb article adjective object
+interrogative verb object verb article adjective object
+interrogative verb object verb preposition article object
+interrogative adverb verb adjective object verb preposition article object
+interrogative adverb verb object verb preposition article adjective object
+interrogative adverb verb adjective object verb preposition article adjective object
+interrogative verb adjective object verb preposition article object
+interrogative verb adjective object verb preposition article adjective object
+interrogative verb object verb preposition article adjective object
+
+participle object
+participle article object
+participle article adjective object
+article subject helper verb participle article object
+article subject adverb helper verb participle article object
+article subject helper verb participle article adjective object
+article subject adverb helper verb participle article adjective object

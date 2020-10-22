@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS machinetrans;
+DROP USER IF EXISTS machinetrans;

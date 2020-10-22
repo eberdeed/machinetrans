@@ -1,0 +1,1110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module lineediten</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>lineediten</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/eberdeed/machinetrans-1.15/machinetrans/lineediten.py">/home/eberdeed/machinetrans-1.15/machinetrans/lineediten.py</a></font></td></tr></table>
+    <p><tt><a href="#LineEditEN">LineEditEN</a>:&nbsp;&nbsp;A&nbsp;subclass&nbsp;for&nbsp;<a href="PyQt5.QtWidgets.html#QLineEdit">QLineEdit</a>&nbsp;to&nbsp;catch&nbsp;the&nbsp;"Return"&nbsp;keypress<br>
+and&nbsp;the&nbsp;loss&nbsp;of&nbsp;focus&nbsp;event.&nbsp;This&nbsp;line&nbsp;editor&nbsp;accepts&nbsp;only&nbsp;English.<br>
+Created&nbsp;By&nbsp;Edward&nbsp;Charles&nbsp;Eberle&nbsp;&lt;eberdeed@eberdeed.net&gt;<br>
+August&nbsp;15,&nbsp;2016,&nbsp;San&nbsp;Diego&nbsp;California&nbsp;United&nbsp;States&nbsp;of&nbsp;America</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt5.QtWidgets.html#QLineEdit">PyQt5.QtWidgets.QLineEdit</a>(<a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="lineediten.html#LineEditEN">LineEditEN</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="LineEditEN">class <strong>LineEditEN</strong></a>(<a href="PyQt5.QtWidgets.html#QLineEdit">PyQt5.QtWidgets.QLineEdit</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#LineEditEN">LineEditEN</a>(parent=None)<br>
+&nbsp;<br>
+A&nbsp;subclass&nbsp;for&nbsp;<a href="PyQt5.QtWidgets.html#QLineEdit">QLineEdit</a>&nbsp;to&nbsp;catch&nbsp;the&nbsp;"Return"&nbsp;keypress<br>
+and&nbsp;the&nbsp;loss&nbsp;of&nbsp;focus&nbsp;event.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="lineediten.html#LineEditEN">LineEditEN</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QLineEdit">PyQt5.QtWidgets.QLineEdit</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="LineEditEN-__init__"><strong>__init__</strong></a>(self, parent=None)</dt><dd><tt>Initialize&nbsp;the&nbsp;class.</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-focusOutEvent"><strong>focusOutEvent</strong></a>(self, event)</dt><dd><tt>Catch&nbsp;the&nbsp;Focus&nbsp;Out&nbsp;event.</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-keyPressEvent"><strong>keyPressEvent</strong></a>(self, event)</dt><dd><tt>Catch&nbsp;the&nbsp;&lt;RETURN&gt;&nbsp;key.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>enall</strong> = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', ...)</dl>
+
+<dl><dt><strong>firefocus</strong> = None</dl>
+
+<dl><dt><strong>firereturn</strong> = None</dl>
+
+<dl><dt><strong>numbers</strong> = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0')</dl>
+
+<dl><dt><strong>parent</strong> = None</dl>
+
+<dl><dt><strong>qtkeys</strong> = (0, 16777216, 16777217, 16777218, 16777219, 16777220, 16777221, 16777222, 16777223, 16777227, 16777232, 16777233, 16777234, 16777235, 16777236, 16777237, 16777248, 16777249, 16777250, 16777251, ...)</dl>
+
+<dl><dt><strong>returnval</strong> = 16777220</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QLineEdit">PyQt5.QtWidgets.QLineEdit</a>:<br>
+<dl><dt><a name="LineEditEN-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-addAction">addAction</a>(self,&nbsp;QAction)<br>
+<a href="#LineEditEN-addAction">addAction</a>(self,&nbsp;QAction,&nbsp;<a href="PyQt5.QtWidgets.html#QLineEdit">QLineEdit</a>.ActionPosition)<br>
+<a href="#LineEditEN-addAction">addAction</a>(self,&nbsp;QIcon,&nbsp;<a href="PyQt5.QtWidgets.html#QLineEdit">QLineEdit</a>.ActionPosition)&nbsp;-&gt;&nbsp;QAction</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-alignment"><strong>alignment</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-alignment">alignment</a>(self)&nbsp;-&gt;&nbsp;Qt.Alignment</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-backspace"><strong>backspace</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-backspace">backspace</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-clear"><strong>clear</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-clear">clear</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-completer"><strong>completer</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-completer">completer</a>(self)&nbsp;-&gt;&nbsp;QCompleter</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-copy"><strong>copy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-copy">copy</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-createStandardContextMenu"><strong>createStandardContextMenu</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-createStandardContextMenu">createStandardContextMenu</a>(self)&nbsp;-&gt;&nbsp;QMenu</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cursorBackward"><strong>cursorBackward</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursorBackward">cursorBackward</a>(self,&nbsp;bool,&nbsp;steps:&nbsp;int&nbsp;=&nbsp;1)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cursorForward"><strong>cursorForward</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursorForward">cursorForward</a>(self,&nbsp;bool,&nbsp;steps:&nbsp;int&nbsp;=&nbsp;1)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cursorMoveStyle"><strong>cursorMoveStyle</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursorMoveStyle">cursorMoveStyle</a>(self)&nbsp;-&gt;&nbsp;Qt.CursorMoveStyle</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cursorPosition"><strong>cursorPosition</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursorPosition">cursorPosition</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cursorPositionAt"><strong>cursorPositionAt</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursorPositionAt">cursorPositionAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<strong>cursorPositionChanged</strong> = &lt;unbound PYQT_SIGNAL cursorPositionChanged(int,int)&gt;
+<dl><dt><a name="LineEditEN-cursorRect"><strong>cursorRect</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursorRect">cursorRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cursorWordBackward"><strong>cursorWordBackward</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursorWordBackward">cursorWordBackward</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cursorWordForward"><strong>cursorWordForward</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursorWordForward">cursorWordForward</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cut"><strong>cut</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cut">cut</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-del_"><strong>del_</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-del_">del_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-deselect"><strong>deselect</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-deselect">deselect</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-displayText"><strong>displayText</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-displayText">displayText</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-dragEnabled"><strong>dragEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-dragEnabled">dragEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-echoMode"><strong>echoMode</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-echoMode">echoMode</a>(self)&nbsp;-&gt;&nbsp;<a href="PyQt5.QtWidgets.html#QLineEdit">QLineEdit</a>.EchoMode</tt></dd></dl>
+
+<strong>editingFinished</strong> = &lt;unbound PYQT_SIGNAL editingFinished()&gt;
+<dl><dt><a name="LineEditEN-end"><strong>end</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-end">end</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-getTextMargins"><strong>getTextMargins</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-getTextMargins">getTextMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hasAcceptableInput"><strong>hasAcceptableInput</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hasAcceptableInput">hasAcceptableInput</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hasFrame"><strong>hasFrame</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hasFrame">hasFrame</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hasSelectedText"><strong>hasSelectedText</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hasSelectedText">hasSelectedText</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-home"><strong>home</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-home">home</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-initStyleOption"><strong>initStyleOption</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-initStyleOption">initStyleOption</a>(self,&nbsp;QStyleOptionFrame)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-inputMask"><strong>inputMask</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-inputMask">inputMask</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any<br>
+<a href="#LineEditEN-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery,&nbsp;Any)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-insert"><strong>insert</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-insert">insert</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isClearButtonEnabled"><strong>isClearButtonEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isClearButtonEnabled">isClearButtonEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isModified"><strong>isModified</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isModified">isModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isReadOnly"><strong>isReadOnly</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isReadOnly">isReadOnly</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isRedoAvailable"><strong>isRedoAvailable</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isRedoAvailable">isRedoAvailable</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isUndoAvailable"><strong>isUndoAvailable</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isUndoAvailable">isUndoAvailable</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-maxLength"><strong>maxLength</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-maxLength">maxLength</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-paste"><strong>paste</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-paste">paste</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-placeholderText"><strong>placeholderText</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-placeholderText">placeholderText</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-redo"><strong>redo</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-redo">redo</a>(self)</tt></dd></dl>
+
+<strong>returnPressed</strong> = &lt;unbound PYQT_SIGNAL returnPressed()&gt;
+<dl><dt><a name="LineEditEN-selectAll"><strong>selectAll</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-selectAll">selectAll</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-selectedText"><strong>selectedText</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-selectedText">selectedText</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>selectionChanged</strong> = &lt;unbound PYQT_SIGNAL selectionChanged()&gt;
+<dl><dt><a name="LineEditEN-selectionEnd"><strong>selectionEnd</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-selectionEnd">selectionEnd</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-selectionLength"><strong>selectionLength</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-selectionLength">selectionLength</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-selectionStart"><strong>selectionStart</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-selectionStart">selectionStart</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setAlignment"><strong>setAlignment</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setAlignment">setAlignment</a>(self,&nbsp;Union[Qt.Alignment,&nbsp;Qt.AlignmentFlag])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setClearButtonEnabled"><strong>setClearButtonEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setClearButtonEnabled">setClearButtonEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setCompleter"><strong>setCompleter</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setCompleter">setCompleter</a>(self,&nbsp;QCompleter)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setCursorMoveStyle"><strong>setCursorMoveStyle</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setCursorMoveStyle">setCursorMoveStyle</a>(self,&nbsp;Qt.CursorMoveStyle)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setCursorPosition"><strong>setCursorPosition</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setCursorPosition">setCursorPosition</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setDragEnabled"><strong>setDragEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setDragEnabled">setDragEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setEchoMode"><strong>setEchoMode</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setEchoMode">setEchoMode</a>(self,&nbsp;<a href="PyQt5.QtWidgets.html#QLineEdit">QLineEdit</a>.EchoMode)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setFrame"><strong>setFrame</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setFrame">setFrame</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setInputMask"><strong>setInputMask</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setInputMask">setInputMask</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMaxLength"><strong>setMaxLength</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMaxLength">setMaxLength</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setModified"><strong>setModified</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setModified">setModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setPlaceholderText"><strong>setPlaceholderText</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setPlaceholderText">setPlaceholderText</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setReadOnly"><strong>setReadOnly</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setReadOnly">setReadOnly</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setSelection"><strong>setSelection</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setSelection">setSelection</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setText"><strong>setText</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setText">setText</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setTextMargins"><strong>setTextMargins</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setTextMargins">setTextMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#LineEditEN-setTextMargins">setTextMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setValidator"><strong>setValidator</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setValidator">setValidator</a>(self,&nbsp;QValidator)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-text"><strong>text</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-text">text</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>textChanged</strong> = &lt;unbound PYQT_SIGNAL textChanged(QString)&gt;
+<strong>textEdited</strong> = &lt;unbound PYQT_SIGNAL textEdited(QString)&gt;
+<dl><dt><a name="LineEditEN-textMargins"><strong>textMargins</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-textMargins">textMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-undo"><strong>undo</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-undo">undo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-validator"><strong>validator</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-validator">validator</a>(self)&nbsp;-&gt;&nbsp;QValidator</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QLineEdit">PyQt5.QtWidgets.QLineEdit</a>:<br>
+<dl><dt><strong>ActionPosition</strong> = &lt;class 'PyQt5.QtWidgets.QLineEdit.ActionPosition'&gt;</dl>
+
+<dl><dt><strong>EchoMode</strong> = &lt;class 'PyQt5.QtWidgets.QLineEdit.EchoMode'&gt;</dl>
+
+<dl><dt><strong>LeadingPosition</strong> = 0</dl>
+
+<dl><dt><strong>NoEcho</strong> = 1</dl>
+
+<dl><dt><strong>Normal</strong> = 0</dl>
+
+<dl><dt><strong>Password</strong> = 2</dl>
+
+<dl><dt><strong>PasswordEchoOnEdit</strong> = 3</dl>
+
+<dl><dt><strong>TrailingPosition</strong> = 1</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="LineEditEN-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-actions">actions</a>(self)&nbsp;-&gt;&nbsp;List[QAction]</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-addActions">addActions</a>(self,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#LineEditEN-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-closeEvent">closeEvent</a>(self,&nbsp;QCloseEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-create">create</a>(self,&nbsp;window:&nbsp;sip.voidptr&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-createWindowContainer">createWindowContainer</a>(QWindow,&nbsp;parent:&nbsp;QWidget&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="LineEditEN-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-find">find</a>(sip.voidptr)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-geometry"><strong>geometry</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Union[Qt.GestureFlags,&nbsp;Qt.GestureFlag]&nbsp;=&nbsp;Qt.GestureFlags())</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-grabMouse">grabMouse</a>(self)<br>
+<a href="#LineEditEN-grabMouse">grabMouse</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-grabShortcut">grabShortcut</a>(self,&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;str,&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#LineEditEN-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-nativeEvent">nativeEvent</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-overrideWindowState">overrideWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#LineEditEN-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))<br>
+<a href="#LineEditEN-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#LineEditEN-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-repaint">repaint</a>(self)<br>
+<a href="#LineEditEN-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#LineEditEN-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#LineEditEN-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#LineEditEN-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-resizeEvent">resizeEvent</a>(self,&nbsp;QResizeEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-restoreGeometry">restoreGeometry</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#LineEditEN-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setAccessibleName">setAccessibleName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#LineEditEN-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#LineEditEN-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setCursor">setCursor</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#LineEditEN-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setFocus">setFocus</a>(self)<br>
+<a href="#LineEditEN-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#LineEditEN-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Union[Qt.InputMethodHints,&nbsp;Qt.InputMethodHint])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#LineEditEN-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#LineEditEN-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#LineEditEN-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#LineEditEN-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#LineEditEN-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#LineEditEN-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setStatusTip">setStatusTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setStyleSheet">setStyleSheet</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setTabletTracking"><strong>setTabletTracking</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setTabletTracking">setTabletTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setToolTip">setToolTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWhatsThis">setWhatsThis</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowFlag"><strong>setWindowFlag</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowFlag">setWindowFlag</a>(self,&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowFlags">setWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowIconText">setWindowIconText</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowRole">setWindowRole</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowState">setWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setWindowTitle">setWindowTitle</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-toolTipDuration"><strong>toolTipDuration</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-update">update</a>(self)<br>
+<a href="#LineEditEN-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#LineEditEN-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#LineEditEN-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-winId">winId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-windowHandle"><strong>windowHandle</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;QWindow</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="LineEditEN-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="LineEditEN-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="LineEditEN-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlags'&gt;<dd><tt>QWidget.<a href="#LineEditEN-RenderFlags">RenderFlags</a>()<br>
+QWidget.<a href="#LineEditEN-RenderFlags">RenderFlags</a>(Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag])<br>
+QWidget.<a href="#LineEditEN-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><a name="LineEditEN-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-children">children</a>(self)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="LineEditEN-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-disconnect">disconnect</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;List[QByteArray]</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject<br>
+<a href="#LineEditEN-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#LineEditEN-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#LineEditEN-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#LineEditEN-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#LineEditEN-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#LineEditEN-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="LineEditEN-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#LineEditEN-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-receivers">receivers</a>(self,&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setObjectName">setObjectName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;Any)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt5.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="LineEditEN-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="LineEditEN-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#LineEditEN-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt5.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDevicePixelRatio</strong> = 11</dl>
+
+<dl><dt><strong>PdmDevicePixelRatioScaled</strong> = 12</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Static methods inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><a name="LineEditEN-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="sip.html#wrappertype">sip.wrappertype</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-QT_TRANSLATE_NOOP"><strong>QT_TRANSLATE_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP"><strong>QT_TR_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP">QT_TR_NOOP</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP_UTF8"><strong>QT_TR_NOOP_UTF8</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP_UTF8">QT_TR_NOOP_UTF8</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-Q_ARG"><strong>Q_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_ARG">Q_ARG</a>(object,&nbsp;object)&nbsp;-&gt;&nbsp;QGenericArgument</tt></dd></dl>
+ <dl><dt><a name="-Q_CLASSINFO"><strong>Q_CLASSINFO</strong></a>(...)</dt><dd><tt><a href="#-Q_CLASSINFO">Q_CLASSINFO</a>(str,&nbsp;str)</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUM"><strong>Q_ENUM</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUM">Q_ENUM</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUMS"><strong>Q_ENUMS</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUMS">Q_ENUMS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAG"><strong>Q_FLAG</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAG">Q_FLAG</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAGS"><strong>Q_FLAGS</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAGS">Q_FLAGS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_RETURN_ARG"><strong>Q_RETURN_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_RETURN_ARG">Q_RETURN_ARG</a>(object)&nbsp;-&gt;&nbsp;QGenericReturnArgument</tt></dd></dl>
+ <dl><dt><a name="-bin_"><strong>bin_</strong></a>(...)</dt><dd><tt><a href="#-bin_">bin_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-bom"><strong>bom</strong></a>(...)</dt><dd><tt><a href="#-bom">bom</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-center"><strong>center</strong></a>(...)</dt><dd><tt><a href="#-center">center</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-dec"><strong>dec</strong></a>(...)</dt><dd><tt><a href="#-dec">dec</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-endl"><strong>endl</strong></a>(...)</dt><dd><tt><a href="#-endl">endl</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-fixed"><strong>fixed</strong></a>(...)</dt><dd><tt><a href="#-fixed">fixed</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-flush"><strong>flush</strong></a>(...)</dt><dd><tt><a href="#-flush">flush</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcepoint"><strong>forcepoint</strong></a>(...)</dt><dd><tt><a href="#-forcepoint">forcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcesign"><strong>forcesign</strong></a>(...)</dt><dd><tt><a href="#-forcesign">forcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-hex_"><strong>hex_</strong></a>(...)</dt><dd><tt><a href="#-hex_">hex_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-left"><strong>left</strong></a>(...)</dt><dd><tt><a href="#-left">left</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasebase"><strong>lowercasebase</strong></a>(...)</dt><dd><tt><a href="#-lowercasebase">lowercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasedigits"><strong>lowercasedigits</strong></a>(...)</dt><dd><tt><a href="#-lowercasedigits">lowercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcepoint"><strong>noforcepoint</strong></a>(...)</dt><dd><tt><a href="#-noforcepoint">noforcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcesign"><strong>noforcesign</strong></a>(...)</dt><dd><tt><a href="#-noforcesign">noforcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noshowbase"><strong>noshowbase</strong></a>(...)</dt><dd><tt><a href="#-noshowbase">noshowbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-oct_"><strong>oct_</strong></a>(...)</dt><dd><tt><a href="#-oct_">oct_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-pyqtPickleProtocol"><strong>pyqtPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtPickleProtocol">pyqtPickleProtocol</a>()&nbsp;-&gt;&nbsp;Optional[int]</tt></dd></dl>
+ <dl><dt><a name="-pyqtRemoveInputHook"><strong>pyqtRemoveInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRemoveInputHook">pyqtRemoveInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtRestoreInputHook"><strong>pyqtRestoreInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRestoreInputHook">pyqtRestoreInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtSetPickleProtocol"><strong>pyqtSetPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtSetPickleProtocol">pyqtSetPickleProtocol</a>(Optional[int])</tt></dd></dl>
+ <dl><dt><a name="-pyqtSlot"><strong>pyqtSlot</strong></a>(...)</dt><dd><tt>@<a href="#-pyqtSlot">pyqtSlot</a>(*types,&nbsp;name:&nbsp;Optional[str],&nbsp;result:&nbsp;Optional[str])<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;decorator&nbsp;applied&nbsp;to&nbsp;Python&nbsp;methods&nbsp;of&nbsp;a&nbsp;QObject&nbsp;that&nbsp;marks&nbsp;them<br>
+as&nbsp;Qt&nbsp;slots.<br>
+The&nbsp;non-keyword&nbsp;arguments&nbsp;are&nbsp;the&nbsp;types&nbsp;of&nbsp;the&nbsp;slot&nbsp;arguments&nbsp;and&nbsp;each&nbsp;may<br>
+be&nbsp;a&nbsp;Python&nbsp;type&nbsp;object&nbsp;or&nbsp;a&nbsp;string&nbsp;specifying&nbsp;a&nbsp;C++&nbsp;type.<br>
+name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;slot&nbsp;and&nbsp;defaults&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method.<br>
+result&nbsp;is&nbsp;type&nbsp;of&nbsp;the&nbsp;value&nbsp;returned&nbsp;by&nbsp;the&nbsp;slot.</tt></dd></dl>
+ <dl><dt><a name="-qAbs"><strong>qAbs</strong></a>(...)</dt><dd><tt><a href="#-qAbs">qAbs</a>(float)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qAddPostRoutine"><strong>qAddPostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPostRoutine">qAddPostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAddPreRoutine"><strong>qAddPreRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPreRoutine">qAddPreRoutine</a>(Callable[[],&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAlpha"><strong>qAlpha</strong></a>(...)</dt><dd><tt><a href="#-qAlpha">qAlpha</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qAlpha">qAlpha</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qBlue"><strong>qBlue</strong></a>(...)</dt><dd><tt><a href="#-qBlue">qBlue</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qBlue">qBlue</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qChecksum"><strong>qChecksum</strong></a>(...)</dt><dd><tt><a href="#-qChecksum">qChecksum</a>(bytes)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qChecksum">qChecksum</a>(bytes,&nbsp;Qt.ChecksumType)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qCompress"><strong>qCompress</strong></a>(...)</dt><dd><tt><a href="#-qCompress">qCompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;compressionLevel:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qCritical"><strong>qCritical</strong></a>(...)</dt><dd><tt><a href="#-qCritical">qCritical</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDebug"><strong>qDebug</strong></a>(...)</dt><dd><tt><a href="#-qDebug">qDebug</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDrawBorderPixmap"><strong>qDrawBorderPixmap</strong></a>(...)</dt><dd><tt><a href="#-qDrawBorderPixmap">qDrawBorderPixmap</a>(QPainter,&nbsp;QRect,&nbsp;QMargins,&nbsp;QPixmap)</tt></dd></dl>
+ <dl><dt><a name="-qDrawPlainRect"><strong>qDrawPlainRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;QRect,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeLine"><strong>qDrawShadeLine</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)<br>
+<a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;QPoint,&nbsp;QPoint,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadePanel"><strong>qDrawShadePanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeRect"><strong>qDrawShadeRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinButton"><strong>qDrawWinButton</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinPanel"><strong>qDrawWinPanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qEnvironmentVariable"><strong>qEnvironmentVariable</strong></a>(...)</dt><dd><tt><a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str)&nbsp;-&gt;&nbsp;str<br>
+<a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qErrnoWarning"><strong>qErrnoWarning</strong></a>(...)</dt><dd><tt><a href="#-qErrnoWarning">qErrnoWarning</a>(int,&nbsp;str)<br>
+<a href="#-qErrnoWarning">qErrnoWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFatal"><strong>qFatal</strong></a>(...)</dt><dd><tt><a href="#-qFatal">qFatal</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFloatDistance"><strong>qFloatDistance</strong></a>(...)</dt><dd><tt><a href="#-qFloatDistance">qFloatDistance</a>(float,&nbsp;float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qFormatLogMessage"><strong>qFormatLogMessage</strong></a>(...)</dt><dd><tt><a href="#-qFormatLogMessage">qFormatLogMessage</a>(QtMsgType,&nbsp;QMessageLogContext,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qFuzzyCompare"><strong>qFuzzyCompare</strong></a>(...)</dt><dd><tt><a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix4x4,&nbsp;QMatrix4x4)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QQuaternion,&nbsp;QQuaternion)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QTransform,&nbsp;QTransform)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector2D,&nbsp;QVector2D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector3D,&nbsp;QVector3D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector4D,&nbsp;QVector4D)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qGray"><strong>qGray</strong></a>(...)</dt><dd><tt><a href="#-qGray">qGray</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGray">qGray</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qGreen"><strong>qGreen</strong></a>(...)</dt><dd><tt><a href="#-qGreen">qGreen</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGreen">qGreen</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qInf"><strong>qInf</strong></a>(...)</dt><dd><tt><a href="#-qInf">qInf</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qInfo"><strong>qInfo</strong></a>(...)</dt><dd><tt><a href="#-qInfo">qInfo</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qInstallMessageHandler"><strong>qInstallMessageHandler</strong></a>(...)</dt><dd><tt><a href="#-qInstallMessageHandler">qInstallMessageHandler</a>(Optional[Callable[[],&nbsp;None]])&nbsp;-&gt;&nbsp;Optional[Callable[[],&nbsp;None]]</tt></dd></dl>
+ <dl><dt><a name="-qIsFinite"><strong>qIsFinite</strong></a>(...)</dt><dd><tt><a href="#-qIsFinite">qIsFinite</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsGray"><strong>qIsGray</strong></a>(...)</dt><dd><tt><a href="#-qIsGray">qIsGray</a>(int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsInf"><strong>qIsInf</strong></a>(...)</dt><dd><tt><a href="#-qIsInf">qIsInf</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNaN"><strong>qIsNaN</strong></a>(...)</dt><dd><tt><a href="#-qIsNaN">qIsNaN</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNull"><strong>qIsNull</strong></a>(...)</dt><dd><tt><a href="#-qIsNull">qIsNull</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatAlpha"><strong>qPixelFormatAlpha</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatAlpha">qPixelFormatAlpha</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatCmyk"><strong>qPixelFormatCmyk</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatCmyk">qPixelFormatCmyk</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatGrayscale"><strong>qPixelFormatGrayscale</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatGrayscale">qPixelFormatGrayscale</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsl"><strong>qPixelFormatHsl</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsl">qPixelFormatHsl</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsv"><strong>qPixelFormatHsv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsv">qPixelFormatHsv</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatRgba"><strong>qPixelFormatRgba</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatRgba">qPixelFormatRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPixelFormat.AlphaUsage,&nbsp;QPixelFormat.AlphaPosition,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatYuv"><strong>qPixelFormatYuv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatYuv">qPixelFormatYuv</a>(QPixelFormat.YUVLayout,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedByte,&nbsp;byteOrder:&nbsp;QPixelFormat.ByteOrder&nbsp;=&nbsp;QPixelFormat.LittleEndian)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPremultiply"><strong>qPremultiply</strong></a>(...)</dt><dd><tt><a href="#-qPremultiply">qPremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qPremultiply">qPremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qQNaN"><strong>qQNaN</strong></a>(...)</dt><dd><tt><a href="#-qQNaN">qQNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qRed"><strong>qRed</strong></a>(...)</dt><dd><tt><a href="#-qRed">qRed</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qRed">qRed</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRegisterResourceData"><strong>qRegisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qRegisterResourceData">qRegisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qRemovePostRoutine"><strong>qRemovePostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qRemovePostRoutine">qRemovePostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qRgb"><strong>qRgb</strong></a>(...)</dt><dd><tt><a href="#-qRgb">qRgb</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba"><strong>qRgba</strong></a>(...)</dt><dd><tt><a href="#-qRgba">qRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba64"><strong>qRgba64</strong></a>(...)</dt><dd><tt><a href="#-qRgba64">qRgba64</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qRgba64">qRgba64</a>(int)&nbsp;-&gt;&nbsp;QRgba64</tt></dd></dl>
+ <dl><dt><a name="-qRound"><strong>qRound</strong></a>(...)</dt><dd><tt><a href="#-qRound">qRound</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRound64"><strong>qRound64</strong></a>(...)</dt><dd><tt><a href="#-qRound64">qRound64</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qSNaN"><strong>qSNaN</strong></a>(...)</dt><dd><tt><a href="#-qSNaN">qSNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qSetFieldWidth"><strong>qSetFieldWidth</strong></a>(...)</dt><dd><tt><a href="#-qSetFieldWidth">qSetFieldWidth</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetMessagePattern"><strong>qSetMessagePattern</strong></a>(...)</dt><dd><tt><a href="#-qSetMessagePattern">qSetMessagePattern</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qSetPadChar"><strong>qSetPadChar</strong></a>(...)</dt><dd><tt><a href="#-qSetPadChar">qSetPadChar</a>(str)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetRealNumberPrecision"><strong>qSetRealNumberPrecision</strong></a>(...)</dt><dd><tt><a href="#-qSetRealNumberPrecision">qSetRealNumberPrecision</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSharedBuild"><strong>qSharedBuild</strong></a>(...)</dt><dd><tt><a href="#-qSharedBuild">qSharedBuild</a>()&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qUncompress"><strong>qUncompress</strong></a>(...)</dt><dd><tt><a href="#-qUncompress">qUncompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qUnpremultiply"><strong>qUnpremultiply</strong></a>(...)</dt><dd><tt><a href="#-qUnpremultiply">qUnpremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qUnpremultiply">qUnpremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qUnregisterResourceData"><strong>qUnregisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qUnregisterResourceData">qUnregisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qVersion"><strong>qVersion</strong></a>(...)</dt><dd><tt><a href="#-qVersion">qVersion</a>()&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qWarning"><strong>qWarning</strong></a>(...)</dt><dd><tt><a href="#-qWarning">qWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qrand"><strong>qrand</strong></a>(...)</dt><dd><tt><a href="#-qrand">qrand</a>()&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qsrand"><strong>qsrand</strong></a>(...)</dt><dd><tt><a href="#-qsrand">qsrand</a>(int)</tt></dd></dl>
+ <dl><dt><a name="-qt_set_sequence_auto_mnemonic"><strong>qt_set_sequence_auto_mnemonic</strong></a>(...)</dt><dd><tt><a href="#-qt_set_sequence_auto_mnemonic">qt_set_sequence_auto_mnemonic</a>(bool)</tt></dd></dl>
+ <dl><dt><a name="-reset"><strong>reset</strong></a>(...)</dt><dd><tt><a href="#-reset">reset</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-right"><strong>right</strong></a>(...)</dt><dd><tt><a href="#-right">right</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-scientific"><strong>scientific</strong></a>(...)</dt><dd><tt><a href="#-scientific">scientific</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-showbase"><strong>showbase</strong></a>(...)</dt><dd><tt><a href="#-showbase">showbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasebase"><strong>uppercasebase</strong></a>(...)</dt><dd><tt><a href="#-uppercasebase">uppercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasedigits"><strong>uppercasedigits</strong></a>(...)</dt><dd><tt><a href="#-uppercasedigits">uppercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-ws"><strong>ws</strong></a>(...)</dt><dd><tt><a href="#-ws">ws</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>PYQT_CONFIGURATION</strong> = {'sip_flags': '-n sip -t WS_X11 -t Qt_5_11_3'}<br>
+<strong>PYQT_VERSION</strong> = 330499<br>
+<strong>PYQT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QT_VERSION</strong> = 330499<br>
+<strong>QT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QWIDGETSIZE_MAX</strong> = 16777215<br>
+<strong>QtCriticalMsg</strong> = 2<br>
+<strong>QtDebugMsg</strong> = 0<br>
+<strong>QtFatalMsg</strong> = 3<br>
+<strong>QtInfoMsg</strong> = 4<br>
+<strong>QtSystemMsg</strong> = 2<br>
+<strong>QtWarningMsg</strong> = 1<br>
+<strong>qApp</strong> = &lt;PyQt5.QtWidgets.QApplication object&gt;</td></tr></table>
+</body></html>

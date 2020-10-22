@@ -1,0 +1,22 @@
+"""
+    WordPlay:  A class to generate English sentences.
+    Edward C. Eberle <eberdeed@eberdeed.net>
+    06-24-2016 San Diego California
+"""
+
+    Personal Pronouns
+    I, me, you, he, him, she...
+    Demonstrative Pronouns
+    this, that, these, those
+    Possessive Pronouns
+    mine, yours, his...
+    Interrogative Pronouns
+    who, what, which...
+    Reflexive Pronouns
+    myself, yourself, himself...
+    Reciprocal Pronouns
+    each other, one another
+    Indefinite Pronouns
+    another, much, nobody, few, such...
+    Relative Pronouns
+    who, whom, which...

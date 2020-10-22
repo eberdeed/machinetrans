@@ -1,0 +1,1071 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module verbconjugation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>verbconjugation</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/eberdeed/machinetrans-1.15/machinetrans/dataentry/verbconjugation.py">/home/eberdeed/machinetrans-1.15/machinetrans/dataentry/verbconjugation.py</a></font></td></tr></table>
+    <p><tt><a href="#VerbConjugation">VerbConjugation</a>:&nbsp;&nbsp;Machine&nbsp;Translation&nbsp;Data&nbsp;Entry&nbsp;--&nbsp;Russian&nbsp;Verb&nbsp;Conjugation&nbsp;Data&nbsp;Entry.<br>
+Created&nbsp;By&nbsp;Edward&nbsp;Charles&nbsp;Eberle&nbsp;&lt;eberdeed@eberdeed.net&gt;<br>
+June&nbsp;29,&nbsp;2016,&nbsp;San&nbsp;Diego&nbsp;California&nbsp;United&nbsp;States&nbsp;of&nbsp;America</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>(<a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="verbconjugation.html#VerbConjugation">VerbConjugation</a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_verbconjugation.html#Ui_VerbConjugation">machinetrans.userinterfaces.ui_verbconjugation.Ui_VerbConjugation</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="machinetrans.userinterfaces.ui_verbconjugation.html#Ui_VerbConjugation">machinetrans.userinterfaces.ui_verbconjugation.Ui_VerbConjugation</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="verbconjugation.html#VerbConjugation">VerbConjugation</a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_verbconjugation.html#Ui_VerbConjugation">machinetrans.userinterfaces.ui_verbconjugation.Ui_VerbConjugation</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="VerbConjugation">class <strong>VerbConjugation</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_verbconjugation.html#Ui_VerbConjugation">machinetrans.userinterfaces.ui_verbconjugation.Ui_VerbConjugation</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#VerbConjugation">VerbConjugation</a>(parent=None)<br>
+&nbsp;<br>
+A&nbsp;GUI&nbsp;to&nbsp;enter&nbsp;Russian-English&nbsp;language&nbsp;verb&nbsp;data&nbsp;into<br>
+a&nbsp;PostgreSQL&nbsp;database.&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;first&nbsp;in&nbsp;a&nbsp;series<br>
+of&nbsp;GUIs&nbsp;for&nbsp;verb&nbsp;conjugation.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="verbconjugation.html#VerbConjugation">VerbConjugation</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="machinetrans.userinterfaces.ui_verbconjugation.html#Ui_VerbConjugation">machinetrans.userinterfaces.ui_verbconjugation.Ui_VerbConjugation</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="VerbConjugation-__init__"><strong>__init__</strong></a>(self, parent=None)</dt><dd><tt>Initialize&nbsp;the&nbsp;GUI&nbsp;and&nbsp;display&nbsp;the&nbsp;Russian<br>
+verb&nbsp;conjugation.&nbsp;&nbsp;Do&nbsp;some&nbsp;selection<br>
+of&nbsp;the&nbsp;conjugation&nbsp;to&nbsp;be&nbsp;used.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-cancel"><strong>cancel</strong></a>(self)</dt><dd><tt>Cancel&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-changeconj"><strong>changeconj</strong></a>(self)</dt><dd><tt>Change&nbsp;the&nbsp;stem&nbsp;for&nbsp;the&nbsp;conjugation<br>
+and&nbsp;propagate&nbsp;it&nbsp;out&nbsp;to&nbsp;the&nbsp;Q<br>
+LineEditors.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-changeeng"><strong>changeeng</strong></a>(self)</dt><dd><tt>Change&nbsp;the&nbsp;English&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-changeruss"><strong>changeruss</strong></a>(self)</dt><dd><tt>Change&nbsp;the&nbsp;Russian&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-closeEvent"><strong>closeEvent</strong></a>(self, event)</dt><dd><tt>Close&nbsp;the&nbsp;GUI&nbsp;passing&nbsp;GUI&nbsp;sizing&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-conjugate"><strong>conjugate</strong></a>(self)</dt><dd><tt>Verb&nbsp;conjugation&nbsp;displayed.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-createconj"><strong>createconj</strong></a>(self)</dt><dd><tt>Put&nbsp;the&nbsp;declension&nbsp;on&nbsp;the&nbsp;GUI.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-displayhelp"><strong>displayhelp</strong></a>(self)</dt><dd><tt>Display&nbsp;an&nbsp;HTML&nbsp;help&nbsp;page&nbsp;for&nbsp;this&nbsp;GUI.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-engconj"><strong>engconj</strong></a>(self)</dt><dd><tt>Conjugate&nbsp;the&nbsp;English&nbsp;forms&nbsp;of&nbsp;the<br>
+given&nbsp;verb.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-eraseall"><strong>eraseall</strong></a>(self)</dt><dd><tt>Reset&nbsp;the&nbsp;data&nbsp;cache&nbsp;"verbdict"&nbsp;so&nbsp;the&nbsp;data<br>
+can&nbsp;be&nbsp;re-entered.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-myself"><strong>myself</strong></a>(self)</dt><dd><tt>Toggle&nbsp;the&nbsp;English&nbsp;reflexive&nbsp;or&nbsp;not.<br>
+Some&nbsp;Russian&nbsp;reflexives&nbsp;do&nbsp;not&nbsp;require<br>
+an&nbsp;English&nbsp;"yourself"&nbsp;for&nbsp;example<br>
+"to&nbsp;hope"&nbsp;"надеяться"</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-passdata"><strong>passdata</strong></a>(self)</dt><dd><tt>Gather&nbsp;the&nbsp;data&nbsp;and&nbsp;create&nbsp;a&nbsp;series&nbsp;of&nbsp;SQL<br>
+commands&nbsp;to&nbsp;insert&nbsp;the&nbsp;data&nbsp;into&nbsp;the&nbsp;database.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-resizeEvent"><strong>resizeEvent</strong></a>(self, event)</dt><dd><tt>Resize&nbsp;the&nbsp;GUI&nbsp;and&nbsp;record&nbsp;GUI&nbsp;sizing&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-ruconj"><strong>ruconj</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="VerbConjugation-tobeeng"><strong>tobeeng</strong></a>(self)</dt><dd><tt>Conjugate&nbsp;an&nbsp;English&nbsp;verb&nbsp;preceded&nbsp;by&nbsp;"to&nbsp;be."</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-tohaveeng"><strong>tohaveeng</strong></a>(self)</dt><dd><tt>Conjugate&nbsp;an&nbsp;English&nbsp;verb&nbsp;preceded&nbsp;by&nbsp;"to&nbsp;have."</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-verbconj"><strong>verbconj</strong></a>(self)</dt><dd><tt>Display&nbsp;a&nbsp;listing&nbsp;of&nbsp;all&nbsp;verb&nbsp;conjugations.<br>
+Once&nbsp;one&nbsp;is&nbsp;selected,&nbsp;return&nbsp;to&nbsp;this&nbsp;GUI<br>
+and&nbsp;display&nbsp;it.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>basecommand</strong> = ''</dl>
+
+<dl><dt><strong>conjlist</strong> = []</dl>
+
+<dl><dt><strong>enstr</strong> = ''</dl>
+
+<dl><dt><strong>geometry</strong> = []</dl>
+
+<dl><dt><strong>height1</strong> = 0</dl>
+
+<dl><dt><strong>helpfile</strong> = '/usr/share/machinetrans/resources/verbconjugation.html'</dl>
+
+<dl><dt><strong>imperfective</strong> = True</dl>
+
+<dl><dt><strong>index</strong> = 0</dl>
+
+<dl><dt><strong>labeltext</strong> = ''</dl>
+
+<dl><dt><strong>morphs</strong> = None</dl>
+
+<dl><dt><strong>oneself</strong> = False</dl>
+
+<dl><dt><strong>parent</strong> = None</dl>
+
+<dl><dt><strong>reflexive</strong> = False</dl>
+
+<dl><dt><strong>rustr</strong> = ''</dl>
+
+<dl><dt><strong>simpleconj</strong> = {}</dl>
+
+<dl><dt><strong>sqlcommand</strong> = ''</dl>
+
+<dl><dt><strong>stem</strong> = None</dl>
+
+<dl><dt><strong>types</strong> = None</dl>
+
+<dl><dt><strong>vowels</strong> = ['a', 'e', 'i', 'o', 'u']</dl>
+
+<dl><dt><strong>width1</strong> = 0</dl>
+
+<dl><dt><strong>winx</strong> = 0</dl>
+
+<dl><dt><strong>winy</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><a name="VerbConjugation-accept"><strong>accept</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-accept">accept</a>(self)</tt></dd></dl>
+
+<strong>accepted</strong> = &lt;unbound PYQT_SIGNAL accepted()&gt;
+<dl><dt><a name="VerbConjugation-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-done"><strong>done</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-done">done</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-exec"><strong>exec</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-exec">exec</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-exec_"><strong>exec_</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<strong>finished</strong> = &lt;unbound PYQT_SIGNAL finished(int)&gt;
+<dl><dt><a name="VerbConjugation-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-keyPressEvent">keyPressEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-open"><strong>open</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-open">open</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-reject"><strong>reject</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-reject">reject</a>(self)</tt></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound PYQT_SIGNAL rejected()&gt;
+<dl><dt><a name="VerbConjugation-result"><strong>result</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-result">result</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setModal"><strong>setModal</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setModal">setModal</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setResult"><strong>setResult</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setResult">setResult</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt5.QtWidgets.QDialog.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="VerbConjugation-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-actions">actions</a>(self)&nbsp;-&gt;&nbsp;List[QAction]</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-addAction">addAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-addActions">addActions</a>(self,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#VerbConjugation-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-create">create</a>(self,&nbsp;window:&nbsp;sip.voidptr&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-createWindowContainer">createWindowContainer</a>(QWindow,&nbsp;parent:&nbsp;QWidget&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="VerbConjugation-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-find">find</a>(sip.voidptr)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-focusOutEvent">focusOutEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Union[Qt.GestureFlags,&nbsp;Qt.GestureFlag]&nbsp;=&nbsp;Qt.GestureFlags())</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-grabMouse">grabMouse</a>(self)<br>
+<a href="#VerbConjugation-grabMouse">grabMouse</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-grabShortcut">grabShortcut</a>(self,&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;str,&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#VerbConjugation-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-nativeEvent">nativeEvent</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-overrideWindowState">overrideWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#VerbConjugation-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))<br>
+<a href="#VerbConjugation-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#VerbConjugation-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-repaint">repaint</a>(self)<br>
+<a href="#VerbConjugation-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#VerbConjugation-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#VerbConjugation-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#VerbConjugation-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-restoreGeometry">restoreGeometry</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#VerbConjugation-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setAccessibleName">setAccessibleName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#VerbConjugation-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#VerbConjugation-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setCursor">setCursor</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#VerbConjugation-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setFocus">setFocus</a>(self)<br>
+<a href="#VerbConjugation-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#VerbConjugation-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Union[Qt.InputMethodHints,&nbsp;Qt.InputMethodHint])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#VerbConjugation-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#VerbConjugation-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#VerbConjugation-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#VerbConjugation-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#VerbConjugation-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#VerbConjugation-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setStatusTip">setStatusTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setStyleSheet">setStyleSheet</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setTabletTracking"><strong>setTabletTracking</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setTabletTracking">setTabletTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setToolTip">setToolTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWhatsThis">setWhatsThis</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowFlag"><strong>setWindowFlag</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowFlag">setWindowFlag</a>(self,&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowFlags">setWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowIconText">setWindowIconText</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowRole">setWindowRole</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowState">setWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setWindowTitle">setWindowTitle</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-toolTipDuration"><strong>toolTipDuration</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-update">update</a>(self)<br>
+<a href="#VerbConjugation-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#VerbConjugation-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#VerbConjugation-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-winId">winId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-windowHandle"><strong>windowHandle</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;QWindow</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="VerbConjugation-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="VerbConjugation-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="VerbConjugation-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlags'&gt;<dd><tt>QWidget.<a href="#VerbConjugation-RenderFlags">RenderFlags</a>()<br>
+QWidget.<a href="#VerbConjugation-RenderFlags">RenderFlags</a>(Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag])<br>
+QWidget.<a href="#VerbConjugation-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><a name="VerbConjugation-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-children">children</a>(self)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="VerbConjugation-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-disconnect">disconnect</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;List[QByteArray]</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject<br>
+<a href="#VerbConjugation-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#VerbConjugation-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#VerbConjugation-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#VerbConjugation-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#VerbConjugation-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#VerbConjugation-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="VerbConjugation-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#VerbConjugation-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-receivers">receivers</a>(self,&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setObjectName">setObjectName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;Any)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt5.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="VerbConjugation-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="VerbConjugation-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#VerbConjugation-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt5.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDevicePixelRatio</strong> = 11</dl>
+
+<dl><dt><strong>PdmDevicePixelRatioScaled</strong> = 12</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Static methods inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><a name="VerbConjugation-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="sip.html#wrappertype">sip.wrappertype</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="machinetrans.userinterfaces.ui_verbconjugation.html#Ui_VerbConjugation">machinetrans.userinterfaces.ui_verbconjugation.Ui_VerbConjugation</a>:<br>
+<dl><dt><a name="VerbConjugation-retranslateUi"><strong>retranslateUi</strong></a>(self, VerbConjugation)</dt></dl>
+
+<dl><dt><a name="VerbConjugation-setupUi"><strong>setupUi</strong></a>(self, VerbConjugation)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-QT_TRANSLATE_NOOP"><strong>QT_TRANSLATE_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP"><strong>QT_TR_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP">QT_TR_NOOP</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP_UTF8"><strong>QT_TR_NOOP_UTF8</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP_UTF8">QT_TR_NOOP_UTF8</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-Q_ARG"><strong>Q_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_ARG">Q_ARG</a>(object,&nbsp;object)&nbsp;-&gt;&nbsp;QGenericArgument</tt></dd></dl>
+ <dl><dt><a name="-Q_CLASSINFO"><strong>Q_CLASSINFO</strong></a>(...)</dt><dd><tt><a href="#-Q_CLASSINFO">Q_CLASSINFO</a>(str,&nbsp;str)</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUM"><strong>Q_ENUM</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUM">Q_ENUM</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUMS"><strong>Q_ENUMS</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUMS">Q_ENUMS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAG"><strong>Q_FLAG</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAG">Q_FLAG</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAGS"><strong>Q_FLAGS</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAGS">Q_FLAGS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_RETURN_ARG"><strong>Q_RETURN_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_RETURN_ARG">Q_RETURN_ARG</a>(object)&nbsp;-&gt;&nbsp;QGenericReturnArgument</tt></dd></dl>
+ <dl><dt><a name="-bin_"><strong>bin_</strong></a>(...)</dt><dd><tt><a href="#-bin_">bin_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-bom"><strong>bom</strong></a>(...)</dt><dd><tt><a href="#-bom">bom</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-center"><strong>center</strong></a>(...)</dt><dd><tt><a href="#-center">center</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-dec"><strong>dec</strong></a>(...)</dt><dd><tt><a href="#-dec">dec</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-endl"><strong>endl</strong></a>(...)</dt><dd><tt><a href="#-endl">endl</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-fixed"><strong>fixed</strong></a>(...)</dt><dd><tt><a href="#-fixed">fixed</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-flush"><strong>flush</strong></a>(...)</dt><dd><tt><a href="#-flush">flush</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcepoint"><strong>forcepoint</strong></a>(...)</dt><dd><tt><a href="#-forcepoint">forcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcesign"><strong>forcesign</strong></a>(...)</dt><dd><tt><a href="#-forcesign">forcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-hex_"><strong>hex_</strong></a>(...)</dt><dd><tt><a href="#-hex_">hex_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-left"><strong>left</strong></a>(...)</dt><dd><tt><a href="#-left">left</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasebase"><strong>lowercasebase</strong></a>(...)</dt><dd><tt><a href="#-lowercasebase">lowercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasedigits"><strong>lowercasedigits</strong></a>(...)</dt><dd><tt><a href="#-lowercasedigits">lowercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcepoint"><strong>noforcepoint</strong></a>(...)</dt><dd><tt><a href="#-noforcepoint">noforcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcesign"><strong>noforcesign</strong></a>(...)</dt><dd><tt><a href="#-noforcesign">noforcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noshowbase"><strong>noshowbase</strong></a>(...)</dt><dd><tt><a href="#-noshowbase">noshowbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-oct_"><strong>oct_</strong></a>(...)</dt><dd><tt><a href="#-oct_">oct_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-pyqtPickleProtocol"><strong>pyqtPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtPickleProtocol">pyqtPickleProtocol</a>()&nbsp;-&gt;&nbsp;Optional[int]</tt></dd></dl>
+ <dl><dt><a name="-pyqtRemoveInputHook"><strong>pyqtRemoveInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRemoveInputHook">pyqtRemoveInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtRestoreInputHook"><strong>pyqtRestoreInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRestoreInputHook">pyqtRestoreInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtSetPickleProtocol"><strong>pyqtSetPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtSetPickleProtocol">pyqtSetPickleProtocol</a>(Optional[int])</tt></dd></dl>
+ <dl><dt><a name="-pyqtSlot"><strong>pyqtSlot</strong></a>(...)</dt><dd><tt>@<a href="#-pyqtSlot">pyqtSlot</a>(*types,&nbsp;name:&nbsp;Optional[str],&nbsp;result:&nbsp;Optional[str])<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;decorator&nbsp;applied&nbsp;to&nbsp;Python&nbsp;methods&nbsp;of&nbsp;a&nbsp;QObject&nbsp;that&nbsp;marks&nbsp;them<br>
+as&nbsp;Qt&nbsp;slots.<br>
+The&nbsp;non-keyword&nbsp;arguments&nbsp;are&nbsp;the&nbsp;types&nbsp;of&nbsp;the&nbsp;slot&nbsp;arguments&nbsp;and&nbsp;each&nbsp;may<br>
+be&nbsp;a&nbsp;Python&nbsp;type&nbsp;object&nbsp;or&nbsp;a&nbsp;string&nbsp;specifying&nbsp;a&nbsp;C++&nbsp;type.<br>
+name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;slot&nbsp;and&nbsp;defaults&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method.<br>
+result&nbsp;is&nbsp;type&nbsp;of&nbsp;the&nbsp;value&nbsp;returned&nbsp;by&nbsp;the&nbsp;slot.</tt></dd></dl>
+ <dl><dt><a name="-qAbs"><strong>qAbs</strong></a>(...)</dt><dd><tt><a href="#-qAbs">qAbs</a>(float)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qAddPostRoutine"><strong>qAddPostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPostRoutine">qAddPostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAddPreRoutine"><strong>qAddPreRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPreRoutine">qAddPreRoutine</a>(Callable[[],&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAlpha"><strong>qAlpha</strong></a>(...)</dt><dd><tt><a href="#-qAlpha">qAlpha</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qAlpha">qAlpha</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qBlue"><strong>qBlue</strong></a>(...)</dt><dd><tt><a href="#-qBlue">qBlue</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qBlue">qBlue</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qChecksum"><strong>qChecksum</strong></a>(...)</dt><dd><tt><a href="#-qChecksum">qChecksum</a>(bytes)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qChecksum">qChecksum</a>(bytes,&nbsp;Qt.ChecksumType)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qCompress"><strong>qCompress</strong></a>(...)</dt><dd><tt><a href="#-qCompress">qCompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;compressionLevel:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qCritical"><strong>qCritical</strong></a>(...)</dt><dd><tt><a href="#-qCritical">qCritical</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDebug"><strong>qDebug</strong></a>(...)</dt><dd><tt><a href="#-qDebug">qDebug</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDrawBorderPixmap"><strong>qDrawBorderPixmap</strong></a>(...)</dt><dd><tt><a href="#-qDrawBorderPixmap">qDrawBorderPixmap</a>(QPainter,&nbsp;QRect,&nbsp;QMargins,&nbsp;QPixmap)</tt></dd></dl>
+ <dl><dt><a name="-qDrawPlainRect"><strong>qDrawPlainRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;QRect,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeLine"><strong>qDrawShadeLine</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)<br>
+<a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;QPoint,&nbsp;QPoint,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadePanel"><strong>qDrawShadePanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeRect"><strong>qDrawShadeRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinButton"><strong>qDrawWinButton</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinPanel"><strong>qDrawWinPanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qEnvironmentVariable"><strong>qEnvironmentVariable</strong></a>(...)</dt><dd><tt><a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str)&nbsp;-&gt;&nbsp;str<br>
+<a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qErrnoWarning"><strong>qErrnoWarning</strong></a>(...)</dt><dd><tt><a href="#-qErrnoWarning">qErrnoWarning</a>(int,&nbsp;str)<br>
+<a href="#-qErrnoWarning">qErrnoWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFatal"><strong>qFatal</strong></a>(...)</dt><dd><tt><a href="#-qFatal">qFatal</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFloatDistance"><strong>qFloatDistance</strong></a>(...)</dt><dd><tt><a href="#-qFloatDistance">qFloatDistance</a>(float,&nbsp;float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qFormatLogMessage"><strong>qFormatLogMessage</strong></a>(...)</dt><dd><tt><a href="#-qFormatLogMessage">qFormatLogMessage</a>(QtMsgType,&nbsp;QMessageLogContext,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qFuzzyCompare"><strong>qFuzzyCompare</strong></a>(...)</dt><dd><tt><a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix4x4,&nbsp;QMatrix4x4)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QQuaternion,&nbsp;QQuaternion)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QTransform,&nbsp;QTransform)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector2D,&nbsp;QVector2D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector3D,&nbsp;QVector3D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector4D,&nbsp;QVector4D)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qGray"><strong>qGray</strong></a>(...)</dt><dd><tt><a href="#-qGray">qGray</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGray">qGray</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qGreen"><strong>qGreen</strong></a>(...)</dt><dd><tt><a href="#-qGreen">qGreen</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGreen">qGreen</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qInf"><strong>qInf</strong></a>(...)</dt><dd><tt><a href="#-qInf">qInf</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qInfo"><strong>qInfo</strong></a>(...)</dt><dd><tt><a href="#-qInfo">qInfo</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qInstallMessageHandler"><strong>qInstallMessageHandler</strong></a>(...)</dt><dd><tt><a href="#-qInstallMessageHandler">qInstallMessageHandler</a>(Optional[Callable[[],&nbsp;None]])&nbsp;-&gt;&nbsp;Optional[Callable[[],&nbsp;None]]</tt></dd></dl>
+ <dl><dt><a name="-qIsFinite"><strong>qIsFinite</strong></a>(...)</dt><dd><tt><a href="#-qIsFinite">qIsFinite</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsGray"><strong>qIsGray</strong></a>(...)</dt><dd><tt><a href="#-qIsGray">qIsGray</a>(int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsInf"><strong>qIsInf</strong></a>(...)</dt><dd><tt><a href="#-qIsInf">qIsInf</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNaN"><strong>qIsNaN</strong></a>(...)</dt><dd><tt><a href="#-qIsNaN">qIsNaN</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNull"><strong>qIsNull</strong></a>(...)</dt><dd><tt><a href="#-qIsNull">qIsNull</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatAlpha"><strong>qPixelFormatAlpha</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatAlpha">qPixelFormatAlpha</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatCmyk"><strong>qPixelFormatCmyk</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatCmyk">qPixelFormatCmyk</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatGrayscale"><strong>qPixelFormatGrayscale</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatGrayscale">qPixelFormatGrayscale</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsl"><strong>qPixelFormatHsl</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsl">qPixelFormatHsl</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsv"><strong>qPixelFormatHsv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsv">qPixelFormatHsv</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatRgba"><strong>qPixelFormatRgba</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatRgba">qPixelFormatRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPixelFormat.AlphaUsage,&nbsp;QPixelFormat.AlphaPosition,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatYuv"><strong>qPixelFormatYuv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatYuv">qPixelFormatYuv</a>(QPixelFormat.YUVLayout,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedByte,&nbsp;byteOrder:&nbsp;QPixelFormat.ByteOrder&nbsp;=&nbsp;QPixelFormat.LittleEndian)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPremultiply"><strong>qPremultiply</strong></a>(...)</dt><dd><tt><a href="#-qPremultiply">qPremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qPremultiply">qPremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qQNaN"><strong>qQNaN</strong></a>(...)</dt><dd><tt><a href="#-qQNaN">qQNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qRed"><strong>qRed</strong></a>(...)</dt><dd><tt><a href="#-qRed">qRed</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qRed">qRed</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRegisterResourceData"><strong>qRegisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qRegisterResourceData">qRegisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qRemovePostRoutine"><strong>qRemovePostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qRemovePostRoutine">qRemovePostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qRgb"><strong>qRgb</strong></a>(...)</dt><dd><tt><a href="#-qRgb">qRgb</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba"><strong>qRgba</strong></a>(...)</dt><dd><tt><a href="#-qRgba">qRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba64"><strong>qRgba64</strong></a>(...)</dt><dd><tt><a href="#-qRgba64">qRgba64</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qRgba64">qRgba64</a>(int)&nbsp;-&gt;&nbsp;QRgba64</tt></dd></dl>
+ <dl><dt><a name="-qRound"><strong>qRound</strong></a>(...)</dt><dd><tt><a href="#-qRound">qRound</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRound64"><strong>qRound64</strong></a>(...)</dt><dd><tt><a href="#-qRound64">qRound64</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qSNaN"><strong>qSNaN</strong></a>(...)</dt><dd><tt><a href="#-qSNaN">qSNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qSetFieldWidth"><strong>qSetFieldWidth</strong></a>(...)</dt><dd><tt><a href="#-qSetFieldWidth">qSetFieldWidth</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetMessagePattern"><strong>qSetMessagePattern</strong></a>(...)</dt><dd><tt><a href="#-qSetMessagePattern">qSetMessagePattern</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qSetPadChar"><strong>qSetPadChar</strong></a>(...)</dt><dd><tt><a href="#-qSetPadChar">qSetPadChar</a>(str)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetRealNumberPrecision"><strong>qSetRealNumberPrecision</strong></a>(...)</dt><dd><tt><a href="#-qSetRealNumberPrecision">qSetRealNumberPrecision</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSharedBuild"><strong>qSharedBuild</strong></a>(...)</dt><dd><tt><a href="#-qSharedBuild">qSharedBuild</a>()&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qUncompress"><strong>qUncompress</strong></a>(...)</dt><dd><tt><a href="#-qUncompress">qUncompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qUnpremultiply"><strong>qUnpremultiply</strong></a>(...)</dt><dd><tt><a href="#-qUnpremultiply">qUnpremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qUnpremultiply">qUnpremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qUnregisterResourceData"><strong>qUnregisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qUnregisterResourceData">qUnregisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qVersion"><strong>qVersion</strong></a>(...)</dt><dd><tt><a href="#-qVersion">qVersion</a>()&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qWarning"><strong>qWarning</strong></a>(...)</dt><dd><tt><a href="#-qWarning">qWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qrand"><strong>qrand</strong></a>(...)</dt><dd><tt><a href="#-qrand">qrand</a>()&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qsrand"><strong>qsrand</strong></a>(...)</dt><dd><tt><a href="#-qsrand">qsrand</a>(int)</tt></dd></dl>
+ <dl><dt><a name="-qt_set_sequence_auto_mnemonic"><strong>qt_set_sequence_auto_mnemonic</strong></a>(...)</dt><dd><tt><a href="#-qt_set_sequence_auto_mnemonic">qt_set_sequence_auto_mnemonic</a>(bool)</tt></dd></dl>
+ <dl><dt><a name="-reset"><strong>reset</strong></a>(...)</dt><dd><tt><a href="#-reset">reset</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-right"><strong>right</strong></a>(...)</dt><dd><tt><a href="#-right">right</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-scientific"><strong>scientific</strong></a>(...)</dt><dd><tt><a href="#-scientific">scientific</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-showbase"><strong>showbase</strong></a>(...)</dt><dd><tt><a href="#-showbase">showbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasebase"><strong>uppercasebase</strong></a>(...)</dt><dd><tt><a href="#-uppercasebase">uppercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasedigits"><strong>uppercasedigits</strong></a>(...)</dt><dd><tt><a href="#-uppercasedigits">uppercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-ws"><strong>ws</strong></a>(...)</dt><dd><tt><a href="#-ws">ws</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>PYQT_CONFIGURATION</strong> = {'sip_flags': '-n sip -t WS_X11 -t Qt_5_11_3'}<br>
+<strong>PYQT_VERSION</strong> = 330499<br>
+<strong>PYQT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QT_VERSION</strong> = 330499<br>
+<strong>QT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QWIDGETSIZE_MAX</strong> = 16777215<br>
+<strong>QtCriticalMsg</strong> = 2<br>
+<strong>QtDebugMsg</strong> = 0<br>
+<strong>QtFatalMsg</strong> = 3<br>
+<strong>QtInfoMsg</strong> = 4<br>
+<strong>QtSystemMsg</strong> = 2<br>
+<strong>QtWarningMsg</strong> = 1<br>
+<strong>qApp</strong> = &lt;PyQt5.QtWidgets.QApplication object&gt;</td></tr></table>
+</body></html>

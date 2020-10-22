@@ -1,0 +1,1188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module partdecl</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>partdecl</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/eberdeed/machinetrans-1.15/machinetrans/dataentry/partdecl.py">/home/eberdeed/machinetrans-1.15/machinetrans/dataentry/partdecl.py</a></font></td></tr></table>
+    <p><tt><a href="#PartDecl">PartDecl</a>:&nbsp;&nbsp;Machine&nbsp;Translation&nbsp;Data&nbsp;Entry&nbsp;--&nbsp;Russian&nbsp;Participle&nbsp;Declension.<br>
+Created&nbsp;By&nbsp;Edward&nbsp;Charles&nbsp;Eberle&nbsp;&lt;eberdeed@eberdeed.net&gt;<br>
+June&nbsp;29,&nbsp;2016,&nbsp;San&nbsp;Diego&nbsp;California&nbsp;United&nbsp;States&nbsp;of&nbsp;America</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>(<a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="partdecl.html#PartDecl">PartDecl</a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_partdecl.html#Ui_PartDecl">machinetrans.userinterfaces.ui_partdecl.Ui_PartDecl</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="machinetrans.userinterfaces.ui_partdecl.html#Ui_PartDecl">machinetrans.userinterfaces.ui_partdecl.Ui_PartDecl</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="partdecl.html#PartDecl">PartDecl</a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_partdecl.html#Ui_PartDecl">machinetrans.userinterfaces.ui_partdecl.Ui_PartDecl</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PartDecl">class <strong>PartDecl</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_partdecl.html#Ui_PartDecl">machinetrans.userinterfaces.ui_partdecl.Ui_PartDecl</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#PartDecl">PartDecl</a>(parent=None)<br>
+&nbsp;<br>
+A&nbsp;GUI&nbsp;to&nbsp;enter&nbsp;Russian&nbsp;participles&nbsp;and&nbsp;their&nbsp;declensions.<br>
+A&nbsp;Russian&nbsp;participle&nbsp;is&nbsp;an&nbsp;adjectival&nbsp;construct.<br>
+This&nbsp;GUI&nbsp;allows&nbsp;the&nbsp;user&nbsp;to&nbsp;adjust&nbsp;for&nbsp;participles<br>
+that&nbsp;do&nbsp;not&nbsp;have&nbsp;regular&nbsp;forms,&nbsp;some&nbsp;verbs&nbsp;do&nbsp;not&nbsp;have&nbsp;all&nbsp;the&nbsp;<br>
+varieties&nbsp;of&nbsp;participles.&nbsp;In&nbsp;particular,&nbsp;perfective<br>
+verbs&nbsp;do&nbsp;not&nbsp;have&nbsp;the&nbsp;present&nbsp;tense&nbsp;forms.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;To&nbsp;manage&nbsp;the&nbsp;participles&nbsp;the&nbsp;data&nbsp;is&nbsp;divided&nbsp;up&nbsp;into&nbsp;<br>
+four&nbsp;tenses&nbsp;and&nbsp;five&nbsp;genders&nbsp;as&nbsp;follows:<br>
+Genders:&nbsp;(0)&nbsp;Masculine&nbsp;Animate,&nbsp;(1)&nbsp;Masculine&nbsp;Inanimate,&nbsp;(2)&nbsp;Feminine,&nbsp;(3)&nbsp;Nueter,&nbsp;&nbsp;(4)&nbsp;Plural&nbsp;Animate,&nbsp;(5)&nbsp;Plural&nbsp;Inanimate<br>
+Tenses:&nbsp;(0)&nbsp;Present&nbsp;Active,&nbsp;(1)&nbsp;Present&nbsp;Passive,&nbsp;(2)&nbsp;Past&nbsp;Active,&nbsp;(3)&nbsp;Past&nbsp;Passive<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="partdecl.html#PartDecl">PartDecl</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="machinetrans.userinterfaces.ui_partdecl.html#Ui_PartDecl">machinetrans.userinterfaces.ui_partdecl.Ui_PartDecl</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="PartDecl-__init__"><strong>__init__</strong></a>(self, parent=None)</dt><dd><tt>Intialize&nbsp;the&nbsp;GUI&nbsp;create&nbsp;the&nbsp;data&nbsp;lists&nbsp;for&nbsp;the&nbsp;various<br>
+participial&nbsp;declensions&nbsp;and&nbsp;display&nbsp;the&nbsp;one&nbsp;for&nbsp;masculine<br>
+present&nbsp;active&nbsp;participles&nbsp;if&nbsp;the&nbsp;verb&nbsp;is&nbsp;imperfective.<br>
+and&nbsp;masculine&nbsp;past&nbsp;active&nbsp;participles&nbsp;if&nbsp;perfective.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-accept"><strong>accept</strong></a>(self)</dt><dd><tt>Gather&nbsp;the&nbsp;data&nbsp;from&nbsp;all&nbsp;the&nbsp;lists&nbsp;and&nbsp;create<br>
+a&nbsp;series&nbsp;of&nbsp;SQL&nbsp;commands&nbsp;to&nbsp;insert&nbsp;the&nbsp;data&nbsp;into<br>
+the&nbsp;database&nbsp;and&nbsp;close&nbsp;the&nbsp;GUI.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-addlist"><strong>addlist</strong></a>(self, sqlpart, partlist)</dt><dd><tt>Create&nbsp;a&nbsp;single&nbsp;SQL&nbsp;command&nbsp;to&nbsp;insert&nbsp;one&nbsp;line&nbsp;of&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-alter"><strong>alter</strong></a>(self)</dt><dd><tt>Propgate&nbsp;altered&nbsp;data&nbsp;to&nbsp;the&nbsp;various&nbsp;lists&nbsp;that&nbsp;are<br>
+effected&nbsp;by&nbsp;user&nbsp;input&nbsp;to&nbsp;the&nbsp;Line&nbsp;Editors.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-alterenglish"><strong>alterenglish</strong></a>(self)</dt><dd><tt>Alter&nbsp;the&nbsp;English&nbsp;data&nbsp;for&nbsp;a&nbsp;specific&nbsp;tense&nbsp;and&nbsp;gender.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-alterfem"><strong>alterfem</strong></a>(self)</dt><dd><tt>Alter&nbsp;the&nbsp;"feminine"&nbsp;data&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-altermascanim"><strong>altermascanim</strong></a>(self)</dt><dd><tt>Alter&nbsp;the&nbsp;"masculine&nbsp;animate"&nbsp;data&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-altermascinan"><strong>altermascinan</strong></a>(self)</dt><dd><tt>Alter&nbsp;the&nbsp;"masculine&nbsp;inanimate"&nbsp;data&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-alternuet"><strong>alternuet</strong></a>(self)</dt><dd><tt>Alter&nbsp;the&nbsp;"nueter"&nbsp;data&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-alterpluranim"><strong>alterpluranim</strong></a>(self)</dt><dd><tt>Alter&nbsp;the&nbsp;"plural&nbsp;animate"&nbsp;data&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-alterplurinan"><strong>alterplurinan</strong></a>(self)</dt><dd><tt>Alter&nbsp;the&nbsp;"plural&nbsp;inanimate"&nbsp;data&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-apostrophe"><strong>apostrophe</strong></a>(self, x)</dt></dl>
+
+<dl><dt><a name="PartDecl-back"><strong>back</strong></a>(self)</dt><dd><tt>Go&nbsp;back&nbsp;one&nbsp;page&nbsp;in&nbsp;the&nbsp;data&nbsp;entry&nbsp;process.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-blankform"><strong>blankform</strong></a>(self)</dt><dd><tt>Clear&nbsp;the&nbsp;&nbsp;Line&nbsp;Editors.&nbsp;&nbsp;<br>
+This&nbsp;is&nbsp;the&nbsp;result&nbsp;of&nbsp;a&nbsp;check&nbsp;box&nbsp;being&nbsp;unchecked.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-callgender"><strong>callgender</strong></a>(self)</dt><dd><tt>Calls&nbsp;the&nbsp;proper&nbsp;gender&nbsp;of&nbsp;participial&nbsp;declensions.<br>
+The&nbsp;tense&nbsp;must&nbsp;be&nbsp;selected&nbsp;before&nbsp;hand.<br>
+Also&nbsp;enable&nbsp;or&nbsp;disable&nbsp;the&nbsp;radio&nbsp;buttons<br>
+and&nbsp;declensions&nbsp;based&nbsp;upon&nbsp;which&nbsp;check&nbsp;boxes&nbsp;are&nbsp;selected.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-cancel"><strong>cancel</strong></a>(self)</dt><dd><tt>Cancel&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-changeeng"><strong>changeeng</strong></a>(self)</dt><dd><tt>Takes&nbsp;the&nbsp;value&nbsp;in&nbsp;the&nbsp;English&nbsp;line&nbsp;editor&nbsp;and&nbsp;distributes<br>
+it&nbsp;to&nbsp;all&nbsp;the&nbsp;values&nbsp;of&nbsp;the&nbsp;displayed&nbsp;tense&nbsp;for&nbsp;that&nbsp;participle.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-closeEvent"><strong>closeEvent</strong></a>(self, event)</dt><dd><tt>Close&nbsp;the&nbsp;GUI&nbsp;and&nbsp;pass&nbsp;along&nbsp;sizing&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-createdecl"><strong>createdecl</strong></a>(self)</dt><dd><tt>Create&nbsp;the&nbsp;declensions.<br>
+This&nbsp;is&nbsp;a&nbsp;seperate&nbsp;method&nbsp;because&nbsp;altering&nbsp;stem<br>
+and&nbsp;endings&nbsp;are&nbsp;allowed&nbsp;in&nbsp;this&nbsp;GUI.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-createfromdata"><strong>createfromdata</strong></a>(self)</dt><dd><tt>Used&nbsp;when&nbsp;browsing&nbsp;the&nbsp;pages.&nbsp;&nbsp;Ensures&nbsp;that&nbsp;any&nbsp;altered&nbsp;data&nbsp;is&nbsp;still&nbsp;the&nbsp;same&nbsp;on&nbsp;the&nbsp;screen.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-displayhelp"><strong>displayhelp</strong></a>(self)</dt><dd><tt>Display&nbsp;an&nbsp;HTML&nbsp;help&nbsp;page&nbsp;for&nbsp;this&nbsp;GUI.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-endchange"><strong>endchange</strong></a>(self)</dt><dd><tt>Record&nbsp;and&nbsp;propagate&nbsp;the&nbsp;change&nbsp;in&nbsp;an&nbsp;infix&nbsp;between&nbsp;the&nbsp;stem&nbsp;and&nbsp;the&nbsp;<br>
+adjectival&nbsp;endings.&nbsp;&nbsp;Works&nbsp;only&nbsp;on&nbsp;the&nbsp;tense&nbsp;displayed.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-english"><strong>english</strong></a>(self)</dt><dd><tt>Display&nbsp;the&nbsp;English&nbsp;translation<br>
+for&nbsp;the&nbsp;selected&nbsp;tense&nbsp;and&nbsp;gender&nbsp;of&nbsp;participle.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-extractval"><strong>extractval</strong></a>(self, item)</dt><dd><tt>Extract&nbsp;one&nbsp;item&nbsp;from&nbsp;a&nbsp;line&nbsp;of&nbsp;partconj&nbsp;with&nbsp;sorted&nbsp;keys.<br>
+The&nbsp;item&nbsp;that&nbsp;corresponds&nbsp;to&nbsp;"declension"&nbsp;is&nbsp;the&nbsp;declined&nbsp;participle.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-feminine"><strong>feminine</strong></a>(self)</dt><dd><tt>Fill&nbsp;the&nbsp;GUI&nbsp;with&nbsp;"feminine"&nbsp;information&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-fillform"><strong>fillform</strong></a>(self, verbdata)</dt><dd><tt>Add&nbsp;the&nbsp;declension&nbsp;data&nbsp;to&nbsp;the&nbsp;Line&nbsp;Editors.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-getlist"><strong>getlist</strong></a>(self, itemstr)</dt><dd><tt>Get&nbsp;an&nbsp;ordered&nbsp;list&nbsp;of&nbsp;conjugations&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;order&nbsp;of&nbsp;the<br>
+WordMorph&nbsp;class&nbsp;declension&nbsp;list&nbsp;by&nbsp;using&nbsp;that&nbsp;list&nbsp;to&nbsp;index&nbsp;the&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-masculineanim"><strong>masculineanim</strong></a>(self)</dt><dd><tt>Fill&nbsp;the&nbsp;GUI&nbsp;with&nbsp;"masculine&nbsp;animate"&nbsp;information&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-masculineinan"><strong>masculineinan</strong></a>(self)</dt><dd><tt>Fill&nbsp;the&nbsp;GUI&nbsp;with&nbsp;"masculine&nbsp;inanimate"&nbsp;information&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-nueter"><strong>nueter</strong></a>(self)</dt><dd><tt>Fill&nbsp;the&nbsp;GUI&nbsp;with&nbsp;"nueter"&nbsp;information&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-pa"><strong>pa</strong></a>(self)</dt><dd><tt>Present&nbsp;Active&nbsp;Participle&nbsp;tense&nbsp;selector.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-pasta"><strong>pasta</strong></a>(self)</dt><dd><tt>Past&nbsp;Active&nbsp;Participle&nbsp;tense&nbsp;selector.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-pastp"><strong>pastp</strong></a>(self)</dt><dd><tt>Past&nbsp;Passive&nbsp;Participle&nbsp;tense&nbsp;selector.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-pluralanim"><strong>pluralanim</strong></a>(self)</dt><dd><tt>Fill&nbsp;the&nbsp;GUI&nbsp;with&nbsp;"plural&nbsp;animate"&nbsp;information&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-pluralinan"><strong>pluralinan</strong></a>(self)</dt><dd><tt>Fill&nbsp;the&nbsp;GUI&nbsp;with&nbsp;"plural&nbsp;inanimate"&nbsp;information&nbsp;for&nbsp;the&nbsp;selected&nbsp;tense.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-pp"><strong>pp</strong></a>(self)</dt><dd><tt>Present&nbsp;Passive&nbsp;Participle&nbsp;tense&nbsp;selector.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-resizeEvent"><strong>resizeEvent</strong></a>(self, event)</dt><dd><tt>Resize&nbsp;the&nbsp;GUI&nbsp;and&nbsp;store&nbsp;sizing&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-stemchange"><strong>stemchange</strong></a>(self)</dt><dd><tt>Record&nbsp;and&nbsp;propagate&nbsp;a&nbsp;stem&nbsp;change&nbsp;from&nbsp;the&nbsp;Line&nbsp;Editor&nbsp;for&nbsp;the&nbsp;Russian&nbsp;stem.<br>
+This&nbsp;works&nbsp;only&nbsp;on&nbsp;the&nbsp;current&nbsp;tense&nbsp;displayed,&nbsp;except&nbsp;for&nbsp;the&nbsp;past&nbsp;tenses.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>conjlist</strong> = []</dl>
+
+<dl><dt><strong>endings</strong> = ['щ', '', 'вш', 'нн']</dl>
+
+<dl><dt><strong>enpartkeys</strong> = ('mascpresentactiveanim', 'mascpresentactiveinan', 'mascpastactiveanim', 'mascpastactiveinan', 'mascpresentpassiveanim', 'mascpresentpassiveinan', 'mascpastpassiveanim', 'mascpastpassiveinan', 'fempresentactive', 'fempastactive', 'fempresentpassive', 'fempastpassive', 'nuetpresentactive', 'nuetpastactive', 'nuetpresentpassive', 'nuetpastpassive', 'plurpresentactiveanim', 'plurpresentactiveinan', 'plurpastactiveanim', 'plurpastactiveinan', ...)</dl>
+
+<dl><dt><strong>enpartvals</strong> = {}</dl>
+
+<dl><dt><strong>enstr</strong> = ''</dl>
+
+<dl><dt><strong>fempastactive</strong> = []</dl>
+
+<dl><dt><strong>fempastpassive</strong> = []</dl>
+
+<dl><dt><strong>fempresentactive</strong> = []</dl>
+
+<dl><dt><strong>fempresentpassive</strong> = []</dl>
+
+<dl><dt><strong>firstpersonplural</strong> = ''</dl>
+
+<dl><dt><strong>gender</strong> = 0</dl>
+
+<dl><dt><strong>geometry</strong> = []</dl>
+
+<dl><dt><strong>height1</strong> = 0</dl>
+
+<dl><dt><strong>helpfile</strong> = '/usr/share/machinetrans/resources/partdecl.html'</dl>
+
+<dl><dt><strong>imperfective</strong> = True</dl>
+
+<dl><dt><strong>labeltext</strong> = ''</dl>
+
+<dl><dt><strong>mascpastactiveanim</strong> = []</dl>
+
+<dl><dt><strong>mascpastactiveinan</strong> = []</dl>
+
+<dl><dt><strong>mascpastpassiveanim</strong> = []</dl>
+
+<dl><dt><strong>mascpastpassiveinan</strong> = []</dl>
+
+<dl><dt><strong>mascpresentactiveanim</strong> = []</dl>
+
+<dl><dt><strong>mascpresentactiveinan</strong> = []</dl>
+
+<dl><dt><strong>mascpresentpassiveanim</strong> = []</dl>
+
+<dl><dt><strong>mascpresentpassiveinan</strong> = []</dl>
+
+<dl><dt><strong>morphs</strong> = None</dl>
+
+<dl><dt><strong>motion</strong> = False</dl>
+
+<dl><dt><strong>nuetpastactive</strong> = []</dl>
+
+<dl><dt><strong>nuetpastpassive</strong> = []</dl>
+
+<dl><dt><strong>nuetpresentactive</strong> = []</dl>
+
+<dl><dt><strong>nuetpresentpassive</strong> = []</dl>
+
+<dl><dt><strong>oneself</strong> = False</dl>
+
+<dl><dt><strong>parent</strong> = None</dl>
+
+<dl><dt><strong>partconj</strong> = {}</dl>
+
+<dl><dt><strong>plurpastactiveanim</strong> = []</dl>
+
+<dl><dt><strong>plurpastactiveinan</strong> = []</dl>
+
+<dl><dt><strong>plurpastpassiveanim</strong> = []</dl>
+
+<dl><dt><strong>plurpastpassiveinan</strong> = []</dl>
+
+<dl><dt><strong>plurpresentactiveanim</strong> = []</dl>
+
+<dl><dt><strong>plurpresentactiveinan</strong> = []</dl>
+
+<dl><dt><strong>plurpresentpassiveanim</strong> = []</dl>
+
+<dl><dt><strong>plurpresentpassiveinan</strong> = []</dl>
+
+<dl><dt><strong>reflexive</strong> = False</dl>
+
+<dl><dt><strong>rustr</strong> = ''</dl>
+
+<dl><dt><strong>sqlcommand</strong> = ''</dl>
+
+<dl><dt><strong>stem3</strong> = ''</dl>
+
+<dl><dt><strong>stem4</strong> = ''</dl>
+
+<dl><dt><strong>tense</strong> = 0</dl>
+
+<dl><dt><strong>thirdpersonplural</strong> = ''</dl>
+
+<dl><dt><strong>types</strong> = None</dl>
+
+<dl><dt><strong>used</strong> = False</dl>
+
+<dl><dt><strong>verblist</strong> = []</dl>
+
+<dl><dt><strong>vowels</strong> = ['a', 'e', 'i', 'o', 'u']</dl>
+
+<dl><dt><strong>width1</strong> = 0</dl>
+
+<dl><dt><strong>winx</strong> = 0</dl>
+
+<dl><dt><strong>winy</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<strong>accepted</strong> = &lt;unbound PYQT_SIGNAL accepted()&gt;
+<dl><dt><a name="PartDecl-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-done"><strong>done</strong></a>(...)</dt><dd><tt><a href="#PartDecl-done">done</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#PartDecl-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-exec"><strong>exec</strong></a>(...)</dt><dd><tt><a href="#PartDecl-exec">exec</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-exec_"><strong>exec_</strong></a>(...)</dt><dd><tt><a href="#PartDecl-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<strong>finished</strong> = &lt;unbound PYQT_SIGNAL finished(int)&gt;
+<dl><dt><a name="PartDecl-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-keyPressEvent">keyPressEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#PartDecl-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-open"><strong>open</strong></a>(...)</dt><dd><tt><a href="#PartDecl-open">open</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-reject"><strong>reject</strong></a>(...)</dt><dd><tt><a href="#PartDecl-reject">reject</a>(self)</tt></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound PYQT_SIGNAL rejected()&gt;
+<dl><dt><a name="PartDecl-result"><strong>result</strong></a>(...)</dt><dd><tt><a href="#PartDecl-result">result</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setModal"><strong>setModal</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setModal">setModal</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setResult"><strong>setResult</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setResult">setResult</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#PartDecl-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt5.QtWidgets.QDialog.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="PartDecl-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#PartDecl-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#PartDecl-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#PartDecl-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#PartDecl-actions">actions</a>(self)&nbsp;-&gt;&nbsp;List[QAction]</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#PartDecl-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#PartDecl-addAction">addAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#PartDecl-addActions">addActions</a>(self,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#PartDecl-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#PartDecl-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#PartDecl-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#PartDecl-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#PartDecl-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#PartDecl-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#PartDecl-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#PartDecl-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#PartDecl-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#PartDecl-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#PartDecl-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#PartDecl-create">create</a>(self,&nbsp;window:&nbsp;sip.voidptr&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><tt><a href="#PartDecl-createWindowContainer">createWindowContainer</a>(QWindow,&nbsp;parent:&nbsp;QWidget&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#PartDecl-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="PartDecl-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#PartDecl-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#PartDecl-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#PartDecl-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#PartDecl-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#PartDecl-find">find</a>(sip.voidptr)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#PartDecl-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#PartDecl-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-focusOutEvent">focusOutEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#PartDecl-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#PartDecl-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#PartDecl-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#PartDecl-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#PartDecl-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#PartDecl-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#PartDecl-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#PartDecl-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#PartDecl-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#PartDecl-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Union[Qt.GestureFlags,&nbsp;Qt.GestureFlag]&nbsp;=&nbsp;Qt.GestureFlags())</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#PartDecl-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#PartDecl-grabMouse">grabMouse</a>(self)<br>
+<a href="#PartDecl-grabMouse">grabMouse</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#PartDecl-grabShortcut">grabShortcut</a>(self,&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;str,&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#PartDecl-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#PartDecl-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#PartDecl-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#PartDecl-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#PartDecl-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)</dt><dd><tt><a href="#PartDecl-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#PartDecl-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#PartDecl-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#PartDecl-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#PartDecl-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#PartDecl-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#PartDecl-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#PartDecl-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#PartDecl-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#PartDecl-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#PartDecl-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#PartDecl-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#PartDecl-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#PartDecl-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#PartDecl-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#PartDecl-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#PartDecl-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#PartDecl-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#PartDecl-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#PartDecl-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#PartDecl-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-nativeEvent">nativeEvent</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#PartDecl-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#PartDecl-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#PartDecl-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#PartDecl-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#PartDecl-overrideWindowState">overrideWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#PartDecl-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#PartDecl-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#PartDecl-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#PartDecl-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#PartDecl-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#PartDecl-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#PartDecl-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#PartDecl-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#PartDecl-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#PartDecl-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#PartDecl-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#PartDecl-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#PartDecl-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))<br>
+<a href="#PartDecl-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#PartDecl-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#PartDecl-repaint">repaint</a>(self)<br>
+<a href="#PartDecl-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#PartDecl-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#PartDecl-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#PartDecl-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#PartDecl-restoreGeometry">restoreGeometry</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#PartDecl-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#PartDecl-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#PartDecl-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setAccessibleName">setAccessibleName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#PartDecl-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#PartDecl-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setCursor">setCursor</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#PartDecl-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setFocus">setFocus</a>(self)<br>
+<a href="#PartDecl-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#PartDecl-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Union[Qt.InputMethodHints,&nbsp;Qt.InputMethodHint])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#PartDecl-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#PartDecl-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#PartDecl-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#PartDecl-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#PartDecl-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#PartDecl-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setStatusTip">setStatusTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setStyleSheet">setStyleSheet</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setTabletTracking"><strong>setTabletTracking</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setTabletTracking">setTabletTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setToolTip">setToolTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWhatsThis">setWhatsThis</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowFlag"><strong>setWindowFlag</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowFlag">setWindowFlag</a>(self,&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowFlags">setWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowIconText">setWindowIconText</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowRole">setWindowRole</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowState">setWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setWindowTitle">setWindowTitle</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#PartDecl-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#PartDecl-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#PartDecl-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#PartDecl-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#PartDecl-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#PartDecl-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#PartDecl-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#PartDecl-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#PartDecl-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#PartDecl-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#PartDecl-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#PartDecl-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#PartDecl-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#PartDecl-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#PartDecl-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-toolTipDuration"><strong>toolTipDuration</strong></a>(...)</dt><dd><tt><a href="#PartDecl-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#PartDecl-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#PartDecl-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#PartDecl-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#PartDecl-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#PartDecl-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#PartDecl-update">update</a>(self)<br>
+<a href="#PartDecl-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#PartDecl-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#PartDecl-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#PartDecl-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#PartDecl-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#PartDecl-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#PartDecl-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#PartDecl-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#PartDecl-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#PartDecl-winId">winId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#PartDecl-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-windowHandle"><strong>windowHandle</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;QWindow</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="PartDecl-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="PartDecl-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="PartDecl-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#PartDecl-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#PartDecl-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#PartDecl-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlags'&gt;<dd><tt>QWidget.<a href="#PartDecl-RenderFlags">RenderFlags</a>()<br>
+QWidget.<a href="#PartDecl-RenderFlags">RenderFlags</a>(Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag])<br>
+QWidget.<a href="#PartDecl-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><a name="PartDecl-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#PartDecl-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#PartDecl-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#PartDecl-children">children</a>(self)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#PartDecl-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#PartDecl-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="PartDecl-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#PartDecl-disconnect">disconnect</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#PartDecl-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#PartDecl-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#PartDecl-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#PartDecl-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;List[QByteArray]</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#PartDecl-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject<br>
+<a href="#PartDecl-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#PartDecl-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#PartDecl-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#PartDecl-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#PartDecl-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#PartDecl-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#PartDecl-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#PartDecl-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#PartDecl-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#PartDecl-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#PartDecl-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#PartDecl-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#PartDecl-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#PartDecl-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="PartDecl-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#PartDecl-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#PartDecl-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#PartDecl-receivers">receivers</a>(self,&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#PartDecl-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#PartDecl-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#PartDecl-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setObjectName">setObjectName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#PartDecl-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;Any)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#PartDecl-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#PartDecl-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#PartDecl-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#PartDecl-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#PartDecl-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt5.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="PartDecl-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#PartDecl-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#PartDecl-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)</dt><dd><tt><a href="#PartDecl-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)</dt><dd><tt><a href="#PartDecl-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)</dt><dd><tt><a href="#PartDecl-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#PartDecl-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#PartDecl-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#PartDecl-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#PartDecl-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#PartDecl-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#PartDecl-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="PartDecl-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#PartDecl-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt5.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDevicePixelRatio</strong> = 11</dl>
+
+<dl><dt><strong>PdmDevicePixelRatioScaled</strong> = 12</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Static methods inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><a name="PartDecl-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="sip.html#wrappertype">sip.wrappertype</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="machinetrans.userinterfaces.ui_partdecl.html#Ui_PartDecl">machinetrans.userinterfaces.ui_partdecl.Ui_PartDecl</a>:<br>
+<dl><dt><a name="PartDecl-retranslateUi"><strong>retranslateUi</strong></a>(self, PartDecl)</dt></dl>
+
+<dl><dt><a name="PartDecl-setupUi"><strong>setupUi</strong></a>(self, PartDecl)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-QT_TRANSLATE_NOOP"><strong>QT_TRANSLATE_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP"><strong>QT_TR_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP">QT_TR_NOOP</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP_UTF8"><strong>QT_TR_NOOP_UTF8</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP_UTF8">QT_TR_NOOP_UTF8</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-Q_ARG"><strong>Q_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_ARG">Q_ARG</a>(object,&nbsp;object)&nbsp;-&gt;&nbsp;QGenericArgument</tt></dd></dl>
+ <dl><dt><a name="-Q_CLASSINFO"><strong>Q_CLASSINFO</strong></a>(...)</dt><dd><tt><a href="#-Q_CLASSINFO">Q_CLASSINFO</a>(str,&nbsp;str)</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUM"><strong>Q_ENUM</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUM">Q_ENUM</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUMS"><strong>Q_ENUMS</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUMS">Q_ENUMS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAG"><strong>Q_FLAG</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAG">Q_FLAG</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAGS"><strong>Q_FLAGS</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAGS">Q_FLAGS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_RETURN_ARG"><strong>Q_RETURN_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_RETURN_ARG">Q_RETURN_ARG</a>(object)&nbsp;-&gt;&nbsp;QGenericReturnArgument</tt></dd></dl>
+ <dl><dt><a name="-bin_"><strong>bin_</strong></a>(...)</dt><dd><tt><a href="#-bin_">bin_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-bom"><strong>bom</strong></a>(...)</dt><dd><tt><a href="#-bom">bom</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-center"><strong>center</strong></a>(...)</dt><dd><tt><a href="#-center">center</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-dec"><strong>dec</strong></a>(...)</dt><dd><tt><a href="#-dec">dec</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-endl"><strong>endl</strong></a>(...)</dt><dd><tt><a href="#-endl">endl</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-fixed"><strong>fixed</strong></a>(...)</dt><dd><tt><a href="#-fixed">fixed</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-flush"><strong>flush</strong></a>(...)</dt><dd><tt><a href="#-flush">flush</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcepoint"><strong>forcepoint</strong></a>(...)</dt><dd><tt><a href="#-forcepoint">forcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcesign"><strong>forcesign</strong></a>(...)</dt><dd><tt><a href="#-forcesign">forcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-hex_"><strong>hex_</strong></a>(...)</dt><dd><tt><a href="#-hex_">hex_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-left"><strong>left</strong></a>(...)</dt><dd><tt><a href="#-left">left</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasebase"><strong>lowercasebase</strong></a>(...)</dt><dd><tt><a href="#-lowercasebase">lowercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasedigits"><strong>lowercasedigits</strong></a>(...)</dt><dd><tt><a href="#-lowercasedigits">lowercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcepoint"><strong>noforcepoint</strong></a>(...)</dt><dd><tt><a href="#-noforcepoint">noforcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcesign"><strong>noforcesign</strong></a>(...)</dt><dd><tt><a href="#-noforcesign">noforcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noshowbase"><strong>noshowbase</strong></a>(...)</dt><dd><tt><a href="#-noshowbase">noshowbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-oct_"><strong>oct_</strong></a>(...)</dt><dd><tt><a href="#-oct_">oct_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-pyqtPickleProtocol"><strong>pyqtPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtPickleProtocol">pyqtPickleProtocol</a>()&nbsp;-&gt;&nbsp;Optional[int]</tt></dd></dl>
+ <dl><dt><a name="-pyqtRemoveInputHook"><strong>pyqtRemoveInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRemoveInputHook">pyqtRemoveInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtRestoreInputHook"><strong>pyqtRestoreInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRestoreInputHook">pyqtRestoreInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtSetPickleProtocol"><strong>pyqtSetPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtSetPickleProtocol">pyqtSetPickleProtocol</a>(Optional[int])</tt></dd></dl>
+ <dl><dt><a name="-pyqtSlot"><strong>pyqtSlot</strong></a>(...)</dt><dd><tt>@<a href="#-pyqtSlot">pyqtSlot</a>(*types,&nbsp;name:&nbsp;Optional[str],&nbsp;result:&nbsp;Optional[str])<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;decorator&nbsp;applied&nbsp;to&nbsp;Python&nbsp;methods&nbsp;of&nbsp;a&nbsp;QObject&nbsp;that&nbsp;marks&nbsp;them<br>
+as&nbsp;Qt&nbsp;slots.<br>
+The&nbsp;non-keyword&nbsp;arguments&nbsp;are&nbsp;the&nbsp;types&nbsp;of&nbsp;the&nbsp;slot&nbsp;arguments&nbsp;and&nbsp;each&nbsp;may<br>
+be&nbsp;a&nbsp;Python&nbsp;type&nbsp;object&nbsp;or&nbsp;a&nbsp;string&nbsp;specifying&nbsp;a&nbsp;C++&nbsp;type.<br>
+name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;slot&nbsp;and&nbsp;defaults&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method.<br>
+result&nbsp;is&nbsp;type&nbsp;of&nbsp;the&nbsp;value&nbsp;returned&nbsp;by&nbsp;the&nbsp;slot.</tt></dd></dl>
+ <dl><dt><a name="-qAbs"><strong>qAbs</strong></a>(...)</dt><dd><tt><a href="#-qAbs">qAbs</a>(float)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qAddPostRoutine"><strong>qAddPostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPostRoutine">qAddPostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAddPreRoutine"><strong>qAddPreRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPreRoutine">qAddPreRoutine</a>(Callable[[],&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAlpha"><strong>qAlpha</strong></a>(...)</dt><dd><tt><a href="#-qAlpha">qAlpha</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qAlpha">qAlpha</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qBlue"><strong>qBlue</strong></a>(...)</dt><dd><tt><a href="#-qBlue">qBlue</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qBlue">qBlue</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qChecksum"><strong>qChecksum</strong></a>(...)</dt><dd><tt><a href="#-qChecksum">qChecksum</a>(bytes)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qChecksum">qChecksum</a>(bytes,&nbsp;Qt.ChecksumType)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qCompress"><strong>qCompress</strong></a>(...)</dt><dd><tt><a href="#-qCompress">qCompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;compressionLevel:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qCritical"><strong>qCritical</strong></a>(...)</dt><dd><tt><a href="#-qCritical">qCritical</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDebug"><strong>qDebug</strong></a>(...)</dt><dd><tt><a href="#-qDebug">qDebug</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDrawBorderPixmap"><strong>qDrawBorderPixmap</strong></a>(...)</dt><dd><tt><a href="#-qDrawBorderPixmap">qDrawBorderPixmap</a>(QPainter,&nbsp;QRect,&nbsp;QMargins,&nbsp;QPixmap)</tt></dd></dl>
+ <dl><dt><a name="-qDrawPlainRect"><strong>qDrawPlainRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;QRect,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeLine"><strong>qDrawShadeLine</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)<br>
+<a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;QPoint,&nbsp;QPoint,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadePanel"><strong>qDrawShadePanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeRect"><strong>qDrawShadeRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinButton"><strong>qDrawWinButton</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinPanel"><strong>qDrawWinPanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qEnvironmentVariable"><strong>qEnvironmentVariable</strong></a>(...)</dt><dd><tt><a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str)&nbsp;-&gt;&nbsp;str<br>
+<a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qErrnoWarning"><strong>qErrnoWarning</strong></a>(...)</dt><dd><tt><a href="#-qErrnoWarning">qErrnoWarning</a>(int,&nbsp;str)<br>
+<a href="#-qErrnoWarning">qErrnoWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFatal"><strong>qFatal</strong></a>(...)</dt><dd><tt><a href="#-qFatal">qFatal</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFloatDistance"><strong>qFloatDistance</strong></a>(...)</dt><dd><tt><a href="#-qFloatDistance">qFloatDistance</a>(float,&nbsp;float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qFormatLogMessage"><strong>qFormatLogMessage</strong></a>(...)</dt><dd><tt><a href="#-qFormatLogMessage">qFormatLogMessage</a>(QtMsgType,&nbsp;QMessageLogContext,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qFuzzyCompare"><strong>qFuzzyCompare</strong></a>(...)</dt><dd><tt><a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix4x4,&nbsp;QMatrix4x4)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QQuaternion,&nbsp;QQuaternion)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QTransform,&nbsp;QTransform)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector2D,&nbsp;QVector2D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector3D,&nbsp;QVector3D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector4D,&nbsp;QVector4D)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qGray"><strong>qGray</strong></a>(...)</dt><dd><tt><a href="#-qGray">qGray</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGray">qGray</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qGreen"><strong>qGreen</strong></a>(...)</dt><dd><tt><a href="#-qGreen">qGreen</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGreen">qGreen</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qInf"><strong>qInf</strong></a>(...)</dt><dd><tt><a href="#-qInf">qInf</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qInfo"><strong>qInfo</strong></a>(...)</dt><dd><tt><a href="#-qInfo">qInfo</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qInstallMessageHandler"><strong>qInstallMessageHandler</strong></a>(...)</dt><dd><tt><a href="#-qInstallMessageHandler">qInstallMessageHandler</a>(Optional[Callable[[],&nbsp;None]])&nbsp;-&gt;&nbsp;Optional[Callable[[],&nbsp;None]]</tt></dd></dl>
+ <dl><dt><a name="-qIsFinite"><strong>qIsFinite</strong></a>(...)</dt><dd><tt><a href="#-qIsFinite">qIsFinite</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsGray"><strong>qIsGray</strong></a>(...)</dt><dd><tt><a href="#-qIsGray">qIsGray</a>(int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsInf"><strong>qIsInf</strong></a>(...)</dt><dd><tt><a href="#-qIsInf">qIsInf</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNaN"><strong>qIsNaN</strong></a>(...)</dt><dd><tt><a href="#-qIsNaN">qIsNaN</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNull"><strong>qIsNull</strong></a>(...)</dt><dd><tt><a href="#-qIsNull">qIsNull</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatAlpha"><strong>qPixelFormatAlpha</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatAlpha">qPixelFormatAlpha</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatCmyk"><strong>qPixelFormatCmyk</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatCmyk">qPixelFormatCmyk</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatGrayscale"><strong>qPixelFormatGrayscale</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatGrayscale">qPixelFormatGrayscale</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsl"><strong>qPixelFormatHsl</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsl">qPixelFormatHsl</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsv"><strong>qPixelFormatHsv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsv">qPixelFormatHsv</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatRgba"><strong>qPixelFormatRgba</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatRgba">qPixelFormatRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPixelFormat.AlphaUsage,&nbsp;QPixelFormat.AlphaPosition,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatYuv"><strong>qPixelFormatYuv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatYuv">qPixelFormatYuv</a>(QPixelFormat.YUVLayout,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedByte,&nbsp;byteOrder:&nbsp;QPixelFormat.ByteOrder&nbsp;=&nbsp;QPixelFormat.LittleEndian)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPremultiply"><strong>qPremultiply</strong></a>(...)</dt><dd><tt><a href="#-qPremultiply">qPremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qPremultiply">qPremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qQNaN"><strong>qQNaN</strong></a>(...)</dt><dd><tt><a href="#-qQNaN">qQNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qRed"><strong>qRed</strong></a>(...)</dt><dd><tt><a href="#-qRed">qRed</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qRed">qRed</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRegisterResourceData"><strong>qRegisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qRegisterResourceData">qRegisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qRemovePostRoutine"><strong>qRemovePostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qRemovePostRoutine">qRemovePostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qRgb"><strong>qRgb</strong></a>(...)</dt><dd><tt><a href="#-qRgb">qRgb</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba"><strong>qRgba</strong></a>(...)</dt><dd><tt><a href="#-qRgba">qRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba64"><strong>qRgba64</strong></a>(...)</dt><dd><tt><a href="#-qRgba64">qRgba64</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qRgba64">qRgba64</a>(int)&nbsp;-&gt;&nbsp;QRgba64</tt></dd></dl>
+ <dl><dt><a name="-qRound"><strong>qRound</strong></a>(...)</dt><dd><tt><a href="#-qRound">qRound</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRound64"><strong>qRound64</strong></a>(...)</dt><dd><tt><a href="#-qRound64">qRound64</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qSNaN"><strong>qSNaN</strong></a>(...)</dt><dd><tt><a href="#-qSNaN">qSNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qSetFieldWidth"><strong>qSetFieldWidth</strong></a>(...)</dt><dd><tt><a href="#-qSetFieldWidth">qSetFieldWidth</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetMessagePattern"><strong>qSetMessagePattern</strong></a>(...)</dt><dd><tt><a href="#-qSetMessagePattern">qSetMessagePattern</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qSetPadChar"><strong>qSetPadChar</strong></a>(...)</dt><dd><tt><a href="#-qSetPadChar">qSetPadChar</a>(str)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetRealNumberPrecision"><strong>qSetRealNumberPrecision</strong></a>(...)</dt><dd><tt><a href="#-qSetRealNumberPrecision">qSetRealNumberPrecision</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSharedBuild"><strong>qSharedBuild</strong></a>(...)</dt><dd><tt><a href="#-qSharedBuild">qSharedBuild</a>()&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qUncompress"><strong>qUncompress</strong></a>(...)</dt><dd><tt><a href="#-qUncompress">qUncompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qUnpremultiply"><strong>qUnpremultiply</strong></a>(...)</dt><dd><tt><a href="#-qUnpremultiply">qUnpremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qUnpremultiply">qUnpremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qUnregisterResourceData"><strong>qUnregisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qUnregisterResourceData">qUnregisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qVersion"><strong>qVersion</strong></a>(...)</dt><dd><tt><a href="#-qVersion">qVersion</a>()&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qWarning"><strong>qWarning</strong></a>(...)</dt><dd><tt><a href="#-qWarning">qWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qrand"><strong>qrand</strong></a>(...)</dt><dd><tt><a href="#-qrand">qrand</a>()&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qsrand"><strong>qsrand</strong></a>(...)</dt><dd><tt><a href="#-qsrand">qsrand</a>(int)</tt></dd></dl>
+ <dl><dt><a name="-qt_set_sequence_auto_mnemonic"><strong>qt_set_sequence_auto_mnemonic</strong></a>(...)</dt><dd><tt><a href="#-qt_set_sequence_auto_mnemonic">qt_set_sequence_auto_mnemonic</a>(bool)</tt></dd></dl>
+ <dl><dt><a name="-reset"><strong>reset</strong></a>(...)</dt><dd><tt><a href="#-reset">reset</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-right"><strong>right</strong></a>(...)</dt><dd><tt><a href="#-right">right</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-scientific"><strong>scientific</strong></a>(...)</dt><dd><tt><a href="#-scientific">scientific</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-showbase"><strong>showbase</strong></a>(...)</dt><dd><tt><a href="#-showbase">showbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasebase"><strong>uppercasebase</strong></a>(...)</dt><dd><tt><a href="#-uppercasebase">uppercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasedigits"><strong>uppercasedigits</strong></a>(...)</dt><dd><tt><a href="#-uppercasedigits">uppercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-ws"><strong>ws</strong></a>(...)</dt><dd><tt><a href="#-ws">ws</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>PYQT_CONFIGURATION</strong> = {'sip_flags': '-n sip -t WS_X11 -t Qt_5_11_3'}<br>
+<strong>PYQT_VERSION</strong> = 330499<br>
+<strong>PYQT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QT_VERSION</strong> = 330499<br>
+<strong>QT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QWIDGETSIZE_MAX</strong> = 16777215<br>
+<strong>QtCriticalMsg</strong> = 2<br>
+<strong>QtDebugMsg</strong> = 0<br>
+<strong>QtFatalMsg</strong> = 3<br>
+<strong>QtInfoMsg</strong> = 4<br>
+<strong>QtSystemMsg</strong> = 2<br>
+<strong>QtWarningMsg</strong> = 1<br>
+<strong>qApp</strong> = &lt;PyQt5.QtWidgets.QApplication object&gt;</td></tr></table>
+</body></html>

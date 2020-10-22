@@ -1,0 +1,1071 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module declentry</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>declentry</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/eberdeed/machinetrans-1.15/machinetrans/dataentry/declentry.py">/home/eberdeed/machinetrans-1.15/machinetrans/dataentry/declentry.py</a></font></td></tr></table>
+    <p><tt><a href="#DeclEntry">DeclEntry</a>:&nbsp;&nbsp;Machine&nbsp;Translation&nbsp;Data&nbsp;Entry&nbsp;--&nbsp;Russian&nbsp;Noun&nbsp;Declension.<br>
+Created&nbsp;By&nbsp;Edward&nbsp;Charles&nbsp;Eberle&nbsp;&lt;eberdeed@eberdeed.net&gt;<br>
+August&nbsp;1,&nbsp;2016,&nbsp;San&nbsp;Diego&nbsp;California&nbsp;United&nbsp;States&nbsp;of&nbsp;America</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>(<a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="declentry.html#DeclEntry">DeclEntry</a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_declentry.html#Ui_DeclEntry">machinetrans.userinterfaces.ui_declentry.Ui_DeclEntry</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="machinetrans.userinterfaces.ui_declentry.html#Ui_DeclEntry">machinetrans.userinterfaces.ui_declentry.Ui_DeclEntry</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="declentry.html#DeclEntry">DeclEntry</a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_declentry.html#Ui_DeclEntry">machinetrans.userinterfaces.ui_declentry.Ui_DeclEntry</a>)
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DeclEntry">class <strong>DeclEntry</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>, <a href="machinetrans.userinterfaces.ui_declentry.html#Ui_DeclEntry">machinetrans.userinterfaces.ui_declentry.Ui_DeclEntry</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DeclEntry">DeclEntry</a>(parent=None)<br>
+&nbsp;<br>
+A&nbsp;GUI&nbsp;to&nbsp;enter&nbsp;Russian&nbsp;noun&nbsp;declensions.<br>
+Uses&nbsp;data&nbsp;from&nbsp;the&nbsp;WordMorph&nbsp;class&nbsp;and&nbsp;uses&nbsp;<br>
+the&nbsp;WordParse&nbsp;class&nbsp;to&nbsp;determine&nbsp;noun&nbsp;gender<br>
+from&nbsp;the&nbsp;given&nbsp;noun.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="declentry.html#DeclEntry">DeclEntry</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a></dd>
+<dd><a href="sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a></dd>
+<dd><a href="sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="machinetrans.userinterfaces.ui_declentry.html#Ui_DeclEntry">machinetrans.userinterfaces.ui_declentry.Ui_DeclEntry</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DeclEntry-__init__"><strong>__init__</strong></a>(self, parent=None)</dt><dd><tt>Initialize&nbsp;the&nbsp;GUI&nbsp;and&nbsp;determine&nbsp;the&nbsp;gender&nbsp;of&nbsp;the&nbsp;noun<br>
+using&nbsp;the&nbsp;WordParse&nbsp;class.&nbsp;&nbsp;The&nbsp;drawtable&nbsp;method&nbsp;uses<br>
+the&nbsp;gender&nbsp;found&nbsp;to&nbsp;determine&nbsp;what&nbsp;to&nbsp;display&nbsp;and&nbsp;also<br>
+uses&nbsp;the&nbsp;DeclTable&nbsp;class&nbsp;to&nbsp;create&nbsp;the&nbsp;HTML&nbsp;code&nbsp;for<br>
+the&nbsp;table&nbsp;displayed.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-accept"><strong>accept</strong></a>(self)</dt><dd><tt>Gather&nbsp;the&nbsp;data&nbsp;and&nbsp;create&nbsp;an&nbsp;SQL&nbsp;command&nbsp;to&nbsp;insert&nbsp;it&nbsp;into&nbsp;the&nbsp;database.<br>
+Close&nbsp;the&nbsp;GUI.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-cancel"><strong>cancel</strong></a>(self)</dt><dd><tt>Cancel&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-chopend"><strong>chopend</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DeclEntry-closeEvent"><strong>closeEvent</strong></a>(self, event)</dt><dd><tt>Close&nbsp;the&nbsp;form&nbsp;and&nbsp;pass&nbsp;along&nbsp;GUI&nbsp;sizing&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-createobj"><strong>createobj</strong></a>(self)</dt><dd><tt>Create&nbsp;an&nbsp;HTML&nbsp;table&nbsp;of&nbsp;noun&nbsp;declensions.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-displayhelp"><strong>displayhelp</strong></a>(self)</dt><dd><tt>Display&nbsp;a&nbsp;help&nbsp;file&nbsp;in&nbsp;HTML&nbsp;format.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-finddecl"><strong>finddecl</strong></a>(self)</dt><dd><tt>Open&nbsp;a&nbsp;gui&nbsp;to&nbsp;choose&nbsp;the&nbsp;noun's&nbsp;declension.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-handlenums"><strong>handlenums</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DeclEntry-pluraltitle"><strong>pluraltitle</strong></a>(self)</dt><dd><tt>Display&nbsp;a&nbsp;title&nbsp;for&nbsp;a&nbsp;plural&nbsp;noun.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-resizeEvent"><strong>resizeEvent</strong></a>(self, event)</dt><dd><tt>Resize&nbsp;the&nbsp;GUI&nbsp;and&nbsp;store&nbsp;sizing&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-singulartitle"><strong>singulartitle</strong></a>(self)</dt><dd><tt>Display&nbsp;a&nbsp;title&nbsp;for&nbsp;a&nbsp;singular&nbsp;noun.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-updatestem"><strong>updatestem</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DeclEntry-wordlogic"><strong>wordlogic</strong></a>(self)</dt><dd><tt>Set&nbsp;up&nbsp;the&nbsp;HTML&nbsp;table&nbsp;of&nbsp;the&nbsp;currently&nbsp;selected&nbsp;declension.<br>
+Do&nbsp;some&nbsp;checking&nbsp;on&nbsp;the&nbsp;ending&nbsp;so&nbsp;the&nbsp;right&nbsp;one&nbsp;is&nbsp;selected<br>
+and&nbsp;displayed&nbsp;in&nbsp;the&nbsp;line&nbsp;editors&nbsp;below.<br>
+Fill&nbsp;out&nbsp;the&nbsp;GUI&nbsp;with&nbsp;the&nbsp;declension&nbsp;information.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>animated</strong> = False</dl>
+
+<dl><dt><strong>buttonstart</strong> = 5</dl>
+
+<dl><dt><strong>decllist</strong> = []</dl>
+
+<dl><dt><strong>declnum</strong> = 0</dl>
+
+<dl><dt><strong>decltype</strong> = 0</dl>
+
+<dl><dt><strong>ending</strong> = ''</dl>
+
+<dl><dt><strong>enstr</strong> = ''</dl>
+
+<dl><dt><strong>gencheck</strong> = False</dl>
+
+<dl><dt><strong>geometry</strong> = []</dl>
+
+<dl><dt><strong>height1</strong> = 0</dl>
+
+<dl><dt><strong>helpfile</strong> = '/usr/share/machinetrans/resources/declentry.html'</dl>
+
+<dl><dt><strong>instrumental</strong> = ''</dl>
+
+<dl><dt><strong>labeltext</strong> = ''</dl>
+
+<dl><dt><strong>morphs</strong> = None</dl>
+
+<dl><dt><strong>numbers</strong> = ('один', 'два', 'три', 'четыре')</dl>
+
+<dl><dt><strong>numeric</strong> = False</dl>
+
+<dl><dt><strong>oblique</strong> = ''</dl>
+
+<dl><dt><strong>otherdecl</strong> = -1</dl>
+
+<dl><dt><strong>parent</strong> = None</dl>
+
+<dl><dt><strong>parser</strong> = None</dl>
+
+<dl><dt><strong>penul</strong> = ''</dl>
+
+<dl><dt><strong>plural</strong> = False</dl>
+
+<dl><dt><strong>rustr</strong> = ''</dl>
+
+<dl><dt><strong>singgender</strong> = None</dl>
+
+<dl><dt><strong>stem</strong> = ''</dl>
+
+<dl><dt><strong>tableobj</strong> = []</dl>
+
+<dl><dt><strong>width1</strong> = 0</dl>
+
+<dl><dt><strong>winx</strong> = 0</dl>
+
+<dl><dt><strong>winy</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<strong>accepted</strong> = &lt;unbound PYQT_SIGNAL accepted()&gt;
+<dl><dt><a name="DeclEntry-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;QContextMenuEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-done"><strong>done</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-done">done</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-eventFilter">eventFilter</a>(self,&nbsp;QObject,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-exec"><strong>exec</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-exec">exec</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-exec_"><strong>exec_</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<strong>finished</strong> = &lt;unbound PYQT_SIGNAL finished(int)&gt;
+<dl><dt><a name="DeclEntry-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-keyPressEvent">keyPressEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-open"><strong>open</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-open">open</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-reject"><strong>reject</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-reject">reject</a>(self)</tt></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound PYQT_SIGNAL rejected()&gt;
+<dl><dt><a name="DeclEntry-result"><strong>result</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-result">result</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setModal"><strong>setModal</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setModal">setModal</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setResult"><strong>setResult</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setResult">setResult</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setVisible">setVisible</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-showEvent">showEvent</a>(self,&nbsp;QShowEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt5.QtWidgets.QDialog.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="DeclEntry-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-actionEvent">actionEvent</a>(self,&nbsp;QActionEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-actions"><strong>actions</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-actions">actions</a>(self)&nbsp;-&gt;&nbsp;List[QAction]</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-activateWindow">activateWindow</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-addAction"><strong>addAction</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-addAction">addAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-addActions"><strong>addActions</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-addActions">addActions</a>(self,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-adjustSize">adjustSize</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-changeEvent">changeEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-childAt"><strong>childAt</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-childAt">childAt</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QWidget<br>
+<a href="#DeclEntry-childAt">childAt</a>(self,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-clearFocus">clearFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-clearMask">clearMask</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-close"><strong>close</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-create"><strong>create</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-create">create</a>(self,&nbsp;window:&nbsp;sip.voidptr&nbsp;=&nbsp;0,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-createWindowContainer">createWindowContainer</a>(QWindow,&nbsp;parent:&nbsp;QWidget&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-cursor"><strong>cursor</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</tt></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="DeclEntry-destroy"><strong>destroy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-devType"><strong>devType</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;QDragEnterEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;QDragLeaveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;QDragMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-dropEvent">dropEvent</a>(self,&nbsp;QDropEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-ensurePolished">ensurePolished</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-enterEvent">enterEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-event"><strong>event</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-event">event</a>(self,&nbsp;QEvent)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-find"><strong>find</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-find">find</a>(sip.voidptr)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-focusInEvent">focusInEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-focusOutEvent">focusOutEvent</a>(self,&nbsp;QFocusEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-font"><strong>font</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;Tuple[int,&nbsp;int,&nbsp;int,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-grab"><strong>grab</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,0),QSize(-1,-1)))&nbsp;-&gt;&nbsp;QPixmap</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-grabGesture">grabGesture</a>(self,&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Union[Qt.GestureFlags,&nbsp;Qt.GestureFlag]&nbsp;=&nbsp;Qt.GestureFlags())</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-grabKeyboard">grabKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-grabMouse">grabMouse</a>(self)<br>
+<a href="#DeclEntry-grabMouse">grabMouse</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-grabShortcut">grabShortcut</a>(self,&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;str,&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;QGraphicsEffect</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;QGraphicsProxyWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-height"><strong>height</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-height">height</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-heightForWidth">heightForWidth</a>(self,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-hide"><strong>hide</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-hide">hide</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-hideEvent">hideEvent</a>(self,&nbsp;QHideEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-initPainter">initPainter</a>(self,&nbsp;QPainter)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;QInputMethodEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-insertAction">insertAction</a>(self,&nbsp;QAction,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-insertActions">insertActions</a>(self,&nbsp;QAction,&nbsp;Iterable[QAction])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isAncestorOf">isAncestorOf</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isEnabledTo">isEnabledTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isModal"><strong>isModal</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isVisibleTo">isVisibleTo</a>(self,&nbsp;QWidget)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;QKeyEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-layout"><strong>layout</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-layout">layout</a>(self)&nbsp;-&gt;&nbsp;QLayout</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-leaveEvent">leaveEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-locale"><strong>locale</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-lower"><strong>lower</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-lower">lower</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mapFrom">mapFrom</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mapFromParent">mapFromParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mapTo">mapTo</a>(self,&nbsp;QWidget,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mapToGlobal">mapToGlobal</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mapToParent">mapToParent</a>(self,&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mask"><strong>mask</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-metric"><strong>metric</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-metric">metric</a>(self,&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mousePressEvent">mousePressEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;QMouseEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-move"><strong>move</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-move">move</a>(self,&nbsp;QPoint)<br>
+<a href="#DeclEntry-move">move</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-moveEvent">moveEvent</a>(self,&nbsp;QMoveEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-nativeEvent">nativeEvent</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;sip.voidptr)&nbsp;-&gt;&nbsp;Tuple[bool,&nbsp;int]</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-overrideWindowState">overrideWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;QPaintEngine</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-paintEvent">paintEvent</a>(self,&nbsp;QPaintEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-palette"><strong>palette</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-pos"><strong>pos</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-raise_"><strong>raise_</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-raise_">raise_</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-rect"><strong>rect</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-releaseKeyboard">releaseKeyboard</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-releaseMouse">releaseMouse</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-releaseShortcut">releaseShortcut</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-removeAction">removeAction</a>(self,&nbsp;QAction)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-render"><strong>render</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-render">render</a>(self,&nbsp;QPaintDevice,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#DeclEntry-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))<br>
+<a href="#DeclEntry-render">render</a>(self,&nbsp;QPainter,&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#DeclEntry-RenderFlags">RenderFlags</a>(QWidget.DrawWindowBackground|QWidget.DrawChildren))</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-repaint"><strong>repaint</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-repaint">repaint</a>(self)<br>
+<a href="#DeclEntry-repaint">repaint</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#DeclEntry-repaint">repaint</a>(self,&nbsp;QRect)<br>
+<a href="#DeclEntry-repaint">repaint</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-resize"><strong>resize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-resize">resize</a>(self,&nbsp;QSize)<br>
+<a href="#DeclEntry-resize">resize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-restoreGeometry">restoreGeometry</a>(self,&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-scroll"><strong>scroll</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-scroll">scroll</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DeclEntry-scroll">scroll</a>(self,&nbsp;int,&nbsp;int,&nbsp;QRect)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setAccessibleName">setAccessibleName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setAttribute">setAttribute</a>(self,&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setBaseSize">setBaseSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DeclEntry-setBaseSize">setBaseSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setContentsMargins">setContentsMargins</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)<br>
+<a href="#DeclEntry-setContentsMargins">setContentsMargins</a>(self,&nbsp;QMargins)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;Qt.ContextMenuPolicy)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setCursor">setCursor</a>(self,&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setDisabled">setDisabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setEnabled">setEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setFixedHeight">setFixedHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setFixedSize">setFixedSize</a>(self,&nbsp;QSize)<br>
+<a href="#DeclEntry-setFixedSize">setFixedSize</a>(self,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setFixedWidth">setFixedWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setFocus">setFocus</a>(self)<br>
+<a href="#DeclEntry-setFocus">setFocus</a>(self,&nbsp;Qt.FocusReason)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;Qt.FocusPolicy)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setFocusProxy">setFocusProxy</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setFont"><strong>setFont</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setFont">setFont</a>(self,&nbsp;QFont)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setForegroundRole">setForegroundRole</a>(self,&nbsp;QPalette.ColorRole)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setGeometry">setGeometry</a>(self,&nbsp;QRect)<br>
+<a href="#DeclEntry-setGeometry">setGeometry</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;QGraphicsEffect)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setHidden">setHidden</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;Union[Qt.InputMethodHints,&nbsp;Qt.InputMethodHint])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setLayout">setLayout</a>(self,&nbsp;QLayout)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;Qt.LayoutDirection)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setLocale">setLocale</a>(self,&nbsp;QLocale)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setMask"><strong>setMask</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setMask">setMask</a>(self,&nbsp;QBitmap)<br>
+<a href="#DeclEntry-setMask">setMask</a>(self,&nbsp;QRegion)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setMaximumSize">setMaximumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DeclEntry-setMaximumSize">setMaximumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setMinimumSize">setMinimumSize</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DeclEntry-setMinimumSize">setMinimumSize</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setMouseTracking">setMouseTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setPalette">setPalette</a>(self,&nbsp;QPalette)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setParent"><strong>setParent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setParent">setParent</a>(self,&nbsp;QWidget)<br>
+<a href="#DeclEntry-setParent">setParent</a>(self,&nbsp;QWidget,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;int,&nbsp;int)<br>
+<a href="#DeclEntry-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;QSize)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy)<br>
+<a href="#DeclEntry-setSizePolicy">setSizePolicy</a>(self,&nbsp;QSizePolicy.Policy,&nbsp;QSizePolicy.Policy)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setStatusTip">setStatusTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setStyle">setStyle</a>(self,&nbsp;QStyle)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setStyleSheet">setStyleSheet</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setTabOrder">setTabOrder</a>(QWidget,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setTabletTracking"><strong>setTabletTracking</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setTabletTracking">setTabletTracking</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setToolTip">setToolTip</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWhatsThis">setWhatsThis</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowFlag"><strong>setWindowFlag</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowFlag">setWindowFlag</a>(self,&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowFlags">setWindowFlags</a>(self,&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowIcon">setWindowIcon</a>(self,&nbsp;QIcon)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowIconText">setWindowIconText</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowModality">setWindowModality</a>(self,&nbsp;Qt.WindowModality)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowModified">setWindowModified</a>(self,&nbsp;bool)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;float)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowRole">setWindowRole</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowState">setWindowState</a>(self,&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setWindowTitle">setWindowTitle</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;QPainter</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-show"><strong>show</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-show">show</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-showFullScreen">showFullScreen</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-showMaximized">showMaximized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-showMinimized">showMinimized</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-showNormal">showNormal</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-size"><strong>size</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-stackUnder">stackUnder</a>(self,&nbsp;QWidget)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-style"><strong>style</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-style">style</a>(self)&nbsp;-&gt;&nbsp;QStyle</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-tabletEvent">tabletEvent</a>(self,&nbsp;QTabletEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-testAttribute">testAttribute</a>(self,&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-toolTipDuration"><strong>toolTipDuration</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-ungrabGesture">ungrabGesture</a>(self,&nbsp;Qt.GestureType)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-unsetCursor">unsetCursor</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-unsetLayoutDirection">unsetLayoutDirection</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-unsetLocale">unsetLocale</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-update"><strong>update</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-update">update</a>(self)<br>
+<a href="#DeclEntry-update">update</a>(self,&nbsp;QRect)<br>
+<a href="#DeclEntry-update">update</a>(self,&nbsp;QRegion)<br>
+<a href="#DeclEntry-update">update</a>(self,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-updateGeometry">updateGeometry</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-updateMicroFocus">updateMicroFocus</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-wheelEvent">wheelEvent</a>(self,&nbsp;QWheelEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-width"><strong>width</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-width">width</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-winId"><strong>winId</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-winId">winId</a>(self)&nbsp;-&gt;&nbsp;sip.voidptr</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-window"><strong>window</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-window">window</a>(self)&nbsp;-&gt;&nbsp;QWidget</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-windowHandle"><strong>windowHandle</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;QWindow</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</tt></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="DeclEntry-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="DeclEntry-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-windowState"><strong>windowState</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="DeclEntry-windowType"><strong>windowType</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-x"><strong>x</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-x">x</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-y"><strong>y</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-y">y</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlags'&gt;<dd><tt>QWidget.<a href="#DeclEntry-RenderFlags">RenderFlags</a>()<br>
+QWidget.<a href="#DeclEntry-RenderFlags">RenderFlags</a>(Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag])<br>
+QWidget.<a href="#DeclEntry-RenderFlags">RenderFlags</a>(QWidget.RenderFlags)</tt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><a name="DeclEntry-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-__getattr__">__getattr__</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;object</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-blockSignals">blockSignals</a>(self,&nbsp;bool)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-childEvent">childEvent</a>(self,&nbsp;QChildEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-children"><strong>children</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-children">children</a>(self)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-connectNotify">connectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-customEvent">customEvent</a>(self,&nbsp;QEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-deleteLater">deleteLater</a>(self)</tt></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="DeclEntry-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-disconnect">disconnect</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-disconnectNotify">disconnectNotify</a>(self,&nbsp;QMetaMethod)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-dumpObjectInfo">dumpObjectInfo</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-dumpObjectTree">dumpObjectTree</a>(self)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;List[QByteArray]</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-findChild"><strong>findChild</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-findChild">findChild</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject<br>
+<a href="#DeclEntry-findChild">findChild</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DeclEntry-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;name:&nbsp;str&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DeclEntry-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DeclEntry-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DeclEntry-findChildren">findChildren</a>(self,&nbsp;type,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]<br>
+<a href="#DeclEntry-findChildren">findChildren</a>(self,&nbsp;Tuple,&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;List[QObject]</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-inherits"><strong>inherits</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-inherits">inherits</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-installEventFilter">installEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isSignalConnected">isSignalConnected</a>(self,&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-killTimer">killTimer</a>(self,&nbsp;int)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;QMetaObject</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-moveToThread">moveToThread</a>(self,&nbsp;QThread)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-objectName"><strong>objectName</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="DeclEntry-property"><strong>property</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-property">property</a>(self,&nbsp;str)&nbsp;-&gt;&nbsp;Any</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><tt>QObject.<a href="#DeclEntry-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-receivers"><strong>receivers</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-receivers">receivers</a>(self,&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-removeEventFilter">removeEventFilter</a>(self,&nbsp;QObject)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-sender"><strong>sender</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-sender">sender</a>(self)&nbsp;-&gt;&nbsp;QObject</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setObjectName">setObjectName</a>(self,&nbsp;str)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-setProperty">setProperty</a>(self,&nbsp;str,&nbsp;Any)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-startTimer">startTimer</a>(self,&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-thread"><strong>thread</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-thread">thread</a>(self)&nbsp;-&gt;&nbsp;QThread</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-timerEvent">timerEvent</a>(self,&nbsp;QTimerEvent)</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-tr"><strong>tr</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-tr">tr</a>(self,&nbsp;str,&nbsp;disambiguation:&nbsp;str&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt5.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="DeclEntry-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-depth"><strong>depth</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<dl><dt><a name="DeclEntry-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><tt><a href="#DeclEntry-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt5.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDevicePixelRatio</strong> = 11</dl>
+
+<dl><dt><strong>PdmDevicePixelRatioScaled</strong> = 12</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Static methods inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><a name="DeclEntry-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="sip.html#wrappertype">sip.wrappertype</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<hr>
+Methods inherited from <a href="machinetrans.userinterfaces.ui_declentry.html#Ui_DeclEntry">machinetrans.userinterfaces.ui_declentry.Ui_DeclEntry</a>:<br>
+<dl><dt><a name="DeclEntry-retranslateUi"><strong>retranslateUi</strong></a>(self, DeclEntry)</dt></dl>
+
+<dl><dt><a name="DeclEntry-setupUi"><strong>setupUi</strong></a>(self, DeclEntry)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-QT_TRANSLATE_NOOP"><strong>QT_TRANSLATE_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP"><strong>QT_TR_NOOP</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP">QT_TR_NOOP</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-QT_TR_NOOP_UTF8"><strong>QT_TR_NOOP_UTF8</strong></a>(...)</dt><dd><tt><a href="#-QT_TR_NOOP_UTF8">QT_TR_NOOP_UTF8</a>(str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-Q_ARG"><strong>Q_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_ARG">Q_ARG</a>(object,&nbsp;object)&nbsp;-&gt;&nbsp;QGenericArgument</tt></dd></dl>
+ <dl><dt><a name="-Q_CLASSINFO"><strong>Q_CLASSINFO</strong></a>(...)</dt><dd><tt><a href="#-Q_CLASSINFO">Q_CLASSINFO</a>(str,&nbsp;str)</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUM"><strong>Q_ENUM</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUM">Q_ENUM</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_ENUMS"><strong>Q_ENUMS</strong></a>(...)</dt><dd><tt><a href="#-Q_ENUMS">Q_ENUMS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAG"><strong>Q_FLAG</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAG">Q_FLAG</a>(Union[type,&nbsp;enum.Enum])</tt></dd></dl>
+ <dl><dt><a name="-Q_FLAGS"><strong>Q_FLAGS</strong></a>(...)</dt><dd><tt><a href="#-Q_FLAGS">Q_FLAGS</a>(*)</tt></dd></dl>
+ <dl><dt><a name="-Q_RETURN_ARG"><strong>Q_RETURN_ARG</strong></a>(...)</dt><dd><tt><a href="#-Q_RETURN_ARG">Q_RETURN_ARG</a>(object)&nbsp;-&gt;&nbsp;QGenericReturnArgument</tt></dd></dl>
+ <dl><dt><a name="-bin_"><strong>bin_</strong></a>(...)</dt><dd><tt><a href="#-bin_">bin_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-bom"><strong>bom</strong></a>(...)</dt><dd><tt><a href="#-bom">bom</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-center"><strong>center</strong></a>(...)</dt><dd><tt><a href="#-center">center</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-dec"><strong>dec</strong></a>(...)</dt><dd><tt><a href="#-dec">dec</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-endl"><strong>endl</strong></a>(...)</dt><dd><tt><a href="#-endl">endl</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-fixed"><strong>fixed</strong></a>(...)</dt><dd><tt><a href="#-fixed">fixed</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-flush"><strong>flush</strong></a>(...)</dt><dd><tt><a href="#-flush">flush</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcepoint"><strong>forcepoint</strong></a>(...)</dt><dd><tt><a href="#-forcepoint">forcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-forcesign"><strong>forcesign</strong></a>(...)</dt><dd><tt><a href="#-forcesign">forcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-hex_"><strong>hex_</strong></a>(...)</dt><dd><tt><a href="#-hex_">hex_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-left"><strong>left</strong></a>(...)</dt><dd><tt><a href="#-left">left</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasebase"><strong>lowercasebase</strong></a>(...)</dt><dd><tt><a href="#-lowercasebase">lowercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-lowercasedigits"><strong>lowercasedigits</strong></a>(...)</dt><dd><tt><a href="#-lowercasedigits">lowercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcepoint"><strong>noforcepoint</strong></a>(...)</dt><dd><tt><a href="#-noforcepoint">noforcepoint</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noforcesign"><strong>noforcesign</strong></a>(...)</dt><dd><tt><a href="#-noforcesign">noforcesign</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-noshowbase"><strong>noshowbase</strong></a>(...)</dt><dd><tt><a href="#-noshowbase">noshowbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-oct_"><strong>oct_</strong></a>(...)</dt><dd><tt><a href="#-oct_">oct_</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-pyqtPickleProtocol"><strong>pyqtPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtPickleProtocol">pyqtPickleProtocol</a>()&nbsp;-&gt;&nbsp;Optional[int]</tt></dd></dl>
+ <dl><dt><a name="-pyqtRemoveInputHook"><strong>pyqtRemoveInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRemoveInputHook">pyqtRemoveInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtRestoreInputHook"><strong>pyqtRestoreInputHook</strong></a>(...)</dt><dd><tt><a href="#-pyqtRestoreInputHook">pyqtRestoreInputHook</a>()</tt></dd></dl>
+ <dl><dt><a name="-pyqtSetPickleProtocol"><strong>pyqtSetPickleProtocol</strong></a>(...)</dt><dd><tt><a href="#-pyqtSetPickleProtocol">pyqtSetPickleProtocol</a>(Optional[int])</tt></dd></dl>
+ <dl><dt><a name="-pyqtSlot"><strong>pyqtSlot</strong></a>(...)</dt><dd><tt>@<a href="#-pyqtSlot">pyqtSlot</a>(*types,&nbsp;name:&nbsp;Optional[str],&nbsp;result:&nbsp;Optional[str])<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;a&nbsp;decorator&nbsp;applied&nbsp;to&nbsp;Python&nbsp;methods&nbsp;of&nbsp;a&nbsp;QObject&nbsp;that&nbsp;marks&nbsp;them<br>
+as&nbsp;Qt&nbsp;slots.<br>
+The&nbsp;non-keyword&nbsp;arguments&nbsp;are&nbsp;the&nbsp;types&nbsp;of&nbsp;the&nbsp;slot&nbsp;arguments&nbsp;and&nbsp;each&nbsp;may<br>
+be&nbsp;a&nbsp;Python&nbsp;type&nbsp;object&nbsp;or&nbsp;a&nbsp;string&nbsp;specifying&nbsp;a&nbsp;C++&nbsp;type.<br>
+name&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;slot&nbsp;and&nbsp;defaults&nbsp;to&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;method.<br>
+result&nbsp;is&nbsp;type&nbsp;of&nbsp;the&nbsp;value&nbsp;returned&nbsp;by&nbsp;the&nbsp;slot.</tt></dd></dl>
+ <dl><dt><a name="-qAbs"><strong>qAbs</strong></a>(...)</dt><dd><tt><a href="#-qAbs">qAbs</a>(float)&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qAddPostRoutine"><strong>qAddPostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPostRoutine">qAddPostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAddPreRoutine"><strong>qAddPreRoutine</strong></a>(...)</dt><dd><tt><a href="#-qAddPreRoutine">qAddPreRoutine</a>(Callable[[],&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qAlpha"><strong>qAlpha</strong></a>(...)</dt><dd><tt><a href="#-qAlpha">qAlpha</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qAlpha">qAlpha</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qBlue"><strong>qBlue</strong></a>(...)</dt><dd><tt><a href="#-qBlue">qBlue</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qBlue">qBlue</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qChecksum"><strong>qChecksum</strong></a>(...)</dt><dd><tt><a href="#-qChecksum">qChecksum</a>(bytes)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qChecksum">qChecksum</a>(bytes,&nbsp;Qt.ChecksumType)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qCompress"><strong>qCompress</strong></a>(...)</dt><dd><tt><a href="#-qCompress">qCompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;compressionLevel:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qCritical"><strong>qCritical</strong></a>(...)</dt><dd><tt><a href="#-qCritical">qCritical</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDebug"><strong>qDebug</strong></a>(...)</dt><dd><tt><a href="#-qDebug">qDebug</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qDrawBorderPixmap"><strong>qDrawBorderPixmap</strong></a>(...)</dt><dd><tt><a href="#-qDrawBorderPixmap">qDrawBorderPixmap</a>(QPainter,&nbsp;QRect,&nbsp;QMargins,&nbsp;QPixmap)</tt></dd></dl>
+ <dl><dt><a name="-qDrawPlainRect"><strong>qDrawPlainRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawPlainRect">qDrawPlainRect</a>(QPainter,&nbsp;QRect,&nbsp;Union[QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient],&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeLine"><strong>qDrawShadeLine</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)<br>
+<a href="#-qDrawShadeLine">qDrawShadeLine</a>(QPainter,&nbsp;QPoint,&nbsp;QPoint,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadePanel"><strong>qDrawShadePanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadePanel">qDrawShadePanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawShadeRect"><strong>qDrawShadeRect</strong></a>(...)</dt><dd><tt><a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawShadeRect">qDrawShadeRect</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;lineWidth:&nbsp;int&nbsp;=&nbsp;1,&nbsp;midLineWidth:&nbsp;int&nbsp;=&nbsp;0,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinButton"><strong>qDrawWinButton</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinButton">qDrawWinButton</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qDrawWinPanel"><strong>qDrawWinPanel</strong></a>(...)</dt><dd><tt><a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)<br>
+<a href="#-qDrawWinPanel">qDrawWinPanel</a>(QPainter,&nbsp;QRect,&nbsp;QPalette,&nbsp;sunken:&nbsp;bool&nbsp;=&nbsp;False,&nbsp;fill:&nbsp;Union[QBrush,&nbsp;QColor,&nbsp;Qt.GlobalColor,&nbsp;QGradient]&nbsp;=&nbsp;None)</tt></dd></dl>
+ <dl><dt><a name="-qEnvironmentVariable"><strong>qEnvironmentVariable</strong></a>(...)</dt><dd><tt><a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str)&nbsp;-&gt;&nbsp;str<br>
+<a href="#-qEnvironmentVariable">qEnvironmentVariable</a>(str,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qErrnoWarning"><strong>qErrnoWarning</strong></a>(...)</dt><dd><tt><a href="#-qErrnoWarning">qErrnoWarning</a>(int,&nbsp;str)<br>
+<a href="#-qErrnoWarning">qErrnoWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFatal"><strong>qFatal</strong></a>(...)</dt><dd><tt><a href="#-qFatal">qFatal</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qFloatDistance"><strong>qFloatDistance</strong></a>(...)</dt><dd><tt><a href="#-qFloatDistance">qFloatDistance</a>(float,&nbsp;float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qFormatLogMessage"><strong>qFormatLogMessage</strong></a>(...)</dt><dd><tt><a href="#-qFormatLogMessage">qFormatLogMessage</a>(QtMsgType,&nbsp;QMessageLogContext,&nbsp;str)&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qFuzzyCompare"><strong>qFuzzyCompare</strong></a>(...)</dt><dd><tt><a href="#-qFuzzyCompare">qFuzzyCompare</a>(QMatrix4x4,&nbsp;QMatrix4x4)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QQuaternion,&nbsp;QQuaternion)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QTransform,&nbsp;QTransform)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector2D,&nbsp;QVector2D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector3D,&nbsp;QVector3D)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#-qFuzzyCompare">qFuzzyCompare</a>(QVector4D,&nbsp;QVector4D)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qGray"><strong>qGray</strong></a>(...)</dt><dd><tt><a href="#-qGray">qGray</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGray">qGray</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qGreen"><strong>qGreen</strong></a>(...)</dt><dd><tt><a href="#-qGreen">qGreen</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qGreen">qGreen</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qInf"><strong>qInf</strong></a>(...)</dt><dd><tt><a href="#-qInf">qInf</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qInfo"><strong>qInfo</strong></a>(...)</dt><dd><tt><a href="#-qInfo">qInfo</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qInstallMessageHandler"><strong>qInstallMessageHandler</strong></a>(...)</dt><dd><tt><a href="#-qInstallMessageHandler">qInstallMessageHandler</a>(Optional[Callable[[],&nbsp;None]])&nbsp;-&gt;&nbsp;Optional[Callable[[],&nbsp;None]]</tt></dd></dl>
+ <dl><dt><a name="-qIsFinite"><strong>qIsFinite</strong></a>(...)</dt><dd><tt><a href="#-qIsFinite">qIsFinite</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsGray"><strong>qIsGray</strong></a>(...)</dt><dd><tt><a href="#-qIsGray">qIsGray</a>(int)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsInf"><strong>qIsInf</strong></a>(...)</dt><dd><tt><a href="#-qIsInf">qIsInf</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNaN"><strong>qIsNaN</strong></a>(...)</dt><dd><tt><a href="#-qIsNaN">qIsNaN</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qIsNull"><strong>qIsNull</strong></a>(...)</dt><dd><tt><a href="#-qIsNull">qIsNull</a>(float)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatAlpha"><strong>qPixelFormatAlpha</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatAlpha">qPixelFormatAlpha</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatCmyk"><strong>qPixelFormatCmyk</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatCmyk">qPixelFormatCmyk</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatGrayscale"><strong>qPixelFormatGrayscale</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatGrayscale">qPixelFormatGrayscale</a>(int,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsl"><strong>qPixelFormatHsl</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsl">qPixelFormatHsl</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatHsv"><strong>qPixelFormatHsv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatHsv">qPixelFormatHsv</a>(int,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.FloatingPoint)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatRgba"><strong>qPixelFormatRgba</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatRgba">qPixelFormatRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int,&nbsp;QPixelFormat.AlphaUsage,&nbsp;QPixelFormat.AlphaPosition,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedInteger)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPixelFormatYuv"><strong>qPixelFormatYuv</strong></a>(...)</dt><dd><tt><a href="#-qPixelFormatYuv">qPixelFormatYuv</a>(QPixelFormat.YUVLayout,&nbsp;alphaSize:&nbsp;int&nbsp;=&nbsp;0,&nbsp;alphaUsage:&nbsp;QPixelFormat.AlphaUsage&nbsp;=&nbsp;QPixelFormat.IgnoresAlpha,&nbsp;alphaPosition:&nbsp;QPixelFormat.AlphaPosition&nbsp;=&nbsp;QPixelFormat.AtBeginning,&nbsp;premultiplied:&nbsp;QPixelFormat.AlphaPremultiplied&nbsp;=&nbsp;QPixelFormat.NotPremultiplied,&nbsp;typeInterpretation:&nbsp;QPixelFormat.TypeInterpretation&nbsp;=&nbsp;QPixelFormat.UnsignedByte,&nbsp;byteOrder:&nbsp;QPixelFormat.ByteOrder&nbsp;=&nbsp;QPixelFormat.LittleEndian)&nbsp;-&gt;&nbsp;QPixelFormat</tt></dd></dl>
+ <dl><dt><a name="-qPremultiply"><strong>qPremultiply</strong></a>(...)</dt><dd><tt><a href="#-qPremultiply">qPremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qPremultiply">qPremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qQNaN"><strong>qQNaN</strong></a>(...)</dt><dd><tt><a href="#-qQNaN">qQNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qRed"><strong>qRed</strong></a>(...)</dt><dd><tt><a href="#-qRed">qRed</a>(QRgba64)&nbsp;-&gt;&nbsp;int<br>
+<a href="#-qRed">qRed</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRegisterResourceData"><strong>qRegisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qRegisterResourceData">qRegisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qRemovePostRoutine"><strong>qRemovePostRoutine</strong></a>(...)</dt><dd><tt><a href="#-qRemovePostRoutine">qRemovePostRoutine</a>(Callable[...,&nbsp;None])</tt></dd></dl>
+ <dl><dt><a name="-qRgb"><strong>qRgb</strong></a>(...)</dt><dd><tt><a href="#-qRgb">qRgb</a>(int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba"><strong>qRgba</strong></a>(...)</dt><dd><tt><a href="#-qRgba">qRgba</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRgba64"><strong>qRgba64</strong></a>(...)</dt><dd><tt><a href="#-qRgba64">qRgba64</a>(int,&nbsp;int,&nbsp;int,&nbsp;int)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qRgba64">qRgba64</a>(int)&nbsp;-&gt;&nbsp;QRgba64</tt></dd></dl>
+ <dl><dt><a name="-qRound"><strong>qRound</strong></a>(...)</dt><dd><tt><a href="#-qRound">qRound</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qRound64"><strong>qRound64</strong></a>(...)</dt><dd><tt><a href="#-qRound64">qRound64</a>(float)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qSNaN"><strong>qSNaN</strong></a>(...)</dt><dd><tt><a href="#-qSNaN">qSNaN</a>()&nbsp;-&gt;&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-qSetFieldWidth"><strong>qSetFieldWidth</strong></a>(...)</dt><dd><tt><a href="#-qSetFieldWidth">qSetFieldWidth</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetMessagePattern"><strong>qSetMessagePattern</strong></a>(...)</dt><dd><tt><a href="#-qSetMessagePattern">qSetMessagePattern</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qSetPadChar"><strong>qSetPadChar</strong></a>(...)</dt><dd><tt><a href="#-qSetPadChar">qSetPadChar</a>(str)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSetRealNumberPrecision"><strong>qSetRealNumberPrecision</strong></a>(...)</dt><dd><tt><a href="#-qSetRealNumberPrecision">qSetRealNumberPrecision</a>(int)&nbsp;-&gt;&nbsp;QTextStreamManipulator</tt></dd></dl>
+ <dl><dt><a name="-qSharedBuild"><strong>qSharedBuild</strong></a>(...)</dt><dd><tt><a href="#-qSharedBuild">qSharedBuild</a>()&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qUncompress"><strong>qUncompress</strong></a>(...)</dt><dd><tt><a href="#-qUncompress">qUncompress</a>(Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;QByteArray</tt></dd></dl>
+ <dl><dt><a name="-qUnpremultiply"><strong>qUnpremultiply</strong></a>(...)</dt><dd><tt><a href="#-qUnpremultiply">qUnpremultiply</a>(QRgba64)&nbsp;-&gt;&nbsp;QRgba64<br>
+<a href="#-qUnpremultiply">qUnpremultiply</a>(int)&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qUnregisterResourceData"><strong>qUnregisterResourceData</strong></a>(...)</dt><dd><tt><a href="#-qUnregisterResourceData">qUnregisterResourceData</a>(int,&nbsp;bytes,&nbsp;bytes,&nbsp;bytes)&nbsp;-&gt;&nbsp;bool</tt></dd></dl>
+ <dl><dt><a name="-qVersion"><strong>qVersion</strong></a>(...)</dt><dd><tt><a href="#-qVersion">qVersion</a>()&nbsp;-&gt;&nbsp;str</tt></dd></dl>
+ <dl><dt><a name="-qWarning"><strong>qWarning</strong></a>(...)</dt><dd><tt><a href="#-qWarning">qWarning</a>(str)</tt></dd></dl>
+ <dl><dt><a name="-qrand"><strong>qrand</strong></a>(...)</dt><dd><tt><a href="#-qrand">qrand</a>()&nbsp;-&gt;&nbsp;int</tt></dd></dl>
+ <dl><dt><a name="-qsrand"><strong>qsrand</strong></a>(...)</dt><dd><tt><a href="#-qsrand">qsrand</a>(int)</tt></dd></dl>
+ <dl><dt><a name="-qt_set_sequence_auto_mnemonic"><strong>qt_set_sequence_auto_mnemonic</strong></a>(...)</dt><dd><tt><a href="#-qt_set_sequence_auto_mnemonic">qt_set_sequence_auto_mnemonic</a>(bool)</tt></dd></dl>
+ <dl><dt><a name="-reset"><strong>reset</strong></a>(...)</dt><dd><tt><a href="#-reset">reset</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-right"><strong>right</strong></a>(...)</dt><dd><tt><a href="#-right">right</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-scientific"><strong>scientific</strong></a>(...)</dt><dd><tt><a href="#-scientific">scientific</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-showbase"><strong>showbase</strong></a>(...)</dt><dd><tt><a href="#-showbase">showbase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasebase"><strong>uppercasebase</strong></a>(...)</dt><dd><tt><a href="#-uppercasebase">uppercasebase</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-uppercasedigits"><strong>uppercasedigits</strong></a>(...)</dt><dd><tt><a href="#-uppercasedigits">uppercasedigits</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+ <dl><dt><a name="-ws"><strong>ws</strong></a>(...)</dt><dd><tt><a href="#-ws">ws</a>(QTextStream)&nbsp;-&gt;&nbsp;QTextStream</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>PYQT_CONFIGURATION</strong> = {'sip_flags': '-n sip -t WS_X11 -t Qt_5_11_3'}<br>
+<strong>PYQT_VERSION</strong> = 330499<br>
+<strong>PYQT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QT_VERSION</strong> = 330499<br>
+<strong>QT_VERSION_STR</strong> = '5.11.3'<br>
+<strong>QWIDGETSIZE_MAX</strong> = 16777215<br>
+<strong>QtCriticalMsg</strong> = 2<br>
+<strong>QtDebugMsg</strong> = 0<br>
+<strong>QtFatalMsg</strong> = 3<br>
+<strong>QtInfoMsg</strong> = 4<br>
+<strong>QtSystemMsg</strong> = 2<br>
+<strong>QtWarningMsg</strong> = 1<br>
+<strong>qApp</strong> = &lt;PyQt5.QtWidgets.QApplication object&gt;</td></tr></table>
+</body></html>

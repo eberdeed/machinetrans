@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module wordmorph</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>wordmorph</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/eberdeed/machinetrans-1.15/machinetrans/data/wordmorph.py">/home/eberdeed/machinetrans-1.15/machinetrans/data/wordmorph.py</a></font></td></tr></table>
+    <p><tt><a href="#WordMorph">WordMorph</a>:&nbsp;&nbsp;A&nbsp;class&nbsp;encapsulate&nbsp;Russian&nbsp;word&nbsp;morphology.<br>
+Edward&nbsp;C.&nbsp;Eberle&nbsp;&lt;eberdeed@eberdeed.net&gt;<br>
+July&nbsp;30,&nbsp;2016&nbsp;San&nbsp;Diego&nbsp;California</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="wordmorph.html#WordMorph">WordMorph</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="WordMorph">class <strong>WordMorph</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;to&nbsp;encapsulate&nbsp;Russian&nbsp;word&nbsp;morphology.<br>
+Here&nbsp;are&nbsp;found&nbsp;the&nbsp;declensions&nbsp;and&nbsp;conjugations&nbsp;of&nbsp;Russian.<br>
+We&nbsp;use&nbsp;tuples&nbsp;because&nbsp;they&nbsp;are&nbsp;immutable.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="WordMorph-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>I&nbsp;did&nbsp;the&nbsp;pronouns&nbsp;as&nbsp;one&nbsp;big&nbsp;lump.&nbsp;&nbsp;The&nbsp;dictionary&nbsp;below&nbsp;allows&nbsp;for&nbsp;<br>
+a&nbsp;single&nbsp;input&nbsp;of&nbsp;all&nbsp;the&nbsp;pronouns&nbsp;and&nbsp;their&nbsp;declensions.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>adjectiveshard</strong> = []</dl>
+
+<dl><dt><strong>adjectivesmyagkiy</strong> = []</dl>
+
+<dl><dt><strong>adjectivesoy</strong> = []</dl>
+
+<dl><dt><strong>adjectivessoft</strong> = []</dl>
+
+<dl><dt><strong>adjfemideclgkx</strong> = ('Feminine ГКХ', 'ая', 'ую', 'ой', 'ой', 'ой', 'ой')</dl>
+
+<dl><dt><strong>adjfemideclhrd</strong> = ('Feminine', 'ая', 'ую', 'ой', 'ой', 'ой', 'ой')</dl>
+
+<dl><dt><strong>adjfemideclsft</strong> = ('Feminine', 'яя', 'юю', 'ей', 'ей', 'ей', 'ей')</dl>
+
+<dl><dt><strong>adjfemimyagkiy</strong> = ('Feminine', 'ья', 'ью', 'ьей', 'ьей', 'ьей', 'ьей')</dl>
+
+<dl><dt><strong>adjfemio</strong> = ('Feminine', 'ая', 'ую', 'ой', 'ой', 'ой', 'ой')</dl>
+
+<dl><dt><strong>adjmascdeclgkxanim</strong> = ('Masc Anim ГКХ', 'ий', 'ого', 'ого', 'ому', 'им', 'ом')</dl>
+
+<dl><dt><strong>adjmascdeclgkxinan</strong> = ('Masc Inan ГКХ', 'ий', 'ий', 'ого', 'ому', 'им', 'ом')</dl>
+
+<dl><dt><strong>adjmascdeclhrdanim</strong> = ('Masc Anim', 'ый', 'ого', 'ого', 'ому', 'ым', 'ом')</dl>
+
+<dl><dt><strong>adjmascdeclhrdinan</strong> = ('Masc Inan', 'ый', 'ый', 'ого', 'ому', 'ым', 'ом')</dl>
+
+<dl><dt><strong>adjmascdeclsftanim</strong> = ('Masc Anim', 'ий', 'его', 'его', 'ему', 'им', 'ем')</dl>
+
+<dl><dt><strong>adjmascdeclsftinan</strong> = ('Masc Inan', 'ий', 'ий', 'его', 'ему', 'им', 'ем')</dl>
+
+<dl><dt><strong>adjmascmyagkiyanim</strong> = ('Masc Anim', 'ий', 'ьего', 'ьего', 'ьему', 'ьим', 'ьем')</dl>
+
+<dl><dt><strong>adjmascmyagkiyinan</strong> = ('Masc Inan', 'ий', 'ий', 'ьего', 'ьему', 'ьим', 'ьем')</dl>
+
+<dl><dt><strong>adjmascoanim</strong> = ('Masc Anim', 'ой', 'ого', 'ого', 'ому', 'ым', 'ом')</dl>
+
+<dl><dt><strong>adjmascoinan</strong> = ('Masc Inan', 'ой', 'ой', 'ого', 'ому', 'ым', 'ом')</dl>
+
+<dl><dt><strong>adjnuetdeclgkx</strong> = ('Nueter ГКХ', 'ое', 'ое', 'ого', 'ому', 'им', 'ом')</dl>
+
+<dl><dt><strong>adjnuetdeclhrd</strong> = ('Nueter', 'ое', 'ое', 'ого', 'ому', 'ым', 'ом')</dl>
+
+<dl><dt><strong>adjnuetdeclsft</strong> = ('Nueter', 'ее', 'ее', 'его', 'ему', 'им', 'ем')</dl>
+
+<dl><dt><strong>adjnuetmyagkiy</strong> = ('Nueter', 'ье', 'ье', 'ьего', 'ьему', 'ьим', 'ьем')</dl>
+
+<dl><dt><strong>adjnueto</strong> = ('Nueter', 'ое', 'ое', 'ого', 'ому', 'ым', 'ом')</dl>
+
+<dl><dt><strong>adjplurdeclgkxanim</strong> = ('Plur Anim ГКХ', 'ие', 'их', 'их', 'им', 'ими', 'их')</dl>
+
+<dl><dt><strong>adjplurdeclgkxinan</strong> = ('Plur Inan ГКХ', 'ие', 'ие', 'их', 'им', 'ими', 'их')</dl>
+
+<dl><dt><strong>adjplurdeclhrdanim</strong> = ('Plur Anim', 'ые', 'ых', 'ых', 'ым', 'ыми', 'ых')</dl>
+
+<dl><dt><strong>adjplurdeclhrdinan</strong> = ('Plur Inan', 'ые', 'ые', 'ых', 'ым', 'ыми', 'ых')</dl>
+
+<dl><dt><strong>adjplurdeclsftanim</strong> = ('Plur Anim', 'ие', 'их', 'их', 'им', 'ими', 'их')</dl>
+
+<dl><dt><strong>adjplurdeclsftinan</strong> = ('Plur Inan', 'ие', 'ие', 'их', 'им', 'ими', 'их')</dl>
+
+<dl><dt><strong>adjplurmyagkiyanim</strong> = ('Plur Anim', 'ьи', 'ьих', 'ьих', 'ьим', 'ьими', 'ьих')</dl>
+
+<dl><dt><strong>adjplurmyagkiyinan</strong> = ('Plur Inan', 'ьи', 'ьи', 'ьих', 'ьим', 'ьими', 'ьих')</dl>
+
+<dl><dt><strong>adjpluroanim</strong> = ('Plur Anim', 'ие', 'их', 'их', 'им', 'ими', 'их')</dl>
+
+<dl><dt><strong>adjpluroinan</strong> = ('Plur Inan', 'ие', 'ие', 'их', 'им', 'ими', 'их')</dl>
+
+<dl><dt><strong>adjshorthard</strong> = ('Hard Short Adjective', '', 'а', 'о', 'ы')</dl>
+
+<dl><dt><strong>adjshortsoft</strong> = ('Soft Short Adjective', '', 'а', 'о', 'и')</dl>
+
+<dl><dt><strong>child</strong> = ('Archaic Usage Singular', 'дитя', 'дитя', 'дитяти', 'дитяти', 'дитятей', 'дитяти')</dl>
+
+<dl><dt><strong>childplur</strong> = ('Current Usage Plural', 'дети', 'детей', 'детей', 'детям', 'детьми', 'детях')</dl>
+
+<dl><dt><strong>conjugations</strong> = []</dl>
+
+<dl><dt><strong>consonants</strong> = ('б', 'в', 'г', 'д', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', ...)</dl>
+
+<dl><dt><strong>datalist</strong> = []</dl>
+
+<dl><dt><strong>declblank</strong> = ('Blank', '', '', '', '', '', '')</dl>
+
+<dl><dt><strong>declension</strong> = []</dl>
+
+<dl><dt><strong>demonstrative1</strong> = []</dl>
+
+<dl><dt><strong>demonstrative1f</strong> = ('this', 'эта', 'эту', 'этой', 'этой', 'этой', 'этой')</dl>
+
+<dl><dt><strong>demonstrative1manim</strong> = ('this', 'этот', 'этого', 'этого', 'этому', 'этим', 'этом')</dl>
+
+<dl><dt><strong>demonstrative1minan</strong> = ('this', 'этот', 'этот', 'этого', 'этому', 'этим', 'этом')</dl>
+
+<dl><dt><strong>demonstrative1n</strong> = ('this', 'это', 'это', 'этого', 'этому', 'этим', 'этом')</dl>
+
+<dl><dt><strong>demonstrative1panim</strong> = ('this', 'эти', 'этих', 'этих', 'этим', 'этими', 'этих')</dl>
+
+<dl><dt><strong>demonstrative1pinan</strong> = ('this', 'эти', 'эти', 'этих', 'этим', 'этими', 'этих')</dl>
+
+<dl><dt><strong>demonstrative2</strong> = []</dl>
+
+<dl><dt><strong>demonstrative2f</strong> = ('this', 'та', 'ту', 'той', 'той', 'той', 'той')</dl>
+
+<dl><dt><strong>demonstrative2manim</strong> = ('this', 'тот', 'того', 'того', 'тому', 'тем', 'том')</dl>
+
+<dl><dt><strong>demonstrative2minan</strong> = ('this', 'тот', 'тот', 'того', 'тому', 'тем', 'том')</dl>
+
+<dl><dt><strong>demonstrative2n</strong> = ('this', 'то', 'то', 'того', 'тому', 'тем', 'том')</dl>
+
+<dl><dt><strong>demonstrative2panim</strong> = ('this', 'те', 'тех', 'тех', 'тем', 'теми', 'тех')</dl>
+
+<dl><dt><strong>demonstrative2pinan</strong> = ('this', 'те', 'те', 'тех', 'тем', 'теми', 'тех')</dl>
+
+<dl><dt><strong>enall</strong> = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', ...)</dl>
+
+<dl><dt><strong>femideclanimhrdplur</strong> = ('Hard Animate', 'ы', '', '', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>femideclanimhrdplur1</strong> = ('Hard Animate гкх', 'и', '', '', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>femideclanimsftplur</strong> = ('Soft Animate', 'и', '', '', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>femideclanimsftplur1</strong> = ('Hard Animate Singular Ends in ь', 'и', 'ей', 'ей', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>femideclanimsftplur2</strong> = ('Soft Animate Singular Ends in ь', 'и', 'ей', 'ей', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>femideclanimsftplur3</strong> = ('Soft Animate', 'ии', 'ий', 'ий', 'иям', 'иями', 'иях')</dl>
+
+<dl><dt><strong>femideclhrd</strong> = ('Hard', 'а', 'у', 'ы', 'е', 'ой', 'е')</dl>
+
+<dl><dt><strong>femideclhrdgkx</strong> = ('Hard гкх', 'а', 'у', 'и', 'е', 'ой', 'е')</dl>
+
+<dl><dt><strong>femideclinanhrdplur</strong> = ('Hard Inanimate', 'ы', 'ы', '', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>femideclinanhrdplur1</strong> = ('Hard Inanimate гкх', 'и', 'и', '', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>femideclinansftplur</strong> = ('Soft Inanimate', 'и', 'и', '', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>femideclinansftplur1</strong> = ('Hard Inanimate Singular Ends in ь', 'и', 'и', 'ей', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>femideclinansftplur2</strong> = ('Soft Inanimate Singular Ends in ь', 'и', 'и', 'ей', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>femideclinansftplur3</strong> = ('Soft Inanimate', 'ии', 'ии', 'ий', 'иям', 'иями', 'иях')</dl>
+
+<dl><dt><strong>femideclnumericplur</strong> = ('Numeric', '', '', 'и', 'и', 'ью', 'и')</dl>
+
+<dl><dt><strong>femideclsft</strong> = ('Soft', 'я', 'ю', 'ы', 'е', 'ой', 'е')</dl>
+
+<dl><dt><strong>femideclsft1</strong> = ('Soft', 'ия', 'ию', 'ии', 'ии', 'ией', 'ии')</dl>
+
+<dl><dt><strong>femideclsft2</strong> = ('Soft', 'ь', 'ь', 'и', 'и', 'ью', 'и')</dl>
+
+<dl><dt><strong>femideclsftcons</strong> = ('Soft Consonant Ending', 'я', 'ю', 'и', 'е', 'ей', 'е')</dl>
+
+<dl><dt><strong>femideclsftgkx</strong> = ('Soft гкх', 'я', 'ю', 'и', 'е', 'ой', 'е')</dl>
+
+<dl><dt><strong>feminounsing</strong> = ('а', 'я', 'жь', 'чь', 'шь', 'щь', 'ия')</dl>
+
+<dl><dt><strong>femplur</strong> = []</dl>
+
+<dl><dt><strong>femsing</strong> = []</dl>
+
+<dl><dt><strong>gkx</strong> = ('г', 'к', 'х')</dl>
+
+<dl><dt><strong>groupkeys</strong> = ()</dl>
+
+<dl><dt><strong>inclusive</strong> = []</dl>
+
+<dl><dt><strong>inclusivef</strong> = ('all', 'вся', 'всей', 'всю', 'всей', 'всей', 'всей')</dl>
+
+<dl><dt><strong>inclusivemanim</strong> = ('all', 'весь', 'всего', 'всего', 'всему', 'всем', 'всём')</dl>
+
+<dl><dt><strong>inclusiveminan</strong> = ('all', 'весь', 'весь', 'всего', 'всему', 'всем', 'всём')</dl>
+
+<dl><dt><strong>inclusiven</strong> = ('all', 'всё', 'всё', 'всего', 'всему', 'всем', 'всём')</dl>
+
+<dl><dt><strong>inclusivepanim</strong> = ('all', 'все', 'всех', 'всех', 'всем', 'всеми', 'всех')</dl>
+
+<dl><dt><strong>inclusivepinan</strong> = ('all', 'все', 'все', 'всех', 'всем', 'всеми', 'всех')</dl>
+
+<dl><dt><strong>interrog</strong> = []</dl>
+
+<dl><dt><strong>interrog1</strong> = ('who', 'кто', 'кого', 'кого', 'кому', 'кем', 'ком', 'interrogative')</dl>
+
+<dl><dt><strong>interrog2</strong> = ('what', 'что', 'что', 'чего', 'чему', 'чем', 'чём', 'interrogative')</dl>
+
+<dl><dt><strong>interrogf</strong> = ('whose', 'чья', 'чью', 'чьей', 'чьей', 'чьей', 'чьей')</dl>
+
+<dl><dt><strong>interrogmanim</strong> = ('whose', 'чей', 'чьего', 'чьего', 'чьему', 'чьим', 'чьём')</dl>
+
+<dl><dt><strong>interrogminan</strong> = ('whose', 'чей', 'чей', 'чьего', 'чьему', 'чьим', 'чьём')</dl>
+
+<dl><dt><strong>interrogn</strong> = ('whose', 'чьё', 'чьё', 'чьего', 'чьему', 'чьим', 'чьём')</dl>
+
+<dl><dt><strong>interrogpanim</strong> = ('whose', 'чьи', 'чьих', 'чьих', 'чьим', 'чьими', 'чьих')</dl>
+
+<dl><dt><strong>interrogpinan</strong> = ('whose', 'чьи', 'чьих', 'чьих', 'чьим', 'чьими', 'чьих')</dl>
+
+<dl><dt><strong>mascdeclanimhrd</strong> = ('Animate Hard', '', 'а', 'а', 'у', 'ом', 'е')</dl>
+
+<dl><dt><strong>mascdeclanimplur</strong> = ('Hard Animate', 'ы', 'ов', 'ов', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>mascdeclanimplur1</strong> = ('Soft Animate', 'ы', 'ев', 'ев', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>mascdeclanimplur2</strong> = ('Soft Animate 1', 'и', 'ев', 'ев', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>mascdeclanimplur3</strong> = ('Soft Animate 2', 'и', 'ов', 'ов', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>mascdeclanimplur4</strong> = ('Animate Ends in гкхщш', 'и', 'ей', 'ей', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>mascdeclanimplur5</strong> = ('Animate Singular Ends in ь', 'и', 'ей', 'ей', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>mascdeclanimplur6</strong> = ('Soft Animate ья', 'ья', 'ьев', 'ьев', 'ьям', 'ьями', 'ьях')</dl>
+
+<dl><dt><strong>mascdeclanimsft</strong> = ('Animate Soft', 'ь', 'я', 'я', 'ю', 'ём', 'е')</dl>
+
+<dl><dt><strong>mascdeclanimsft1</strong> = ('Animate Soft 1', '', 'я', 'я', 'у', 'ем', 'е')</dl>
+
+<dl><dt><strong>mascdeclanimsft2</strong> = ('Animate Soft Ends in й', 'й', 'я', 'я', 'ю', 'ем', 'е')</dl>
+
+<dl><dt><strong>mascdeclanimsft3</strong> = ('Animate Soft', 'ий', 'ия', 'ия', 'ию', 'ием', 'ии')</dl>
+
+<dl><dt><strong>mascdeclaninyaninplur</strong> = ('Singular Ends in анин янин', 'не', 'н', 'н', 'нам', 'нами', 'нах')</dl>
+
+<dl><dt><strong>mascdeclatayataplur</strong> = ('Plural Ends in ата ята', 'та', 'т', 'т', 'там', 'тами', 'тах')</dl>
+
+<dl><dt><strong>mascdeclhundredplur</strong> = ('Hundreds', '', '', 'сот', 'стам', 'стами', 'стах')</dl>
+
+<dl><dt><strong>mascdeclinanhrd</strong> = ('Inanimate Hard', '', '', 'а', 'у', 'ом', 'е')</dl>
+
+<dl><dt><strong>mascdeclinanhrd1</strong> = ('y in Prep.', '', '', 'а', 'у', 'ом', 'у')</dl>
+
+<dl><dt><strong>mascdeclinanplur</strong> = ('Hard Inanimate', 'ы', 'ы', 'ов', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>mascdeclinanplur1</strong> = ('Soft Inanimate', 'ы', 'ы', 'ев', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>mascdeclinanplur2</strong> = ('Soft Inanimate 1', 'и', 'и', 'ев', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>mascdeclinanplur3</strong> = ('Soft Inanimate 2', 'и', 'и', 'ов', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>mascdeclinanplur4</strong> = ('Inanimate Ends in гкхщш', 'и', 'и', 'ей', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>mascdeclinanplur5</strong> = ('Inanimate Singular Ends in ь', 'и', 'и', 'ей', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>mascdeclinanplur6</strong> = ('Soft Inanimate ья', 'ья', 'ья', 'ьев', 'ьям', 'ьями', 'ьях')</dl>
+
+<dl><dt><strong>mascdeclinansft</strong> = ('Inanimate Soft', 'ь', 'ь', 'я', 'ю', 'ём', 'е')</dl>
+
+<dl><dt><strong>mascdeclinansft1</strong> = ('Inanimate Soft 1', '', '', 'я', 'у', 'ем', 'е')</dl>
+
+<dl><dt><strong>mascdeclinansft1a</strong> = ('ю in Prep.', 'й', 'й', 'я', 'ю', 'ем', 'ю')</dl>
+
+<dl><dt><strong>mascdeclinansft2</strong> = ('Inanimate Soft Ends in й', 'й', 'й', 'я', 'ю', 'ем', 'е')</dl>
+
+<dl><dt><strong>mascdeclinansft3</strong> = ('Inanimate Soft', 'ий', 'ий', 'ия', 'ию', 'ием', 'ии')</dl>
+
+<dl><dt><strong>mascdeclnumericplur</strong> = ('Numeric', '', '', 'а', 'а', 'а', 'а')</dl>
+
+<dl><dt><strong>mascnounplur</strong> = ('ы', 'и')</dl>
+
+<dl><dt><strong>mascnounplur1</strong> = ('а', 'я')</dl>
+
+<dl><dt><strong>mascnounplur2</strong> = ('ане', 'яне')</dl>
+
+<dl><dt><strong>mascnounplur3</strong> = ('ата', 'ята')</dl>
+
+<dl><dt><strong>mascnounplur4</strong> = 'ья'</dl>
+
+<dl><dt><strong>mascnounsing</strong> = ('ц', 'ш', 'ж', 'к', 'г', 'х', 'т', 'д', 'с', 'з', 'п', 'б', 'ф', 'в', 'л', 'р', 'м', 'н', 'ч', 'щ', ...)</dl>
+
+<dl><dt><strong>mascplur</strong> = []</dl>
+
+<dl><dt><strong>mascsing</strong> = []</dl>
+
+<dl><dt><strong>matdoch</strong> = ('мать дочь Singular', 'ь', 'ь', 'ери', 'ери', 'ерью', 'ери')</dl>
+
+<dl><dt><strong>matdochplur</strong> = ('мать дочь Plural', 'ери', 'ерей', 'ерей', 'ерям', 'ерями', 'ерях')</dl>
+
+<dl><dt><strong>muzh</strong> = ('муж Singular', '', 'а', 'а', 'у', 'ем', 'е')</dl>
+
+<dl><dt><strong>muzhplur</strong> = ('муж Plural', 'ья', 'ей', 'ей', 'ьям', 'ьями', 'ьях')</dl>
+
+<dl><dt><strong>myagkiyznak</strong> = 'ь'</dl>
+
+<dl><dt><strong>neginterrog1</strong> = ('no one', 'никто', 'никого', 'никого', 'никому', 'никем', 'ни о ком', 'interrogative')</dl>
+
+<dl><dt><strong>neginterrog2</strong> = ('nothing', 'ничто', 'ничто', 'ничего', 'ничему', 'ничем', 'ни о чём', 'interrogative')</dl>
+
+<dl><dt><strong>nuetdeclhrd</strong> = ('Hard', 'о', 'о', 'а', 'у', 'ом', 'е')</dl>
+
+<dl><dt><strong>nuetdeclhrdplur</strong> = ('Hard', 'а', 'а', '', 'ам', 'ами', 'ах')</dl>
+
+<dl><dt><strong>nuetdeclmya</strong> = ('Ends in мя', 'мя', 'мя', 'мени', 'мени', 'менем', 'мени')</dl>
+
+<dl><dt><strong>nuetdeclmyaplur</strong> = ('Ends in мя', 'мена', 'мена', 'мён', 'менам', 'менами', 'менах')</dl>
+
+<dl><dt><strong>nuetdeclsft</strong> = ('Soft', 'е', 'е', 'я', 'ю', 'ем', 'е')</dl>
+
+<dl><dt><strong>nuetdeclsft1</strong> = ('Soft', 'ие', 'ие', 'ия', 'ию', 'ием', 'ии')</dl>
+
+<dl><dt><strong>nuetdeclsftplur</strong> = ('Soft', 'я', 'я', 'ей', 'ям', 'ями', 'ях')</dl>
+
+<dl><dt><strong>nuetdeclsftplur1</strong> = ('Soft', 'ия', 'ия', 'ий', 'иям', 'иями', 'иях')</dl>
+
+<dl><dt><strong>nuetnounplur</strong> = ('а', 'я', 'емена', 'емёна')</dl>
+
+<dl><dt><strong>nuetnounplur1</strong> = 'еса'</dl>
+
+<dl><dt><strong>nuetnounsing</strong> = ('о', 'е', 'ё', 'мя')</dl>
+
+<dl><dt><strong>nuetplur</strong> = []</dl>
+
+<dl><dt><strong>nuetsing</strong> = []</dl>
+
+<dl><dt><strong>personal1a</strong> = ('I', 'я', 'меня', 'меня', 'мне', 'мной', 'мне', 'personal')</dl>
+
+<dl><dt><strong>personal1b</strong> = ('we', 'мы', 'нас', 'нас', 'нам', 'нами', 'нас', 'personal')</dl>
+
+<dl><dt><strong>personal2a</strong> = ('you', 'ты', 'тебя', 'тебя', 'тебе', 'тобой', 'тебе', 'personal')</dl>
+
+<dl><dt><strong>personal2b</strong> = ('you', 'вы', 'вас', 'вас', 'вам', 'вами', 'вас', 'personal')</dl>
+
+<dl><dt><strong>personal3a</strong> = ('he', 'он', 'его', 'его', 'ему', 'им', 'нём', 'personal')</dl>
+
+<dl><dt><strong>personal3b</strong> = ('she', 'она', 'её', 'её', 'ей', 'ею', 'ней', 'personal')</dl>
+
+<dl><dt><strong>personal3c</strong> = ('they', 'они', 'их', 'их', 'им', 'ими', 'них', 'personal')</dl>
+
+<dl><dt><strong>plural</strong> = ('Plural Only', '', '', '', '', '', '')</dl>
+
+<dl><dt><strong>pluralonly</strong> = []</dl>
+
+<dl><dt><strong>possessive1a</strong> = []</dl>
+
+<dl><dt><strong>possessive1af</strong> = ('mine', 'моя', 'мою', 'моей', 'моей', 'моей', 'моей')</dl>
+
+<dl><dt><strong>possessive1amanim</strong> = ('mine', 'мой', 'моего', 'моего', 'моему', 'моим', 'моём')</dl>
+
+<dl><dt><strong>possessive1aminan</strong> = ('mine', 'мой', 'мой', 'моего', 'моему', 'моим', 'моём')</dl>
+
+<dl><dt><strong>possessive1an</strong> = ('mine', 'моё', 'моё', 'моего', 'моему', 'моим', 'моём')</dl>
+
+<dl><dt><strong>possessive1apanim</strong> = ('mine', 'мои', 'моих', 'моих', 'моим', 'моими', 'моих')</dl>
+
+<dl><dt><strong>possessive1apinan</strong> = ('mine', 'мои', 'мои', 'моих', 'моим', 'моими', 'моих')</dl>
+
+<dl><dt><strong>possessive2a</strong> = []</dl>
+
+<dl><dt><strong>possessive2af</strong> = ('your', 'твоя', 'твою', 'твоей', 'твоей', 'твоей', 'твоей')</dl>
+
+<dl><dt><strong>possessive2amanim</strong> = ('your', 'твой', 'твоего', 'твоего', 'твоему', 'твоим', 'твоем')</dl>
+
+<dl><dt><strong>possessive2aminan</strong> = ('your', 'твой', 'твой', 'твоего', 'твоему', 'твоим', 'твоем')</dl>
+
+<dl><dt><strong>possessive2an</strong> = ('your', 'твоё', 'твоё', 'твоего', 'твоему', 'твоим', 'твоем')</dl>
+
+<dl><dt><strong>possessive2apanim</strong> = ('your', 'твои', 'твоих', 'твоих', 'твоим', 'твоими', 'твоих')</dl>
+
+<dl><dt><strong>possessive2apinan</strong> = ('your', 'твои', 'твои', 'твоих', 'твоим', 'твоими', 'твоих')</dl>
+
+<dl><dt><strong>possessive2b</strong> = []</dl>
+
+<dl><dt><strong>possessive2bf</strong> = ('your', 'ваша', 'вашу', 'вашей', 'вашей', 'вашей', 'вашей')</dl>
+
+<dl><dt><strong>possessive2bmanim</strong> = ('your', 'ваш', 'вашего', 'вашего', 'вашему', 'вашим', 'вашем')</dl>
+
+<dl><dt><strong>possessive2bminan</strong> = ('your', 'ваш', 'ваш', 'вашего', 'вашему', 'вашим', 'вашем')</dl>
+
+<dl><dt><strong>possessive2bn</strong> = ('your', 'ваше', 'ваше', 'вашего', 'вашему', 'вашим', 'вашем')</dl>
+
+<dl><dt><strong>possessive2bpanim</strong> = ('your', 'ваши', 'ваших', 'ваших', 'вашим', 'вашими', 'ваших')</dl>
+
+<dl><dt><strong>possessive2bpinan</strong> = ('your', 'ваши', 'ваши', 'ваших', 'вашим', 'вашими', 'ваших')</dl>
+
+<dl><dt><strong>possessive3a</strong> = []</dl>
+
+<dl><dt><strong>possessive3af</strong> = ('our', 'наша', 'нашу', 'нашей', 'нашей', 'нашей', 'нашей')</dl>
+
+<dl><dt><strong>possessive3amanim</strong> = ('our', 'наш', 'нашего', 'нашего', 'нашему', 'нашим', 'нашем')</dl>
+
+<dl><dt><strong>possessive3aminan</strong> = ('our', 'наш', 'наш', 'нашего', 'нашему', 'нашим', 'нашем')</dl>
+
+<dl><dt><strong>possessive3an</strong> = ('our', 'наше', 'наше', 'нашего', 'нашему', 'нашим', 'нашем')</dl>
+
+<dl><dt><strong>possessive3apanim</strong> = ('our', 'наши', 'наших', 'наших', 'нашим', 'нашими', 'наших')</dl>
+
+<dl><dt><strong>possessive3apinan</strong> = ('our', 'наши', 'наши', 'наших', 'нашим', 'нашими', 'наших')</dl>
+
+<dl><dt><strong>pppart</strong> = ('Short Past Passive', '', 'а', 'о', 'и')</dl>
+
+<dl><dt><strong>pronouns</strong> = {}</dl>
+
+<dl><dt><strong>reflexive</strong> = ('oneself', 'себя', 'себя', 'себя', 'себе', 'собой', 'себе', 'reflexive')</dl>
+
+<dl><dt><strong>reflexivesam</strong> = []</dl>
+
+<dl><dt><strong>reflexivesamadjf</strong> = ('oneself', 'самая', 'самую', 'самой', 'самой', 'самой', 'самой')</dl>
+
+<dl><dt><strong>reflexivesamadjmanim</strong> = ('oneself', 'самый', 'самого', 'самого', 'самому', 'самим', 'самом')</dl>
+
+<dl><dt><strong>reflexivesamadjminan</strong> = ('oneself', 'самый', 'самый', 'самого', 'самому', 'самим', 'самом')</dl>
+
+<dl><dt><strong>reflexivesamadjn</strong> = ('oneself', 'самое', 'самое', 'самого', 'самому', 'самим', 'самом')</dl>
+
+<dl><dt><strong>reflexivesamadjpanim</strong> = ('oneself', 'самые', 'самих', 'самих', 'самим', 'самими', 'самих')</dl>
+
+<dl><dt><strong>reflexivesamadjpinan</strong> = ('oneself', 'самые', 'самые', 'самих', 'самим', 'самими', 'самих')</dl>
+
+<dl><dt><strong>reflposs</strong> = []</dl>
+
+<dl><dt><strong>reflpossf</strong> = ("one's own", 'своя', 'свою', 'своей', 'своей', 'своей', 'своей')</dl>
+
+<dl><dt><strong>reflpossmanim</strong> = ("one's own", 'свой', 'своего', 'своего', 'своему', 'своим', 'своём')</dl>
+
+<dl><dt><strong>reflpossminan</strong> = ("one's own", 'свой', 'свой', 'своего', 'своему', 'своим', 'своём')</dl>
+
+<dl><dt><strong>reflpossn</strong> = ("one's own", 'своё', 'своё', 'своего', 'своему', 'своим', 'своём')</dl>
+
+<dl><dt><strong>reflposspanim</strong> = ("one's own", 'свои', 'своих', 'своих', 'своим', 'своими', 'своих')</dl>
+
+<dl><dt><strong>reflposspinan</strong> = ("one's own", 'свои', 'свои', 'своих', 'своим', 'своими', 'своих')</dl>
+
+<dl><dt><strong>reqi</strong> = ('г', 'к', 'х', 'ж', 'ч', 'ш', 'щ')</dl>
+
+<dl><dt><strong>ruall</strong> = ('а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', ...)</dl>
+
+<dl><dt><strong>rualphlower</strong> = ('а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', ...)</dl>
+
+<dl><dt><strong>rualphupper</strong> = ('А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', ...)</dl>
+
+<dl><dt><strong>ruconshrd</strong> = ('ц', 'ш', 'ж', 'к', 'г', 'х', 'т', 'д', 'с', 'з', 'п', 'б', 'ф', 'в', 'л', 'р', 'м', 'н')</dl>
+
+<dl><dt><strong>ruconssft</strong> = ('ть', 'дь', 'сь', 'зь', 'пь', 'бь', 'фь', 'вь', 'ль', 'рь', 'мь', 'нь', 'ч', 'щ', 'й')</dl>
+
+<dl><dt><strong>ruconssoftonly</strong> = ('ч', 'щ', 'й')</dl>
+
+<dl><dt><strong>singlekeys</strong> = ()</dl>
+
+<dl><dt><strong>sybillants</strong> = ('ч', 'щ', 'ш')</dl>
+
+<dl><dt><strong>tmyagkiyznak</strong> = 'ть'</dl>
+
+<dl><dt><strong>variety</strong> = []</dl>
+
+<dl><dt><strong>varietyf</strong> = ('which', 'какая', 'какую', 'какой', 'какой', 'какой', 'какой')</dl>
+
+<dl><dt><strong>varietymanim</strong> = ('which', 'какой', 'какого', 'какого', 'какому', 'каким', 'каком')</dl>
+
+<dl><dt><strong>varietyminan</strong> = ('which', 'какой', 'какой', 'какого', 'какому', 'каким', 'каком')</dl>
+
+<dl><dt><strong>varietyn</strong> = ('which', 'какоё', 'какоё', 'какого', 'какому', 'каким', 'каком')</dl>
+
+<dl><dt><strong>varietypanim</strong> = ('which', 'какие', 'каких', 'каких', 'каким', 'какими', 'каких')</dl>
+
+<dl><dt><strong>varietypinan</strong> = ('which', 'какие', 'какие', 'каких', 'каким', 'какими', 'каких')</dl>
+
+<dl><dt><strong>verblist</strong> = []</dl>
+
+<dl><dt><strong>vowels</strong> = ('а', 'е', 'ё', 'о', 'у', 'э', 'ю', 'я')</dl>
+
+<dl><dt><strong>vrbadvb</strong> = ('Verbal Adverb', 'а', 'я', 'в', 'ши', 'вши')</dl>
+
+<dl><dt><strong>vrbimp</strong> = ('Imperative', 'й', 'йте')</dl>
+
+<dl><dt><strong>vrbpast</strong> = ('past', 'л', 'ла', 'ло', 'ли')</dl>
+
+<dl><dt><strong>vrbpast1</strong> = ('past', '', 'ла', 'ло', 'ли')</dl>
+
+<dl><dt><strong>vrbprstat</strong> = ('Present ать', 'аю', 'аешь', 'ает', 'аем', 'аете', 'ают')</dl>
+
+<dl><dt><strong>vrbprstat1</strong> = ('Present ать 1', 'аю', 'аёшь', 'аёт', 'аём', 'аёте', 'ают')</dl>
+
+<dl><dt><strong>vrbprstat2</strong> = ('Present ать 2', 'у', 'ишь', 'ит', 'им', 'ите', 'ат')</dl>
+
+<dl><dt><strong>vrbprstat3</strong> = ('Present еть', 'у', 'ишь', 'ит', 'им', 'ите', 'ят')</dl>
+
+<dl><dt><strong>vrbprstet</strong> = ('Present еть', 'у', 'ешь', 'ет', 'ем', 'ете', 'ут')</dl>
+
+<dl><dt><strong>vrbprstgat</strong> = ('Present гать', 'гу', 'жишь', 'жит', 'жим', 'жите', 'гут')</dl>
+
+<dl><dt><strong>vrbprstit</strong> = ('Present ыть', 'ою', 'оешь', 'оет', 'оем', 'оете', 'оют')</dl>
+
+<dl><dt><strong>vrbprstovat</strong> = ('Present овать', 'ую', 'уешь', 'ует', 'уем', 'уете', 'уют')</dl>
+
+<dl><dt><strong>vrbprststy</strong> = ('Present сти', 'су', 'сёшь', 'сёт', 'сём', 'сёте', 'сут')</dl>
+
+<dl><dt><strong>vrbprstt</strong> = ('Present ть', 'у', 'ишь', 'ит', 'дим', 'дите', 'дут')</dl>
+
+<dl><dt><strong>vrbprstt1</strong> = ('Present ть 1', 'у', 'ишь', 'ит', 'дим', 'дите', 'дят')</dl>
+
+<dl><dt><strong>vrbprstt2</strong> = ('Present ть 2', 'м', 'шь', 'ст', 'дим', 'дите', 'дут')</dl>
+
+<dl><dt><strong>vrbprsty</strong> = ('Present и', 'у', 'ёшь', 'ёт', 'ём', 'ёте', 'ут')</dl>
+
+<dl><dt><strong>vrbprstyat</strong> = ('Present ять', 'яю', 'яешь', 'яет', 'яем', 'яете', 'яют')</dl>
+
+<dl><dt><strong>vrbprstyt1</strong> = ('Present ить 1', 'ю', 'ишь', 'ит', 'им', 'ите', 'ют')</dl>
+
+<dl><dt><strong>vrbprstyt2</strong> = ('Present ить 2', 'ю', 'ишь', 'ит', 'им', 'ите', 'ят')</dl>
+
+<dl><dt><strong>vrbprstyt3</strong> = ('Present ить 3', 'ю', 'ешь', 'ет', 'ем', 'ете', 'ют')</dl>
+
+<dl><dt><strong>vrbprstzty</strong> = ('Present зти', 'зу', 'зёшь', 'зёт', 'зём', 'зёте', 'зут')</dl>
+
+<dl><dt><strong>vrbprtcp</strong> = ('Participles', 'щий', 'мый', 'вший', 'нный', 'я', 'в')</dl>
+
+<dl><dt><strong>vrbshrtpp</strong> = ('Short Past Passive', 'н', 'на', 'но', 'ны')</dl>
+
+<dl><dt><strong>ykratkoye</strong> = 'й'</dl>
+
+<dl><dt><strong>yykratkoye</strong> = 'ий'</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
